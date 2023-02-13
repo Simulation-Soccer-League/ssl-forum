@@ -313,6 +313,7 @@ function HandleDropdowns(element) {
     });
 }
 
+// Fetches the list of current players in the league
 async function fetchListPlayers() {
     const url = "https://api.simulationsoccer.com/ssl/listPlayers"
 
@@ -321,21 +322,64 @@ async function fetchListPlayers() {
     data
         .then((response) => response.json())
         .then((data) => {
+            const jsData = JSON.parse(data)
+
             const selectObject = document.querySelector('#selectedPlayer')
 
-            data.forEach(element => {
+            for (const key in jsData) {
+                // console.log(`${key}: ${jsData[key]}`)
                 const option = document.createElement("option");
-                option.text = element;
-                option.value = element;
+                option.text = jsData[key];
+                option.value = key;
                 selectObject.appendChild(option)
             }
-            )
         }
         )
+
 }
 
-
+// Fetches the build of the player whose user is logged in
 async function fetchPlayerInitial() {
+    const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
+
+    const playerData = fetch(url)
+
+    playerData
+        .then((response) => response.json())
+        .then((data) => {
+            // data contains in its [0] index, the javascript object with all information
+            document.querySelector("#currentTPE").innerText = data[0].TPE
+
+            document.querySelector('option[value="' + data[0].Name + '"]').selected = true
+
+            const attributes = document.querySelectorAll('input[id*="out"]')
+
+            attributes.forEach(element => {
+                const keeperPattern = /K$/
+
+                if (data[0].Position == "Goalkeeper") {
+                    if (keeperPattern.test(element.id)) {
+                        element.value = data[0][attributeArray[element.id.slice(3)]]
+                    }
+                } else {
+                    if (keeperPattern.test(element.id)) {
+                        // Do nothing
+                    } else {
+                        element.value = data[0][attributeArray[element.id.slice(3)]]
+                    }
+                }
+
+                if (element.id == "outNat" | element.id == "outSta") {
+                    // Do nothing
+                } else {
+                    attributeCost(element)
+                }
+            })
+        });
+
+}
+
+async function fetchPlayerSelected() {
     const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
 
     const playerData = fetch(url)
