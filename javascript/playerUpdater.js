@@ -333,11 +333,10 @@ async function fetchListPlayers() {
                 option.value = key;
                 selectObject.appendChild(option)
             }
+
+            if (username != "Guest") { fetchPlayerInitial() } else { fetchPlayerSelected() }
         }
         )
-
-    if (username != "Guest") { fetchPlayerInitial() } else { fetchPlayerSelected() }
-
 }
 
 // Fetches the build of the player whose user is logged in
