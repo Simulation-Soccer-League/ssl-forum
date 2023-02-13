@@ -311,7 +311,9 @@ function HandleDropdowns(element) {
 
 
 async function fetchAsyncJSON(url) {
-    fetch(url)
+    const playerData = fetch(url)
+
+    playerData
         .then((response) => response.json())
         .then((data) => console.log(data));
 
