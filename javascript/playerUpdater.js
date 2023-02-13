@@ -9,19 +9,11 @@ function toCapital(string) {
     return string[0].toUpperCase() + string.slice(1)
 }
 
-// Updates the attribute form based on player type
-function updateForm(control) {
-    if (control.id == "keeper") {
+// Updates the attribute tables based on the selected player position
+function updateForm(position) {
+    if (position == "Goalkeeper") {
         document.querySelector("#keeperAttributes").style.display = "block"
         document.querySelector("#technicalAttributes").style.display = "none"
-        document.querySelector("#outfieldExtra").style.display = "none"
-
-        let outfieldExtras = document.querySelectorAll("#outfieldExtra select")
-
-        outfieldExtras.forEach(element => {
-            element.value = null
-            element.required = false
-        })
 
         let attributes = document.querySelectorAll("#keeperAttributes td input")
 
@@ -38,14 +30,6 @@ function updateForm(control) {
     } else {
         document.querySelector("#keeperAttributes").style.display = "none"
         document.querySelector("#technicalAttributes").style.display = "block"
-        document.querySelector("#outfieldExtra").style.display = "block"
-
-
-        let outfieldExtras = document.querySelectorAll("#outfieldExtra select")
-
-        outfieldExtras.forEach(element => {
-            element.required = true
-        })
 
         let attributes = document.querySelectorAll("#technicalAttributes td input")
 
@@ -362,12 +346,16 @@ async function fetchPlayerInitial() {
                     if (keeperPattern.test(element.id)) {
                         element.value = data[0][attributeArray[element.id.slice(3)]]
                     }
+
+                    updateForm("Goalkeeper")
                 } else {
                     if (keeperPattern.test(element.id)) {
                         // Do nothing
                     } else {
                         element.value = data[0][attributeArray[element.id.slice(3)]]
                     }
+
+                    updateForm("Outfield")
                 }
 
                 if (element.id == "outNat" | element.id == "outSta") {
@@ -380,6 +368,7 @@ async function fetchPlayerInitial() {
 
 }
 
+// Fetches the build of the player that is selected in the drop-down
 async function fetchPlayerSelected() {
     let username = document.querySelector("#selectedPlayer").value
 
@@ -401,10 +390,16 @@ async function fetchPlayerSelected() {
                 const keeperPattern = /K$/
 
                 if (data[0].Position == "Goalkeeper") {
+                    updateForm("Goalkeeper")
+
                     if (keeperPattern.test(element.id)) {
                         element.value = data[0][attributeArray[element.id.slice(3)]]
                     }
+
+
                 } else {
+                    updateForm("Outfield")
+
                     if (keeperPattern.test(element.id)) {
                         // Do nothing
                     } else {
