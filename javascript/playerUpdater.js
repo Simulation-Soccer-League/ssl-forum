@@ -350,7 +350,7 @@ async function fetchPlayerInitial() {
             // data contains in its [0] index, the javascript object with all information
             document.querySelector("#currentTPE").innerText = data[0].TPE
 
-            document.querySelector('option[value="' + data[0].Name + '"]').selected = true
+            document.querySelector('option[value="' + username + '"]').selected = true
 
             const attributes = document.querySelectorAll('input[id*="out"]')
 
@@ -380,6 +380,8 @@ async function fetchPlayerInitial() {
 }
 
 async function fetchPlayerSelected() {
+    let username = document.querySelector("#selectedPlayer").value
+
     const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
 
     const playerData = fetch(url)
@@ -390,7 +392,7 @@ async function fetchPlayerSelected() {
             // data contains in its [0] index, the javascript object with all information
             document.querySelector("#currentTPE").innerText = data[0].TPE
 
-            document.querySelector('option[value="' + data[0].Name + '"]').selected = true
+            document.querySelector('option[value="' + username + '"]').selected = true
 
             const attributes = document.querySelectorAll('input[id*="out"]')
 
