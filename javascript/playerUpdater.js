@@ -11,9 +11,9 @@ function toCapital(string) {
 
 // Updates the attribute tables based on the selected player position
 function updateForm(position) {
-    if (position == "Goalkeeper") {
-        document.querySelector("#keeperAttributes").style.display = "block"
-        document.querySelector("#technicalAttributes").style.display = "none"
+    if (position != "Goalkeeper") {
+        document.querySelector("#keeperAttributes").style.display = "none"
+        document.querySelector("#technicalAttributes").style.display = "block"
 
         let attributes = document.querySelectorAll("#keeperAttributes td input")
 
@@ -28,8 +28,8 @@ function updateForm(position) {
         });
 
     } else {
-        document.querySelector("#keeperAttributes").style.display = "none"
-        document.querySelector("#technicalAttributes").style.display = "block"
+        document.querySelector("#keeperAttributes").style.display = "block"
+        document.querySelector("#technicalAttributes").style.display = "none"
 
         let attributes = document.querySelectorAll("#technicalAttributes td input")
 
@@ -333,6 +333,8 @@ async function fetchPlayerInitial() {
         .then((response) => response.json())
         .then((data) => {
             // data contains in its [0] index, the javascript object with all information
+            updateForm(data[0].Position)
+
             document.querySelector("#currentTPE").innerText = data[0].TPE
 
             document.querySelector('option[value="' + username + '"]').selected = true
@@ -343,11 +345,12 @@ async function fetchPlayerInitial() {
                 const keeperPattern = /K$/
 
                 if (data[0].Position == "Goalkeeper") {
-                    if (keeperPattern.test(element.id)) {
+
+                    // Checks if the attribute is in the Keeper Attributes table and fills it if that is true
+                    if (element.closest("#keeperAttributes") != null) {
                         element.value = data[0][attributeArray[element.id.slice(3)]]
                     }
 
-                    updateForm("Goalkeeper")
                 } else {
                     if (keeperPattern.test(element.id)) {
                         // Do nothing
@@ -355,7 +358,6 @@ async function fetchPlayerInitial() {
                         element.value = data[0][attributeArray[element.id.slice(3)]]
                     }
 
-                    updateForm("Outfield")
                 }
 
                 if (element.id == "outNat" | element.id == "outSta") {
@@ -380,6 +382,8 @@ async function fetchPlayerSelected() {
         .then((response) => response.json())
         .then((data) => {
             // data contains in its [0] index, the javascript object with all information
+            updateForm(data[0].Position)
+
             document.querySelector("#currentTPE").innerText = data[0].TPE
 
             document.querySelector('option[value="' + username + '"]').selected = true
@@ -390,15 +394,12 @@ async function fetchPlayerSelected() {
                 const keeperPattern = /K$/
 
                 if (data[0].Position == "Goalkeeper") {
-                    updateForm("Goalkeeper")
 
-                    if (keeperPattern.test(element.id)) {
+                    if (element.closest("#keeperAttributes") != null) {
                         element.value = data[0][attributeArray[element.id.slice(3)]]
                     }
 
-
                 } else {
-                    updateForm("Outfield")
 
                     if (keeperPattern.test(element.id)) {
                         // Do nothing
