@@ -310,17 +310,16 @@ function HandleDropdowns(element) {
 }
 
 
-async function fetchAsyncJSON(url) {
+async function fetchPlayerInitial() {
+    const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
+
     const playerData = fetch(url)
 
     playerData
         .then((response) => response.json())
         .then((data) => {
-            const jsData = JSON.parse(data)
-
-            console.log(jsData)
-
-            document.querySelector("#currentTPE").innerText = jsData.TPE
+            // data contains in its [0] index, the javascript object with all information
+            document.querySelector("#currentTPE").innerText = data[0].TPE
         });
 
 }
