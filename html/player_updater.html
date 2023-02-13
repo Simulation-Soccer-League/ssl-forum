@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://files.jcink.net/uploads2/simsoccer/scripts/forumJavascripts.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <title>Create a Player</title>
-</head>
-
 <body>
     <main>
-        <h1>Create your player</h1>
+        <h1>Update your player</h1>
 
         <!-- General Information for Player Creation -->
         <form id="playerUpdater">
@@ -23,23 +10,13 @@
                         <label class="control-label" id="playerPages-player-label" for="selectedPlayer">Select a
                             player</label>
                         <div>
-                            <select id="selectedPlayer" name="selectedPlayer">
-                                <option value="Aleksandar Stojakovic" selected="selected">Aleksandar Stojakovic</option>
+                            <select id="selectedPlayer" name="selectedPlayer" onclick=fetchPlayerSelected()>
                             </select>
                         </div>
                     </div>
                 </div>
             </div>
             <hr>
-            <div class="playerType" style="display:none;">
-                <p>
-                    <label for="keeper">Goalkeeper</label>
-                    <input type="radio" name="playerType" id="keeper" value="goalkeeper" onclick="updateForm(this)">
-                    <label for="outfield">Outfield</label>
-                    <input type="radio" name="playerType" id="outfield" value="outfield" onclick="updateForm(this)"
-                        checked>
-                </p>
-            </div>
             <div class="tpeSum">
                 <table>
                     <tr>
@@ -798,12 +775,5 @@
 
         </div>
     </main>
-    <script src="javascript/playerUpdater.js"></script>
-    <!-- <script>
-        function runCode(e) {
-            e.preventDefault();
-        }
-    </script> -->
+    <script>window.addEventListener("load", fetchListPlayers());</script>
 </body>
-
-</html>
