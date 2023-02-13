@@ -297,6 +297,37 @@ function HandleDropdowns(element) {
     });
 }
 
+
+// Attribute updater
+
+function updateAttribute(element, data) {
+    const keeperPattern = /K$/
+
+    if (data[0].Position == "Goalkeeper") {
+
+        // Checks if the attribute is in the Keeper Attributes table and fills it if that is true
+        if (element.closest("#keeperAttributes") != null |
+            element.closest("#mentalAttributes") != null |
+            element.closest("#physicalAttributes") != null) {
+            element.value = data[0][attributeArray[element.id.slice(3)]]
+        }
+
+    } else {
+        if (keeperPattern.test(element.id)) {
+            // Do nothing
+        } else {
+            element.value = data[0][attributeArray[element.id.slice(3)]]
+        }
+
+    }
+
+    if (element.id == "outNat" | element.id == "outSta") {
+        // Do nothing
+    } else {
+        attributeCost(element)
+    }
+}
+
 // Fetches the list of current players in the league
 async function fetchListPlayers() {
     const url = "https://api.simulationsoccer.com/ssl/listPlayers"
@@ -341,31 +372,7 @@ async function fetchPlayerInitial() {
 
             const attributes = document.querySelectorAll('input[id*="out"]')
 
-            attributes.forEach(element => {
-                const keeperPattern = /K$/
-
-                if (data[0].Position == "Goalkeeper") {
-
-                    // Checks if the attribute is in the Keeper Attributes table and fills it if that is true
-                    if (element.closest("#keeperAttributes") != null) {
-                        element.value = data[0][attributeArray[element.id.slice(3)]]
-                    }
-
-                } else {
-                    if (keeperPattern.test(element.id)) {
-                        // Do nothing
-                    } else {
-                        element.value = data[0][attributeArray[element.id.slice(3)]]
-                    }
-
-                }
-
-                if (element.id == "outNat" | element.id == "outSta") {
-                    // Do nothing
-                } else {
-                    attributeCost(element)
-                }
-            })
+            attributes.forEach(element => updateAttribute(element, data))
         });
 
 }
@@ -390,30 +397,7 @@ async function fetchPlayerSelected() {
 
             const attributes = document.querySelectorAll('input[id*="out"]')
 
-            attributes.forEach(element => {
-                const keeperPattern = /K$/
-
-                if (data[0].Position == "Goalkeeper") {
-
-                    if (element.closest("#keeperAttributes") != null) {
-                        element.value = data[0][attributeArray[element.id.slice(3)]]
-                    }
-
-                } else {
-
-                    if (keeperPattern.test(element.id)) {
-                        // Do nothing
-                    } else {
-                        element.value = data[0][attributeArray[element.id.slice(3)]]
-                    }
-                }
-
-                if (element.id == "outNat" | element.id == "outSta") {
-                    // Do nothing
-                } else {
-                    attributeCost(element)
-                }
-            })
+            attributes.forEach(element => updateAttribute(element, data))
         });
 
 }
