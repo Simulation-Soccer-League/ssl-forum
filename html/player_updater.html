@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://files.jcink.net/uploads2/simsoccer/scripts/forumJavascripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>Create a Player</title>
+</head>
+
+<body>
+    <main>
+        <h1>Create your player</h1>
+
+        <!-- General Information for Player Creation -->
+        <form id="playerUpdater">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div>
+                        <label class="control-label" id="playerPages-player-label" for="selectedPlayer">Select a
+                            player</label>
+                        <div>
+                            <select id="selectedPlayer" name="selectedPlayer">
+                                <option value="Aleksandar Stojakovic" selected="selected">Aleksandar Stojakovic</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="playerType" style="display:none;">
+                <p>
+                    <label for="keeper">Goalkeeper</label>
+                    <input type="radio" name="playerType" id="keeper" value="goalkeeper" onclick="updateForm(this)">
+                    <label for="outfield">Outfield</label>
+                    <input type="radio" name="playerType" id="outfield" value="outfield" onclick="updateForm(this)"
+                        checked>
+                </p>
+            </div>
+            <div class="tpeSum">
+                <table>
+                    <tr>
+                        <td>Total TPE</td>
+                        <td>Earned TPE</td>
+                        <td>TPE Spent</td>
+                        <td>TPE Remaining</td>
+                    </tr>
+                    <tr>
+                        <td><span id="currentTPE">0</span></td>
+                        <td><input type="number" name="earnedTPE" id="earnedTPE" value="0" min="0" step="1"
+                                oninput="attributeCost()"></td>
+                        <td><span id="spentTPE">0</span></td>
+                        <td><span id="remainingTPE">0</span></td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="playerBuild">
+                <table class="attributeTable">
+                    <tr>
+                        <td id="physicalAttributes">
+                            <table>
+                                <tr>
+                                    <th colspan="3">
+                                        <b>Physical</b>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i>Attribute</i>
+                                    </td>
+                                    <td>
+                                        <i>Value</i>
+                                    </td>
+                                    <td>
+                                        <i>Cost</i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to quickly reach their top speed.">Acceleration</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="pAcc" id="outAcc" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutAcc">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to quickly change direction in their movement.">Agility</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="pAgi" id="outAgi" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutAgi">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hold their balance when being subjected to physical pressure.">Balance</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="pBal" id="outBal" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutBal">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The maximum height a player can reach when jumping.">Jumping
+                                            Reach</span></td>
+                                    <td>
+                                        <input type="number" name="pJmp" id="outJmp" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutJmp">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext" data-hover="Locked at 20.">Natural Fitness*</span></td>
+                                    <td>
+                                        <input type="number" name="pNat" id="outNat" min="20" max="20" value="20"
+                                            readonly>
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutNat">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext" data-hover="The player's top speed.">Pace</span></td>
+                                    <td>
+                                        <input type="number" name="pPac" id="outPac" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutPac">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext" data-hover="Locked at 20.">Stamina*</span></td>
+                                    <td>
+                                        <input type="number" name="pSta" id="outSta" min="20" max="20" value="20"
+                                            readonly>
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutSta">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to put physical pressure on another player.">Strength</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="pStr" id="outStr" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutStr">0</span>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                        <td id="mentalAttributes">
+                            <table class="attributeTable">
+                                <tr>
+                                    <th colspan="3">
+                                        <b>Mental</b>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i>Attribute</i>
+                                    </td>
+                                    <td>
+                                        <i>Value</i>
+                                    </td>
+                                    <td>
+                                        <i>Cost</i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The likelihood of the player to get into physical situations and the amount of force they use.">Aggression</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mAgg" id="outAgg" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutAgg">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to anticipate teammates' and opposition movements and actions.">Anticipation</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mAnt" id="outAnt" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutAnt">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The willingness of the player to get into areas where they risk an injury.">Bravery</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mBra" id="outBra" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutBra">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to remain unaffected while being under mental pressure.">Composure</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mCmp" id="outCmp" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutCmp">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to keep focus later in the game.">Concentration</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mCon" id="outCon" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutCon">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to decide the best action to perform throughout a game.">Decisions</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mDec" id="outDec" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutDec">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The willingness of the player to try and perform even when their team is losing or the player is not performing well.">Determination</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mDet" id="outDet" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutDet">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to do something unexpected with the ball.">Flair</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mFla" id="outFla" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutFla">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="How inspirational and motivational a player is to their teammates.">Leadership</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mLea" id="outLea" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutLea">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to do position themselves while their team has possession (Offensive).">Off
+                                            the Ball</span></td>
+                                    <td>
+                                        <input type="number" name="mOtb" id="outOtb" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutOtb">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to position themselves while the opposing team has possession (Defensive).">Positioning</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mPos" id="outPos" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutPos">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to follow tactical instructions and the positions of other players on the pitch.">Team
+                                            Work</span></td>
+                                    <td>
+                                        <input type="number" name="mTea" id="outTea" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutTea">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to see what opportunities exist while in possession of the ball.">Vision</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mVis" id="outVis" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutVis">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's amount of physical effort that is used during the match.">Work
+                                            Rate</span></td>
+                                    <td>
+                                        <input type="number" name="mWrk" id="outWrk" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutWrk">0</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td id="technicalAttributes" style="display: block">
+                            <table class="attributeTable">
+                                <tr>
+                                    <th colspan="3">
+                                        <b>Technical</b>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i>Attribute</i>
+                                    </td>
+                                    <td>
+                                        <i>Value</i>
+                                    </td>
+                                    <td>
+                                        <i>Cost</i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit the intended target off a corner.">Corners</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="tCor" id="outCor" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutCor">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit the intended target when crossing the ball from the wide areas of the pitch.">Crossing</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="tCro" id="outCro" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutCro">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to control the ball while moving.">Dribbling</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="tDri" id="outDri" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutDri">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit the intended target of the goal with a shot.">Finishing</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="tFin" id="outFin" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutFin">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to control and set up the ball after receiving it.">First
+                                            Touch</span></td>
+                                    <td>
+                                        <input type="number" name="tFst" id="outFst" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutFst">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit the intended target with a free kick.">Free
+                                            Kick</span></td>
+                                    <td>
+                                        <input type="number" name="tFrk" id="outFrk" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutFrk">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit the intended target with a header.">Heading</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="tHea" id="outHea" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutHea">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit the intended target with a shot from outside the opposition's penalty area.">Long
+                                            Shots</span></td>
+                                    <td>
+                                        <input type="number" name="tLsh" id="outLsh" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutLsh">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The length a player can throw the ball and the player's ability to hit the intended target with a long throw.">Long
+                                            Throws</span></td>
+                                    <td>
+                                        <input type="number" name="tLth" id="outLth" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutLth">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to mark an opponent.">Marking</span></td>
+                                    <td>
+                                        <input type="number" name="tMar" id="outMar" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutMar">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit their intended target with a pass.">Passing</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="tPas" id="outPas" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutPas">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit their intended target on a penalty kick.">Penalty
+                                            Taking</span></td>
+                                    <td>
+                                        <input type="number" name="tPen" id="outPen" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutPen">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to get the ball from the opponent without incurring a foul.">Tackling</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="tTck" id="outTck" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutTck">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to successfully perform advanced technical actions.">Technique</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="tTec" id="outTec" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutTec">0</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td id="keeperAttributes" style="display: none">
+                            <!-- Include the three technical attributes here -->
+                            <table class="attributeTable">
+                                <tr>
+                                    <th colspan="3">
+                                        <b>Keeper</b>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i>Attribute</i>
+                                    </td>
+                                    <td>
+                                        <i>Value</i>
+                                    </td>
+                                    <td>
+                                        <i>Cost</i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The height a goalkeeper can reach when jumping. Equivalent to outfielders Jumping Reach.">Aerial
+                                            Reach</span></td>
+                                    <td>
+                                        <input type="number" name="kAer" id="outAer" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutAer">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The ability to take control of balls in the box.">Command of
+                                            Area</span></td>
+                                    <td>
+                                        <input type="number" name="kCoa" id="outCoa" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutCoa">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The ability to communicate with teammates and control the defensive organization.">Communication</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="kCom" id="outCom" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutCom">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The likelihood to do something unexpected or risky.">Eccentricity</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="kEcc" id="outEcc" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutEcc">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The ability to keep control of the ball when catching it.">Handling</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="kHan" id="outHan" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutHan">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The maximum length of a kick.">Kicking</span></td>
+                                    <td>
+                                        <input type="number" name="kKic" id="outKic" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutKic">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The ability to perform well when alone with an opponent.">One on
+                                            Ones</span></td>
+                                    <td>
+                                        <input type="number" name="kOoo" id="outOoo" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutOoo">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The ability to react to shots.">Reflexes</span></td>
+                                    <td>
+                                        <input type="number" name="kRef" id="outRef" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutRef">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The ability to assess when to rush out.">Tendency to Rush</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="kRus" id="outTtr" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutTtr">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The likelihood to punch instead of catching the ball.">Tendency
+                                            to Punch</span></td>
+                                    <td>
+                                        <input type="number" name="kPun" id="outTtp" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutTtp">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The ability to hit the intended target when throwing the ball.">Throwing</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="kThr" id="outThr" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutThr">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to control and set up the ball after receiving it.">First
+                                            Touch</span></td>
+                                    <td>
+                                        <input type="number" name="kFst" id="outFstK" min="5" max="20" step="1"
+                                            value="5" oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutFstK">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit the intended target with a free kick.">Free
+                                            Kick</span></td>
+                                    <td>
+                                        <input type="number" name="kFrk" id="outFrkK" min="5" max="20" step="1"
+                                            value="5" oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutFrkK">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit their intended target with a pass.">Passing</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="kPas" id="outPasK" min="5" max="20" step="1"
+                                            value="5" oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutPasK">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit their intended target on a penalty kick.">Penalty
+                                            Taking</span></td>
+                                    <td>
+                                        <input type="number" name="kPen" id="outPenK" min="5" max="20" step="1"
+                                            value="5" oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutPenK">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to successfully perform advanced technical actions.">Technique</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="kTec" id="outTecK" min="5" max="20" step="1"
+                                            value="5" oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutTecK">0</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="attributeSubmit">
+                <p>
+                    <a href="#" class="cssbutton" id="createButton">
+                        Summarize your update
+                    </a>
+                    <a href="#" style="display: none;" class="popup click" popupid="createdPopup" id="popupButton">
+                    </a>
+                </p>
+            </div>
+        </form>
+        <div id="createdPopup" class="popupBox" style="top: 409.5px; left: 439.5px; display: none;">
+            <div class="popupBox-content">
+                <div class="maintitle2">
+                    Your update summary
+                </div>
+                <div class="popupDescription">
+                    <span>
+                        Copy the generated text below into your update page.
+                    </span>
+                </div>
+                <div class="createdOutput">
+                    <table border="0" align="center" width="95%" cellpadding="3" cellspacing="1" id="CODE-WRAP">
+                        <tbody>
+                            <tr>
+                                <td id="CODE">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="copyButton">
+                    <button class="cssbutton" onclick="copyText()">Copy text to clipboard</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="playerUpdater.js"></script>
+    <!-- <script>
+        function runCode(e) {
+            e.preventDefault();
+        }
+    </script> -->
+</body>
+
+</html>

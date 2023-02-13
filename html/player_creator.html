@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://files.jcink.net/uploads2/simsoccer/scripts/forumJavascripts.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <title>Create a Player</title>
+</head>
+
+<body>
+    <main>
+        <h1>Create your player</h1>
+
+        <!-- General Information for Player Creation -->
+        <form id="playerCreator" onsubmit="return submitForm(this)">
+            <h3>Player Details</h3>
+            <table class="playerDetails">
+                <tr>
+                    <td>
+                        <label for="firstName">Enter a first name:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="firstName" id="firstName" placeholder="First Name">
+                    </td>
+                    <td>
+                        <label for="lastName">Enter a last name:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="lastName" id="lastName" placeholder="Last Name" required>
+                    </td>
+                    <td>
+                        <label for="discordUsername">Enter your Discord username:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="discordUsername" id="discordUsername" placeholder="Username#0000">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="birthplace"><span class="hovertext" data-hover="Sets your nationality.">Enter a
+                                place of birth:</span></label>
+                    </td>
+                    <td>
+                        <input type="text" name="birthplace" id="birthplace" placeholder="City, Country" required>
+                    </td>
+                    <td>
+                        <label for="height"><span class="hovertext" data-hover="Only cosmetic effect.">Enter height
+                                (inches):</span></label>
+                    </td>
+                    <td>
+                        <input type="number" name="height" id="height" placeholder="Height in inches" value="62"
+                            min="55" max="90">
+                    </td>
+                    <td>
+                        <label for="weight"><span class="hovertext" data-hover="Only cosmetic effect.">Enter weight
+                                (pounds):</span></label>
+                    </td>
+                    <td>
+                        <input type="number" name="weight" id="weight" placeholder="Weight in pounds" value="180"
+                            min="100" max="350" step="5">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+                        <label for="footedness">Select preferred foot:</label>
+                    </td>
+                    <td>
+                        <select name="footedness" id="footedness" required>
+                            <option value="">------- Select a side -------</option>
+                            <option value="left">Left</option>
+                            <option value="right">Right</option>
+                        </select>
+
+                    </td>
+                </tr>
+            </table>
+            <h3>Cosmetics</h3>
+            <table class="playerCosmetics">
+                <tr>
+                    <td>
+                        <label for="hairColor">Select hair color:</label>
+                    </td>
+                    <td>
+                        <select name="hairColor" id="hairColor" required>
+                            <option value="">------- Select a color -------</option>
+                            <option value="Light Brown 1">Light Brown 1</option>
+                            <option value="Light Brown 2">Light Brown 2</option>
+                            <option value="Light Brown 3">Light Brown 3</option>
+                            <option value="Dark Brown 1">Dark Brown 1</option>
+                            <option value="Dark Brown 2">Dark Brown 2</option>
+                            <option value="Dark Brown 3">Dark Brown 3</option>
+                            <option value="Blond(e) 1">Blond(e) 1</option>
+                            <option value="Blond(e) 2">Blond(e) 2</option>
+                            <option value="Blond(e) 3">Blond(e) 3</option>
+                            <option value="Black 1">Black 1</option>
+                            <option value="Black 2">Black 2</option>
+                            <option value="Black 3">Black 3</option>
+                            <option value="Red 1">Red 1</option>
+                            <option value="Red 2">Red 2</option>
+                            <option value="Red 3">Red 3</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label for="hairLength">Select hair length:</label>
+                    </td>
+                    <td>
+                        <select name="hairLength" id="hairLength" required>
+                            <option value="">------- Select a length -------</option>
+                            <option value="bald">Bald</option>
+                            <option value="buzz">Buzzcut</option>
+                            <option value="short">Short</option>
+                            <option value="medium">Medium</option>
+                            <option value="long">Long</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label for="skinColor">Select skin tone:</label>
+                    </td>
+                    <td>
+                        <select name="skinColor" id="skinColor" required>
+                            <option value="">------- Select a skin tone -------</option>
+                            <option value="Skin Tone 1">Skin Tone 1 (lightest)</option>
+                            <option value="Skin Tone 2">Skin Tone 2</option>
+                            <option value="Skin Tone 3">Skin Tone 3</option>
+                            <option value="Skin Tone 4">Skin Tone 4</option>
+                            <option value="Skin Tone 5">Skin Tone 5</option>
+                            <option value="Skin Tone 6">Skin Tone 6</option>
+                            <option value="Skin Tone 7">Skin Tone 7</option>
+                            <option value="Skin Tone 8">Skin Tone 8</option>
+                            <option value="Skin Tone 9">Skin Tone 9</option>
+                            <option value="Skin Tone 10">Skin Tone 10</option>
+                            <option value="Skin Tone 11">Skin Tone 11</option>
+                            <option value="Skin Tone 12">Skin Tone 12</option>
+                            <option value="Skin Tone 13">Skin Tone 13</option>
+                            <option value="Skin Tone 14">Skin Tone 14</option>
+                            <option value="Skin Tone 15">Skin Tone 15</option>
+                            <option value="Skin Tone 16">Skin Tone 16</option>
+                            <option value="Skin Tone 17">Skin Tone 17</option>
+                            <option value="Skin Tone 18">Skin Tone 18</option>
+                            <option value="Skin Tone 19">Skin Tone 19</option>
+                            <option value="Skin Tone 20">Skin Tone 20 (darkest)</option>
+                        </select>
+
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <div class="playerType">
+                <p>
+                    Select what type of player you want to create:
+                </p>
+                <p>
+                    <label for="keeper">Goalkeeper</label>
+                    <input type="radio" name="playerType" id="keeper" value="goalkeeper" onclick="updateForm(this)">
+                    <label for="outfield">Outfield</label>
+                    <input type="radio" name="playerType" id="outfield" value="outfield" onclick="updateForm(this)"
+                        checked>
+                </p>
+            </div>
+            <div class="tpeSum">
+                <table>
+                    <tr>
+                        <td>Total TPE</td>
+                        <td>TPE Spent</td>
+                        <td>TPE Remaining</td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="totalTPE" id="totalTPE" value="350" min="350" step="1"
+                                oninput="attributeCost()"></td>
+                        <td><span id="spentTPE">0</span></td>
+                        <td><span id="remainingTPE">350</span></td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="playerBuild">
+                <table class="attributeTable">
+                    <tr>
+                        <td id="physicalAttributes">
+                            <table>
+                                <tr>
+                                    <th colspan="3">
+                                        <b>Physical</b>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i>Attribute</i>
+                                    </td>
+                                    <td>
+                                        <i>Value</i>
+                                    </td>
+                                    <td>
+                                        <i>Cost</i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to quickly reach their top speed.">Acceleration</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="pAcc" id="outAcc" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutAcc">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to quickly change direction in their movement.">Agility</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="pAgi" id="outAgi" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutAgi">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hold their balance when being subjected to physical pressure.">Balance</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="pBal" id="outBal" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutBal">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The maximum height a player can reach when jumping.">Jumping
+                                            Reach</span></td>
+                                    <td>
+                                        <input type="number" name="pJmp" id="outJmp" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutJmp">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext" data-hover="Locked at 20.">Natural Fitness*</span></td>
+                                    <td>
+                                        <input type="number" name="pNat" id="outNat" min="20" max="20" value="20"
+                                            readonly>
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutNat">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext" data-hover="The player's top speed.">Pace</span></td>
+                                    <td>
+                                        <input type="number" name="pPac" id="outPac" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutPac">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext" data-hover="Locked at 20.">Stamina*</span></td>
+                                    <td>
+                                        <input type="number" name="pSta" id="outSta" min="20" max="20" value="20"
+                                            readonly>
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutSta">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to put physical pressure on another player.">Strength</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="pStr" id="outStr" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutStr">0</span>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                        <td id="mentalAttributes">
+                            <table class="attributeTable">
+                                <tr>
+                                    <th colspan="3">
+                                        <b>Mental</b>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i>Attribute</i>
+                                    </td>
+                                    <td>
+                                        <i>Value</i>
+                                    </td>
+                                    <td>
+                                        <i>Cost</i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The likelihood of the player to get into physical situations and the amount of force they use.">Aggression</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mAgg" id="outAgg" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutAgg">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to anticipate teammates' and opposition movements and actions.">Anticipation</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mAnt" id="outAnt" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutAnt">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The willingness of the player to get into areas where they risk an injury.">Bravery</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mBra" id="outBra" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutBra">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to remain unaffected while being under mental pressure.">Composure</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mCmp" id="outCmp" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutCmp">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to keep focus later in the game.">Concentration</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mCon" id="outCon" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutCon">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to decide the best action to perform throughout a game.">Decisions</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mDec" id="outDec" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutDec">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The willingness of the player to try and perform even when their team is losing or the player is not performing well.">Determination</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mDet" id="outDet" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutDet">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to do something unexpected with the ball.">Flair</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mFla" id="outFla" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutFla">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="How inspirational and motivational a player is to their teammates.">Leadership</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mLea" id="outLea" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutLea">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to do position themselves while their team has possession (Offensive).">Off
+                                            the Ball</span></td>
+                                    <td>
+                                        <input type="number" name="mOtb" id="outOtb" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutOtb">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to position themselves while the opposing team has possession (Defensive).">Positioning</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mPos" id="outPos" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutPos">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to follow tactical instructions and the positions of other players on the pitch.">Team
+                                            Work</span></td>
+                                    <td>
+                                        <input type="number" name="mTea" id="outTea" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutTea">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to see what opportunities exist while in possession of the ball.">Vision</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="mVis" id="outVis" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutVis">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's amount of physical effort that is used during the match.">Work
+                                            Rate</span></td>
+                                    <td>
+                                        <input type="number" name="mWrk" id="outWrk" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutWrk">0</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td id="technicalAttributes" style="display: block">
+                            <table class="attributeTable">
+                                <tr>
+                                    <th colspan="3">
+                                        <b>Technical</b>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i>Attribute</i>
+                                    </td>
+                                    <td>
+                                        <i>Value</i>
+                                    </td>
+                                    <td>
+                                        <i>Cost</i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit the intended target off a corner.">Corners</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="tCor" id="outCor" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutCor">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit the intended target when crossing the ball from the wide areas of the pitch.">Crossing</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="tCro" id="outCro" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutCro">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to control the ball while moving.">Dribbling</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="tDri" id="outDri" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutDri">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit the intended target of the goal with a shot.">Finishing</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="tFin" id="outFin" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutFin">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to control and set up the ball after receiving it.">First
+                                            Touch</span></td>
+                                    <td>
+                                        <input type="number" name="tFst" id="outFst" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutFst">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit the intended target with a free kick.">Free
+                                            Kick</span></td>
+                                    <td>
+                                        <input type="number" name="tFrk" id="outFrk" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutFrk">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit the intended target with a header.">Heading</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="tHea" id="outHea" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutHea">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit the intended target with a shot from outside the opposition's penalty area.">Long
+                                            Shots</span></td>
+                                    <td>
+                                        <input type="number" name="tLsh" id="outLsh" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutLsh">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The length a player can throw the ball and the player's ability to hit the intended target with a long throw.">Long
+                                            Throws</span></td>
+                                    <td>
+                                        <input type="number" name="tLth" id="outLth" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutLth">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to mark an opponent.">Marking</span></td>
+                                    <td>
+                                        <input type="number" name="tMar" id="outMar" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutMar">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit their intended target with a pass.">Passing</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="tPas" id="outPas" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutPas">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit their intended target on a penalty kick.">Penalty
+                                            Taking</span></td>
+                                    <td>
+                                        <input type="number" name="tPen" id="outPen" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutPen">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to get the ball from the opponent without incurring a foul.">Tackling</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="tTck" id="outTck" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutTck">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to successfully perform advanced technical actions.">Technique</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="tTec" id="outTec" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutTec">0</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td id="keeperAttributes" style="display: none">
+                            <!-- Include the three technical attributes here -->
+                            <table class="attributeTable">
+                                <tr>
+                                    <th colspan="3">
+                                        <b>Keeper</b>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i>Attribute</i>
+                                    </td>
+                                    <td>
+                                        <i>Value</i>
+                                    </td>
+                                    <td>
+                                        <i>Cost</i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The height a goalkeeper can reach when jumping. Equivalent to outfielders Jumping Reach.">Aerial
+                                            Reach</span></td>
+                                    <td>
+                                        <input type="number" name="kAer" id="outAer" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutAer">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The ability to take control of balls in the box.">Command of
+                                            Area</span></td>
+                                    <td>
+                                        <input type="number" name="kCoa" id="outCoa" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutCoa">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The ability to communicate with teammates and control the defensive organization.">Communication</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="kCom" id="outCom" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutCom">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The likelihood to do something unexpected or risky.">Eccentricity</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="kEcc" id="outEcc" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutEcc">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The ability to keep control of the ball when catching it.">Handling</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="kHan" id="outHan" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutHan">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The maximum length of a kick.">Kicking</span></td>
+                                    <td>
+                                        <input type="number" name="kKic" id="outKic" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutKic">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The ability to perform well when alone with an opponent.">One on
+                                            Ones</span></td>
+                                    <td>
+                                        <input type="number" name="kOoo" id="outOoo" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutOoo">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The ability to react to shots.">Reflexes</span></td>
+                                    <td>
+                                        <input type="number" name="kRef" id="outRef" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutRef">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The ability to assess when to rush out.">Tendency to Rush</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="kRus" id="outTtr" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutTtr">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The likelihood to punch instead of catching the ball.">Tendency
+                                            to Punch</span></td>
+                                    <td>
+                                        <input type="number" name="kPun" id="outTtp" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutTtp">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The ability to hit the intended target when throwing the ball.">Throwing</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="kThr" id="outThr" min="5" max="20" step="1" value="5"
+                                            oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutThr">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to control and set up the ball after receiving it.">First
+                                            Touch</span></td>
+                                    <td>
+                                        <input type="number" name="kFst" id="outFstK" min="5" max="20" step="1"
+                                            value="5" oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutFstK">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit the intended target with a free kick.">Free
+                                            Kick</span></td>
+                                    <td>
+                                        <input type="number" name="kFrk" id="outFrkK" min="5" max="20" step="1"
+                                            value="5" oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutFrkK">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit their intended target with a pass.">Passing</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="kPas" id="outPasK" min="5" max="20" step="1"
+                                            value="5" oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutPasK">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to hit their intended target on a penalty kick.">Penalty
+                                            Taking</span></td>
+                                    <td>
+                                        <input type="number" name="kPen" id="outPenK" min="5" max="20" step="1"
+                                            value="5" oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutPenK">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hovertext"
+                                            data-hover="The player's ability to successfully perform advanced technical actions.">Technique</span>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="kTec" id="outTecK" min="5" max="20" step="1"
+                                            value="5" oninput="attributeCost(this)">
+                                    </td>
+                                    <td>
+                                        <span class="attributeCost" id="costOutTecK">0</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <div id="outfieldExtra" style="display: block">
+                    <p>
+                        An outfield player may select one primary position and two secondary positions.
+                    </p>
+                    <table id="outfieldPositions" style="display: inline">
+                        <tr>
+                            <td>
+                                <label for="posPrim"><span class="hovertext"
+                                        data-hover="Converts to the max 20 positional experience in the position.">Primary
+                                        position:</span></label>
+                            </td>
+                            <td>
+                                <select name="posPrim" id="positionPrimary" required>
+                                    <option value="">--- Select
+                                        a primary position ---</option>
+                                    <option value="ld">Left Defender</option>
+                                    <option value="cd">Central Defender</option>
+                                    <option value="rd">Right Defender</option>
+                                    <option value="lwb">Left Wing Back</option>
+                                    <option value="cdm">Defensive Midfielder</option>
+                                    <option value="rwb">Right Wing Back</option>
+                                    <option value="lm">Left Midfielder</option>
+                                    <option value="cm">Central Midfielder</option>
+                                    <option value="rm">Right Midfielder</option>
+                                    <option value="lam">Left Attacking Midfielder</option>
+                                    <option value="cam">Central Attacking Midfielder</option>
+                                    <option value="ram">Right Attacking Midfielder</option>
+                                    <option value="st">Striker</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="posSec1"><span class="hovertext"
+                                        data-hover="Converts to 15 positional experience in the position.">Secondary
+                                        position:</span></label>
+                            </td>
+                            <td>
+                                <select name="posSec1" id="positionSecondary" required>
+                                    <option value="">--- Select a secondary position ---</option>
+                                    <option value="ld">Left Defender</option>
+                                    <option value="cd">Central Defender</option>
+                                    <option value="rd">Right Defender</option>
+                                    <option value="lwb">Left Wing Back</option>
+                                    <option value="cdm">Defensive Midfielder</option>
+                                    <option value="rwb">Right Wing Back</option>
+                                    <option value="lm">Left Midfielder</option>
+                                    <option value="cm">Central Midfielder</option>
+                                    <option value="rm">Right Midfielder</option>
+                                    <option value="lam">Left Attacking Midfielder</option>
+                                    <option value="cam">Central Attacking Midfielder</option>
+                                    <option value="ram">Right Attacking Midfielder</option>
+                                    <option value="st">Striker</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="posSec2"><span class="hovertext"
+                                        data-hover="Converts to 15 positional experience in the position.">Secondary
+                                        position:</span></label>
+                            </td>
+                            <td>
+                                <select name="posSec2" id="positionTertiary" required>
+                                    <option value="">--- Select a secondary position ---</option>
+                                    <option value="ld">Left Defender</option>
+                                    <option value="cd">Central Defender</option>
+                                    <option value="rd">Right Defender</option>
+                                    <option value="lwb">Left Wing Back</option>
+                                    <option value="cdm">Defensive Midfielder</option>
+                                    <option value="rwb">Right Wing Back</option>
+                                    <option value="lm">Left Midfielder</option>
+                                    <option value="cm">Central Midfielder</option>
+                                    <option value="rm">Right Midfielder</option>
+                                    <option value="lam">Left Attacking Midfielder</option>
+                                    <option value="cam">Central Attacking Midfielder</option>
+                                    <option value="ram">Right Attacking Midfielder</option>
+                                    <option value="st">Striker</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <p>
+                        An outfield player may select two traits to start off their career with.
+                    </p>
+                    <table id="outfieldTraits" style="display: inline">
+                        <tr>
+                            <td>
+                                <label for="trait1">Select a trait:</label>
+                            </td>
+                            <td>
+                                <select name="trait1" id="trait1" required>
+                                    <option value="">--- Select
+                                        a trait ---</option>
+                                    <optgroup label="Movement - On the Ball">
+                                        <option>Cuts Inside From Both Wings</option>
+                                        <option>Knocks Ball Past Opponent</option>
+                                        <option>Runs With Ball Rarely</option>
+                                        <option>Runs With Ball Often</option>
+                                        <option>Runs With Ball Down Left</option>
+                                        <option>Runs With Ball Down Right</option>
+                                        <option>Runs With Ball Through Centre</option>
+                                        <option>Stops Play</option>
+                                    </optgroup>
+                                    <optgroup label="Movement - Off the Ball">
+                                        <option>Arrives Late In Opponent's Area</option>
+                                        <option>Comes Deep To Get Ball</option>
+                                        <option>Gets Forward Whenever Possible</option>
+                                        <option>Gets Into Opposition Area</option>
+                                        <option>Hugs Line</option>
+                                        <option>Likes To Try To Beat Offside Trap</option>
+                                        <option>Moves Into Channels</option>
+                                        <option>Plays One-Twos</option>
+                                        <option>Plays With Back To Goal</option>
+                                        <option>Does Not Move Into Channels</option>
+                                        <option>Stays Back At All Times</option>
+                                    </optgroup>
+                                    <optgroup label="Passing">
+                                        <option>Dictates Tempo</option>
+                                        <option>Likes To Switch Ball To Other Flank</option>
+                                        <option>Looks For Pass Rather Than Attempting To Score</option>
+                                        <option>Plays No Through Balls</option>
+                                        <option>Plays Short Simple Passes</option>
+                                        <option>Tries Killer Balls Often</option>
+                                        <option>Tries Long Range Passes</option>
+                                    </optgroup>
+                                    <optgroup label="Finishing">
+                                        <option>Attempts Overhead Kicks</option>
+                                        <option>Hits Free Kicks With Power</option>
+                                        <option>Likes To Lob Keeper</option>
+                                        <option>Likes To Round Keeper</option>
+                                        <option>Places Shots</option>
+                                        <option>Refrains From Taking Long Shots</option>
+                                        <option>Shoots From Distance</option>
+                                        <option>Shoots With Power</option>
+                                        <option>Tries First Time Shots</option>
+                                        <option>Tries Long Range Free Kicks</option>
+                                    </optgroup>
+                                    <optgroup label="Discipline">
+                                        <option>Argues With Officials</option>
+                                    </optgroup>
+                                    <optgroup label="Defending">
+                                        <option>Dives Into Tackles</option>
+                                        <option>Does Not Dive Into Tackles</option>
+                                        <option>Marks Opponent Tightly</option>
+                                    </optgroup>
+                                    <optgroup label="Technique">
+                                        <option>Avoids Using Weaker Foot</option>
+                                        <option>Curls Ball</option>
+                                        <option>Possess Long Flat Throw</option>
+                                        <option>Tries To Play Way Out Of Trouble</option>
+                                    </optgroup>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="trait2">Select a trait:</label>
+                            </td>
+                            <td>
+                                <select name="trait2" id="trait2" required>
+                                    <option value="">--- Select
+                                        a trait ---</option>
+                                    <optgroup label="Movement - On the Ball">
+                                        <option>Cuts Inside From Both Wings</option>
+                                        <option>Knocks Ball Past Opponent</option>
+                                        <option>Runs With Ball Rarely</option>
+                                        <option>Runs With Ball Often</option>
+                                        <option>Runs With Ball Down Left</option>
+                                        <option>Runs With Ball Down Right</option>
+                                        <option>Runs With Ball Through Centre</option>
+                                        <option>Stops Play</option>
+                                    </optgroup>
+                                    <optgroup label="Movement - Off the Ball">
+                                        <option>Arrives Late In Opponent's Area</option>
+                                        <option>Comes Deep To Get Ball</option>
+                                        <option>Gets Forward Whenever Possible</option>
+                                        <option>Gets Into Opposition Area</option>
+                                        <option>Hugs Line</option>
+                                        <option>Likes To Try To Beat Offside Trap</option>
+                                        <option>Moves Into Channels</option>
+                                        <option>Plays One-Twos</option>
+                                        <option>Plays With Back To Goal</option>
+                                        <option>Does Not Move Into Channels</option>
+                                        <option>Stays Back At All Times</option>
+                                    </optgroup>
+                                    <optgroup label="Passing">
+                                        <option>Dictates Tempo</option>
+                                        <option>Likes To Switch Ball To Other Flank</option>
+                                        <option>Looks For Pass Rather Than Attempting To Score</option>
+                                        <option>Plays No Through Balls</option>
+                                        <option>Plays Short Simple Passes</option>
+                                        <option>Tries Killer Balls Often</option>
+                                        <option>Tries Long Range Passes</option>
+                                    </optgroup>
+                                    <optgroup label="Finishing">
+                                        <option>Attempts Overhead Kicks</option>
+                                        <option>Hits Free Kicks With Power</option>
+                                        <option>Likes To Lob Keeper</option>
+                                        <option>Likes To Round Keeper</option>
+                                        <option>Places Shots</option>
+                                        <option>Refrains From Taking Long Shots</option>
+                                        <option>Shoots From Distance</option>
+                                        <option>Shoots With Power</option>
+                                        <option>Tries First Time Shots</option>
+                                        <option>Tries Long Range Free Kicks</option>
+                                    </optgroup>
+                                    <optgroup label="Discipline">
+                                        <option>Argues With Officials</option>
+                                    </optgroup>
+                                    <optgroup label="Defending">
+                                        <option>Dives Into Tackles</option>
+                                        <option>Does Not Dive Into Tackles</option>
+                                        <option>Marks Opponent Tightly</option>
+                                    </optgroup>
+                                    <optgroup label="Technique">
+                                        <option>Avoids Using Weaker Foot</option>
+                                        <option>Curls Ball</option>
+                                        <option>Possess Long Flat Throw</option>
+                                        <option>Tries To Play Way Out Of Trouble</option>
+                                    </optgroup>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="attributeSubmit">
+                <p>
+                    <a href="#" class="cssbutton" id="createButton">
+                        Summarize your created player
+                    </a>
+                    <a href="#" style="display: none;" class="popup click" popupid="createdPopup" id="popupButton">
+                    </a>
+                    <!-- <output id="output"></output> -->
+                </p>
+
+            </div>
+
+        </form>
+        <div id="createdPopup" class="popupBox" style="top: 409.5px; left: 439.5px; display: none;">
+            <div class="popupBox-content">
+                <div class="maintitle2">
+                    Created player
+                </div>
+                <div class="popupDescription">
+                    <span>
+                        Copy the generated text below into a new thread in the <a
+                            href="https://simsoccer.jcink.net/index.php?showforum=42" target="_blank">Create a
+                            player</a> forum.
+                    </span>
+                </div>
+                <div class="createdOutput">
+                    <table border="0" align="center" width="95%" cellpadding="3" cellspacing="1" id="CODE-WRAP">
+                        <tbody>
+                            <tr>
+                                <td id="CODE">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="copyButton">
+                    <button class="cssbutton" onclick="copyText()">Copy text to clipboard</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="playerCreator.js"></script>
+    <!-- <script>
+        function runCode(e) {
+            e.preventDefault();
+        }
+    </script> -->
+</body>
+
+</html>
