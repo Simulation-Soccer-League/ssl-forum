@@ -336,6 +336,8 @@ async function fetchListPlayers() {
         }
         )
 
+    if (username != "Guest") { fetchPlayerInitial() } else { fetchPlayerSelected() }
+
 }
 
 // Fetches the build of the player whose user is logged in
