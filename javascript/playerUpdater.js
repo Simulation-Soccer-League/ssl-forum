@@ -316,7 +316,9 @@ async function fetchAsyncJSON(url) {
     playerData
         .then((response) => response.json())
         .then((data) => {
-            document.querySelector("#currentTPE").innerText = data.TPE
+            const jsData = JSON.parse(data)
+
+            document.querySelector("#currentTPE").innerText = jsData.TPE
         });
 
 }
