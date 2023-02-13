@@ -326,6 +326,7 @@ async function fetchListPlayers() {
             data.forEach(element => {
                 const option = document.createElement("option");
                 option.text = element;
+                option.value = element;
                 selectObject.appendChild(option)
             }
             )
