@@ -3,6 +3,7 @@ const costArray = { 5: 0, 6: 2, 7: 4, 8: 8, 9: 12, 10: 16, 11: 22, 12: 28, 13: 3
 const attributeArray = {
     Acc: "Acceleration", Agi: "Agility", Bal: "Balance", Jmp: "Jumping Reach", Nat: "Natural Fitness", Pac: "Pace", Sta: "Stamina", Str: "Strength", Agg: "Aggression", Ant: "Anticipation", Bra: "Bravery", Cmp: "Composure", Con: "Concentration", Dec: "Decisions", Det: "Determination", Fla: "Flair", Lea: "Leadership", Otb: "Off the Ball", Pos: "Positioning", Tea: "Teamwork", Vis: "Vision", Wrk: "Work Rate", Cor: "Corners", Cro: "Crossing", Dri: "Dribbling", Fin: "Finishing", Fst: "First Touch", FstK: "First Touch", Frk: "Free Kick", FrkK: "Free Kick", Hea: "Heading", Lsh: "Long Shots", Lth: "Long Throws", Mar: "Marking", Pas: "Passing", PasK: "Passing", Pen: "Penalty Taking", PenK: "Penalty Taking", Tck: "Tackling", Tec: "Technique", TecK: "Technique", Aer: "Aerial Reach", Coa: "Command of Area", Com: "Communication", Ecc: "Eccentricity", Han: "Handling", Kic: "Kicking", Ooo: "One on Ones", Ref: "Reflexes", Ttr: "Tendency to Rush", Ttp: "Tendency to Punch", Thr: "Throwing"
 }
+
 // Capitalize first letter in string
 function toCapital(string) {
     return string[0].toUpperCase() + string.slice(1)
@@ -312,6 +313,26 @@ function HandleDropdowns(element) {
     });
 }
 
+async function fetchListPlayers() {
+    const url = "https://api.simulationsoccer.com/ssl/listPlayers"
+
+    const data = fetch(url)
+
+    data
+        .then((response) => response.json())
+        .then((data) => {
+            const selectObject = document.querySelector('#selectedPlayer')
+
+            data.forEach(element => {
+                const option = document.createElement("option");
+                option.text = element;
+                selectObject.appendChild(option)
+            }
+            )
+        }
+        )
+}
+
 
 async function fetchPlayerInitial() {
     const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
@@ -323,6 +344,8 @@ async function fetchPlayerInitial() {
         .then((data) => {
             // data contains in its [0] index, the javascript object with all information
             document.querySelector("#currentTPE").innerText = data[0].TPE
+
+            document.querySelector('option[value="' + data[0].Name + '"]').selected = true
 
             const attributes = document.querySelectorAll('input[id*="out"]')
 
