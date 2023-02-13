@@ -318,6 +318,8 @@ async function fetchAsyncJSON(url) {
         .then((data) => {
             const jsData = JSON.parse(data)
 
+            console.log(jsData)
+
             document.querySelector("#currentTPE").innerText = jsData.TPE
         });
 
