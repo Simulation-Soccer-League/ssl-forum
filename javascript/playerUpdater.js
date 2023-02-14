@@ -62,7 +62,7 @@ function attributeCost(control) {
     document.querySelector("#spentTPE").innerText = cost
     document.querySelector("#remainingTPE").innerText =
         parseInt(document.querySelector("#currentTPE").innerText) +
-        document.querySelector("#earnedTPE").value -
+        parseInt(document.querySelector("#earnedTPE").value) -
         cost
 }
 
