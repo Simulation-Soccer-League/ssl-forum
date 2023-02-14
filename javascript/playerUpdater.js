@@ -87,7 +87,7 @@ function updateOutput() {
     const playerData = fetch(url)
 
     const total = document.querySelector("#currentTPE").innerText
-    const earned = document.querySelector("#earnedTPE").value
+    const earned = document.querySelector("#spentTPE").innerText
     const bank = document.querySelector("#remainingTPE").innerText
 
     let updateText = `[b]Earned TPE:[/b] ${total}
