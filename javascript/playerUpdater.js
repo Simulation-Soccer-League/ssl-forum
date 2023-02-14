@@ -75,198 +75,83 @@ function totalAttributeCost() {
     return sum
 }
 
-function anyRequiredEmpty() {
-    const required = document.getElementById("playerCreator").querySelectorAll("[required]")
-
-    const requiredArr = Array.prototype.slice.call(required)
-
-    const isEmpty = (element) => element.value === "";
-
-    const anyEmpty = requiredArr.some(isEmpty)
-
-    return anyEmpty
-}
-
-
 // Function to gather the information from the form
-function submitForm(formElement) {
-    const formData = new FormData(formElement)
-    const allEntries = [...formData.entries()]
-        .reduce((all, entry) => {
-            all[entry[0]] = entry[1]
-            return all
-        }, {})
-    console.log(allEntries)
+function updateOutput() {
+    let username = document.querySelector("#selectedPlayer").value
 
-    if (allEntries.footedness == "right") {
-        allEntries.footedness = "10 | 20"
-    } else {
-        allEntries.footedness = "20 | 10"
-    }
+    const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
 
-    const positions = { ld: 0, cd: 0, rd: 0, lwb: 0, cdm: 0, rwb: 0, lm: 0, cm: 0, rm: 0, lam: 0, cam: 0, ram: 0, st: 0 }
+    const playerData = fetch(url)
 
-    if (allEntries.playerType == "goalkeeper") {
-        allEntries.posPrim = "GK"
-    } else {
-        positions[allEntries.posPrim] = 20
-        positions[allEntries.posSec1] = 15
-        positions[allEntries.posSec2] = 15
-    }
+    const total = document.querySelector("#currentTPE").innerText
+    const earned = document.querySelector("#earnedTPE").value
+    const bank = document.querySelector("#remainingTPE").innerText
 
-    let textOutput =
-        `[size=7][u][b]Player Details[/b][/u][/size]
-First Name: ${allEntries.firstName}
-Last Name: ${allEntries.lastName}
-Discord: ${allEntries.discordUsername}
-Birthplace: ${allEntries.birthplace}
-Height: ${allEntries.height}
-Weight: ${allEntries.weight}
-Preferred Foot: ${allEntries.footedness}
-Preferred Position: ${allEntries.posPrim.toUpperCase()}
-
-[size=7][u][b]Cosmetics[/b][/u][/size]
-Hair Color: ${allEntries.hairColor}
-Hair Length: ${allEntries.hairLength}
-Skin Tone: ${allEntries.skinColor}
-
-[size=7][u][b]Player Attributes[/b][/u][/size]
-TPE Available: ${allEntries.totalTPE - totalAttributeCost()}
-
-[u][b]Physical[/b][/u]
-Acceleration: ${allEntries.pAcc}
-Agility: ${allEntries.pAgi}
-Balance: ${allEntries.pBal}
-Jumping Reach: ${allEntries.pJmp}
-Natural Fitness: ${allEntries.pNat}
-Pace: ${allEntries.pPac}
-Stamina: ${allEntries.pSta}
-Strength: ${allEntries.pStr}
-
-[u][b]Mental[/b][/u]
-Aggression: ${allEntries.mAgg}
-Anticipation: ${allEntries.mAnt}
-Bravery: ${allEntries.mBra}
-Composure: ${allEntries.mCmp}
-Concentration: ${allEntries.mCon}
-Decisions: ${allEntries.mDec}
-Determination: ${allEntries.mDet}
-Flair: ${allEntries.mFla}
-Leadership: ${allEntries.mLea}
-Off the Ball: ${allEntries.mOtb}
-Positioning: ${allEntries.mPos}
-Teamwork: ${allEntries.mTea}
-Vision: ${allEntries.mVis}
-Work Rate: ${allEntries.mWrk}
+    let updateText = `[b]Earned TPE:[/b] ${total}
+[b]Used TPE:[/b] ${earned} 
+[b]Banked TPE:[/b] ${bank}
 
 `
 
-    if (allEntries.playerType == "goalkeeper") {
-        let addition =
-            `[u][b]Goalkeeping[/b][/u]
-Aerial Reach: ${allEntries.kAer}
-Command of Area: ${allEntries.kCoa}
-Communication: ${allEntries.kCom}
-Eccentricity: ${allEntries.kEcc}
-Handling: ${allEntries.kHan}
-Kicking: ${allEntries.kKic}
-One on Ones: ${allEntries.kOoo}
-Reflexes: ${allEntries.kRef}
-Tendency to Rush: ${allEntries.kRus}
-Tendency to Punch: ${allEntries.kPun}
-Throwing: ${allEntries.kThr}
-First Touch: ${allEntries.kFst}
-Free Kick: ${allEntries.kFrk}
-Passing: ${allEntries.kPas}
-Penalty Taking: ${allEntries.kPen}
-Technique: ${allEntries.kTec}`
+    playerData
+        .then((response) => response.json())
+        .then((data) => {
+            const attributes = document.querySelectorAll('input[id*="out"]')
 
-        textOutput += addition
-    } else {
-        let addition =
-            `[u][b]Technical[/b][/u]
-Corners: ${allEntries.tCor}
-Crossing: ${allEntries.tCro}
-Dribbling: ${allEntries.tDri}
-Finishing: ${allEntries.tFin}
-First Touch: ${allEntries.tFst}
-Free Kick: ${allEntries.tFrk}
-Heading: ${allEntries.tHea}
-Long Shots: ${allEntries.tLsh}
-Long Throws: ${allEntries.tLth}
-Marking: ${allEntries.tMar}
-Passing: ${allEntries.tPas}
-Penalty Taking: ${allEntries.tPen}
-Tackling: ${allEntries.tTck}
-Technique: ${allEntries.tTec}
+            attributes.forEach(element => {
+                if (data[0].Position == "Goalkeeper") {
+                    if (element.closest("#keeperAttributes") != null |
+                        element.closest("#mentalAttributes") != null |
+                        element.closest("#physicalAttributes") != null) {
+                        if (element.value != data[0][attributeArray[element.id.slice(3)]]) {
+                            updateText +=
+                                `${attributeArray[element.id.slice(3)]}: ${data[0][attributeArray[element.id.slice(3)]]} -> ${element.value}
+                                    
+                                    `
+                        }
+                    }
+                } else {
+                    if (element.closest("#technicalAttributes") != null |
+                        element.closest("#mentalAttributes") != null |
+                        element.closest("#physicalAttributes") != null) {
+                        if (element.value != data[0][attributeArray[element.id.slice(3)]]) {
+                            updateText +=
+                                `${attributeArray[element.id.slice(3)]}: ${data[0][attributeArray[element.id.slice(3)]]} -> ${element.value}
+                                    
+                                    `
+                        }
+                    }
+                }
 
-[u][b]Positional Experience[/b][/u]
-Striker: ${positions.st}
-Attacking Midfielder [L]: ${positions.lam}
-Attacking Midfielder [C]: ${positions.cam}
-Attacking Midfielder [R]: ${positions.ram}
-Midfielder [L]: ${positions.lm}
-Midfielder [C]: ${positions.cm}
-Midfielder [R]: ${positions.rm}
-Wingback [L]: ${positions.lwb}
-Defensive Midfielder [C]: ${positions.cdm}
-Wingback [R]: ${positions.rwb}
-Defense [L]: ${positions.ld}
-Defense [C]: ${positions.cd}
-Defense [R]: ${positions.rd}
 
-[u][b]Traits[/b][/u]
-Trait 1: ${allEntries.trait1}
-Trait 2: ${allEntries.trait2}`
+            })
 
-        textOutput += addition
-    }
-
-    document.querySelector("#CODE").innerHTML = textOutput
+            document.querySelector("#CODE").innerHTML = updateText
+        })
 
     return false;
 }
 
 
 function submitCheck() {
-    if (anyRequiredEmpty()) {
-        alert("You must fill out all required fields.")
-        const required = document.getElementById("playerCreator").querySelectorAll("[required]")
-
-        required.forEach(element => {
-            if (element.value == "") {
-                element.style = "border: 2px solid red;"
-            } else {
-                element.style = "border: inherit;"
-            }
-        })
-    } else if (document.querySelector("#remainingTPE").innerText < 0) {
+    if (document.querySelector("#remainingTPE").innerText < 0) {
 
         alert("You have spent too much TPE on your build.")
 
         document.querySelector("#remainingTPE").style = "border: 2px solid red;"
 
-    } else if (document.querySelector("#remainingTPE").innerText > 150) {
-
-        alert("You have more than 150 TPE left to spend on your player.")
-
     } else {
-        const required = document.getElementById("playerCreator").querySelectorAll("[required]")
-
-        required.forEach(element => {
-            element.style = "border: inherit;"
-        })
 
         document.querySelector("#remainingTPE").style = "border: inherit;"
 
-        submitForm(document.querySelector("#playerCreator"))
+        updateOutput()
 
         document.querySelector("#popupButton").click()
     }
 }
 
 
-document.querySelector("#createButton").addEventListener("click", submitCheck);
+document.querySelector("#summaryButton").addEventListener("click", submitCheck);
 
 function copyText() {
     // Get the text field
@@ -299,7 +184,6 @@ function HandleDropdowns(element) {
 
 
 // Attribute updater
-
 function updateAttribute(element, data) {
     const keeperPattern = /K$/
 
@@ -398,6 +282,8 @@ async function fetchPlayerSelected() {
             const attributes = document.querySelectorAll('input[id*="out"]')
 
             attributes.forEach(element => updateAttribute(element, data))
+
+
         });
 
 }
