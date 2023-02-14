@@ -60,7 +60,7 @@ function attributeCost(control) {
     let cost = totalAttributeCost()
 
     document.querySelector("#spentTPE").innerText = cost
-    document.querySelector("#remainingTPE").innerText = document.querySelector("#currentTPE").innerText + document.querySelector("#earnedTPE").innerText - cost
+    document.querySelector("#remainingTPE").innerText = document.querySelector("#currentTPE").innerText + document.querySelector("#earnedTPE").value - cost
 }
 
 function totalAttributeCost() {
