@@ -141,7 +141,7 @@ function submitCheck() {
         document.querySelector("#remainingTPE").style = "border: 2px solid red;"
 
     } else {
-
+        console.log("Checked and building")
         document.querySelector("#remainingTPE").style = "border: inherit;"
 
         updateOutput()
@@ -150,8 +150,7 @@ function submitCheck() {
     }
 }
 
-
-document.querySelector("#summaryButton").addEventListener("click", submitCheck);
+// document.querySelector("#summaryButton").addEventListener("click", submitCheck);
 
 function copyText() {
     // Get the text field
