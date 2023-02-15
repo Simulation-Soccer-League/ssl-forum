@@ -1174,10 +1174,6 @@ div.row2 {
     text-align: center;
 }
 
-.rowStats {
-    text-align: center;
-}
-
 #subforum-list .titlemedium,
 .topic-subheader .titlemedium {
     border-bottom: 1px solid var(--middleBackground);
@@ -1197,11 +1193,19 @@ div.row2 {
     max-width: 400px;
 }
 
-/* Sets the max width of smaller columns and shortens overflowing text outside of the viewport */
+/* Sets the max width of smaller columns and shortens overflowing text outside of the viewport. 
+Also sets the min-width to the same so that the forum columns look identical*/
 .row2 {
     max-width: 150px;
+    min-width: 150px;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+/* Sets the min width of the forum/topic stats columns to smaller than the default row2.*/
+.rowStats {
+    text-align: center;
+    min-width: inherit;
 }
 
 .topic-row .row2 {
