@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="793.70081"
+   height="1122.5197"
+   viewBox="0 0 793.70081 1122.5197"
+   version="1.1"
+   id="svg907"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="cssbutton.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview909"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="false"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="18.985859"
+     inkscape:cx="448.43902"
+     inkscape:cy="578.64119"
+     inkscape:window-width="1278"
+     inkscape:window-height="1008"
+     inkscape:window-x="1272"
+     inkscape:window-y="948"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs904">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1503">
+      <stop
+         style="stop-color:#3b3b3b;stop-opacity:1"
+         offset="0"
+         id="stop1499" />
+      <stop
+         style="stop-color:#fdfdfd;stop-opacity:1"
+         offset="1"
+         id="stop1501" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1129">
+      <stop
+         style="stop-color:#202021;stop-opacity:1"
+         offset="0"
+         id="stop1125" />
+      <stop
+         style="stop-color:#3b3b3b;stop-opacity:1"
+         offset="1"
+         id="stop1127" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1129"
+       id="linearGradient1131"
+       x1="450.86188"
+       y1="590.43945"
+       x2="450.86188"
+       y2="562.41858"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1503"
+       id="linearGradient1505"
+       x1="445.06808"
+       y1="590.43945"
+       x2="445.06808"
+       y2="562.31323"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <image
+       width="6"
+       height="28"
+       preserveAspectRatio="none"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAcCAMAAAB1Xz6HAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
+bWFnZVJlYWR5ccllPAAAARFQTFRFOTk5Ozs7ISEhOjo6KSoqJSUlMDAwNTU1MTExICAgKCgoIiIi
+IyQjLCwsISIiJiYnKysrMjIyMzMzJycoIyMiKSkpNzc4Nzc3LS4tKSgoIiMjJCQlLCwtLi8uJSUm
+Ozo7JycnIyQkNzg4ODg5MjIzMzM0KisrOTg4NDQ1NjY2MTEyNDMzLS4uODc3NjU1KSopOzo6Li4v
+LSwsLzAwLi4uIyMkJCUkICEiICAhICEhOjs6KissLy4vNzY3NTU2JSUkNjY1ISEiOTo5ODg4ODk4
+NjY3LS0tJCQkLy8vJiYmLS0uJSQkJygoOjo7NTY1MDExOTo6Njc2IiMiMjMzKioqNTU0KCgpLi0t
+NDQ0MC8wIyMj57RUWQAAALNJREFUeNoswYVywkAABcDHXaTxNMEhwYq7u7RIixeX//8QGIZdOF4Q
+6oRKawpKf+g/xVsyGRtPYnB7ou5oHtN0uu/ZgecLg9EGqdTpyvMw4oYRz+Lw+fWMzMfTFjeuynEc
+rN6fVa5hkfNevDMolaCiBJHo6rqeAMMciwwDl8vnO4sQxZVpmghrmjYPg7VtlmXR+A0shwFE5Loc
+keG8+517PyRVUlUJ5JsQ0oQgtFtEeAgwANviFEZuqBgyAAAAAElFTkSuQmCC
+"
+       id="image829"
+       x="453.76099"
+       y="562.42902"
+       style="fill:#ffffff" />
+    <rect
+       style="fill:url(#linearGradient1131);fill-rule:evenodd;stroke-width:2;stroke-linecap:square;stop-color:#000000;fill-opacity:1"
+       id="rect873"
+       width="6"
+       height="28"
+       x="447.76099"
+       y="562.42902"
+       inkscape:export-filename="D:\GitHubs\ssl-forum\images\cssbuttonblack.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:url(#linearGradient1505);fill-rule:evenodd;stroke-width:2;stroke-linecap:square;stop-color:#000000;fill-opacity:1"
+       id="rect1075"
+       width="6"
+       height="28"
+       x="441.76099"
+       y="562.42902"
+       inkscape:export-filename="D:\GitHubs\ssl-forum\images\cssbuttonwhite.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>
