@@ -43,6 +43,7 @@ body {
     font-family: "Roboto", sans-serif;
     padding: 10px;
     overflow-x: hidden;
+    color: var(--lightText);
 }
 
 nav,
@@ -180,6 +181,11 @@ td input {
     padding: 2px;
 }
 
+fieldset input,
+input[name="agree"] {
+    min-width: 0px;
+}
+
 /* Link styles */
 a {
     text-decoration: none;
@@ -192,7 +198,7 @@ a {
 
 #userbar li.dropmenu ul.drop,
 ul.drop {
-    background: rgba(0, 0, 0, 0.9);
+    background: hsl(var(--color), 0%, 90%);
     border-top: 0;
     z-index: 99;
     padding: 0px;
@@ -894,7 +900,7 @@ li.helprow {
 #ucpmenu .pformstrip {
     font-weight: bold;
     background: var(--borderColor);
-    color: #bbb;
+    color: var(--lightText);
 }
 
 #ucpcontent,
@@ -907,7 +913,7 @@ li.helprow {
 #ucpcontent .pformstrip {
     font-weight: bold;
     background: var(--borderColor);
-    color: #bbb;
+    color: var(--lightText);
 }
 
 #ucpcontent table {
@@ -1040,7 +1046,7 @@ li.helprow {
 /* CSS Button styles */
 .cssbutton,
 /* select[class="forminput"], */
-input[class="forminput"]:not([type="text"]) {
+input[class="forminput"]:not([type="text"]):not([type="password"]):not([type="email"]) {
     background: url("https://github.com/Simulation-Soccer-League/ssl-forum/raw/main/images/cssbuttonblack.png") repeat-x scroll center top var(--topBackground);
     background-size: auto 100%;
     border-color: var(--topBackground);
@@ -1052,6 +1058,7 @@ input[class="forminput"]:not([type="text"]) {
     cursor: pointer;
     display: inline-block;
     font: 300 12px/30px "Gotham", sans-serif;
+    font-weight: 500;
     height: 30px;
     min-width: 125px;
     padding: 0 10px;
@@ -1091,7 +1098,7 @@ input[class="forminput"]:not([type="text"]) {
     border: 1px solid #111111;
     border-radius: 3px 3px 3px 3px;
     box-shadow: 0 1px 0 var(--topBackground) inset, 0 1px 0 rgba(0, 0, 0, 0.3);
-    color: #bbb;
+    color: var(--lightText);
     display: inline-block;
     font-size: 12px;
     height: 22px;
@@ -1206,7 +1213,8 @@ div.row2 {
     font-size: smaller;
 }
 
-#recent-alerts-data .row2 {
+#recent-alerts-data .row2,
+.popupBox-content .row2 {
     max-width: inherit;
 }
 
@@ -1276,7 +1284,6 @@ div.row2 {
 #mini-profile .bottom {
     text-align: left;
     padding: 1px;
-    color: #e1e1e1;
 }
 
 
