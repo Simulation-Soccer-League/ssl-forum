@@ -6,14 +6,14 @@
     --color: 0, 0%;
     --midnight-blue: #070b51ff;
     --satin-sheen-gold: #bd9523ff;
-    --lightText: hsl(var(--color), 100%);
-    --darkText: hsl(var(--color), 0%);
+    --lightText: hsl(var(--color), 0%);
+    --darkText: hsl(var(--color), 100%);
     --amazon: #417b5aff;
     --mountbatten-pink: #916c80ff;
-    --topBackground: hsl(var(--color), 10%);
-    --middleBackground: hsl(var(--color), 20%);
-    --bottomBackground: hsl(var(--color), 30%);
-    --borderColor: hsl(var(--color), 25%);
+    --topBackground: hsl(var(--color), 90%);
+    --middleBackground: hsl(var(--color), 80%);
+    --bottomBackground: hsl(var(--color), 70%);
+    --borderColor: hsl(var(--color), 75%)
 }
 
 /* General css styles */
@@ -497,7 +497,7 @@ nav li a:hover {
 * Header styles
 */
 #header {
-    background: url("https://files.jcink.net/uploads/darknight/redmo/maintitlered.png") repeat-x scroll 0 0 var(--bottomBackground);
+    background: var(--bottomBackground);
     min-height: 64px;
     width: 1020px;
     margin: 0 auto;
@@ -926,7 +926,7 @@ li.helprow {
 
 /* Userbar */
 #userbar {
-    background: url("https://files.jcink.net/uploads/darknight/redmo/navl.png") repeat-x scroll center bottom #323232;
+    background: var(--middleBackground);
     padding: 0;
     text-align: left;
     height: 30px;
@@ -1041,7 +1041,7 @@ li.helprow {
 .cssbutton,
 /* select[class="forminput"], */
 input[class="forminput"]:not([type="text"]) {
-    background: url("https://github.com/Simulation-Soccer-League/ssl-forum/raw/main/images/cssbuttonblack.png") repeat-x scroll center top var(--topBackground);
+    background: url("https://github.com/Simulation-Soccer-League/ssl-forum/raw/main/images/cssbuttonwhite.png") repeat-x scroll center top var(--topBackground);
     background-size: auto 100%;
     border-color: var(--topBackground);
     border-radius: 3px 3px 3px 3px;
@@ -1056,7 +1056,7 @@ input[class="forminput"]:not([type="text"]) {
     min-width: 125px;
     padding: 0 10px;
     text-align: center;
-    text-shadow: 0 -1px 0 #191919;
+    text-shadow: 0 -1px 0 hsl(var(--color), 50%);
 }
 
 
@@ -1117,7 +1117,7 @@ Forum + Subforum Style Structure
 
 .maintitle,
 .popupBox-content .maintitle2 {
-    background: url("https://github.com/Simulation-Soccer-League/ssl-forum/raw/main/images/topicHeaderBlack.png") repeat-x scroll center top var(--darkText);
+    background: url("https://github.com/Simulation-Soccer-League/ssl-forum/raw/main/images/topicHeaderWhite.png") repeat-x scroll center top var(--darkText);
     color: var(--lightText);
     font-family: "Gotham", sans-serif;
     font-size: 16px;
@@ -1127,7 +1127,7 @@ Forum + Subforum Style Structure
     border-radius: 4px 4px 0 0;
     -moz-border-radius: 4px 4px 0 0;
     -webkit-border-radius: 4px 4px 0 0;
-    border-color: #303030;
+    border-color: var(--borderColor);
     border-style: solid;
     border-width: 1px 1px 0;
     margin: 0;
