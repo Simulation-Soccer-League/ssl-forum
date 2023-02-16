@@ -42,7 +42,7 @@ body {
         'footer';
     font-family: "Roboto", sans-serif;
     padding: 10px;
-    overflow-x: hidden;
+    overflow-x: auto;
     color: var(--lightText);
 }
 
