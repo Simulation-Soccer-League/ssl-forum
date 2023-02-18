@@ -1,0 +1,16 @@
+/* CSS HEX */
+:root {
+    --color: 0, 0%;
+    --midnight-blue: #070b51ff;
+    --satin-sheen-gold: #bd9523ff;
+    --lightText: hsl(var(--color), 100%);
+    --darkText: hsl(var(--color), 0%);
+    --amazon: #417b5aff;
+    --mountbatten-pink: #916c80ff;
+    --topBackground: hsl(var(--color), 10%);
+    --middleBackground: hsl(var(--color), 20%);
+    --bottomBackground: hsl(var(--color), 30%);
+    --borderColor: hsl(var(--color), 25%);
+}
+
+@import url("https://simulation-soccer-league.github.io/ssl-forum/css/style.css");
