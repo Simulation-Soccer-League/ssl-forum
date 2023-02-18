@@ -1557,10 +1557,16 @@ main td {
 
 .keyAttribute {
     color: var(--amazon);
+    border: 1px dashed var(--amazon);
+    border-radius: 5px;
+    padding: 0 5px;
 }
 
 .importantAttribute {
-    color: var(--mountbatten-pink)
+    color: var(--mountbatten-pink);
+    border: 1px dashed var(--mountbatten-pink);
+    border-radius: 5px;
+    padding: 0 5px;
 }
 
 .tpeSum table,
