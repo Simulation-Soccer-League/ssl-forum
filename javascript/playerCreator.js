@@ -1,5 +1,9 @@
 const costArray = { 5: 0, 6: 2, 7: 4, 8: 8, 9: 12, 10: 16, 11: 22, 12: 28, 13: 34, 14: 46, 15: 58, 16: 70, 17: 88, 18: 106, 19: 131, 20: 156 }
 
+const attributeArray = {
+    Acc: "Acceleration", Agi: "Agility", Bal: "Balance", Jmp: "Jumping Reach", Nat: "Natural Fitness", Pac: "Pace", Sta: "Stamina", Str: "Strength", Agg: "Aggression", Ant: "Anticipation", Bra: "Bravery", Cmp: "Composure", Con: "Concentration", Dec: "Decisions", Det: "Determination", Fla: "Flair", Lea: "Leadership", Otb: "Off the Ball", Pos: "Positioning", Tea: "Teamwork", Vis: "Vision", Wrk: "Work Rate", Cor: "Corners", Cro: "Crossing", Dri: "Dribbling", Fin: "Finishing", Fst: "First Touch", FstK: "First Touch", Frk: "Free Kick", FrkK: "Free Kick", Hea: "Heading", Lsh: "Long Shots", Lth: "Long Throws", Mar: "Marking", Pas: "Passing", PasK: "Passing", Pen: "Penalty Taking", PenK: "Penalty Taking", Tck: "Tackling", Tec: "Technique", TecK: "Technique", Aer: "Aerial Reach", Coa: "Command of Area", Com: "Communication", Ecc: "Eccentricity", Han: "Handling", Kic: "Kicking", Ooo: "One on Ones", Ref: "Reflexes", Ttr: "Tendency to Rush", Ttp: "Tendency to Punch", Thr: "Throwing"
+}
+
 const roleAttributes = {
     'Attacking Midfielder - Attack': { 'Acceleration': 0, 'Aerial Reach': 0, 'Aggression': 0, 'Agility': 1, 'Anticipation': 2, 'Balance': 0, 'Bravery': 0, 'Command of Area': 0, 'Communication': 0, 'Composure': 1, 'Concentration': 0, 'Corners': 0, 'Crossing': 0, 'Decisions': 2, 'Determination': 0, 'Dribbling': 2, 'Eccentricity': 0, 'Finishing': 1, 'First Touch': 2, 'Flair': 2, 'Free Kick': 0, 'Handling': 0, 'Heading': 0, 'Jumping Reach': 0, 'Kicking': 0, 'Leadership': 0, 'Long Shots': 2, 'Long Throws': 0, 'Marking': 0, 'Natural Fitness': 0, 'Off the Ball': 2, 'One on Ones': 0, 'Pace': 0, 'Passing': 2, 'Penalty Taking': 0, 'Positioning': 0, 'Tendency to Punch': 0, 'Reflexes': 0, 'Tendency to Rush': 0, 'Stamina': 0, 'Strength': 0, 'Tackling': 0, 'Teamwork': 0, 'Technique': 2, 'Throwing': 0, 'Vision': 1, 'Work Rate': 0 },
     'Attacking Midfielder - Support': { 'Acceleration': 0, 'Aerial Reach': 0, 'Aggression': 0, 'Agility': 1, 'Anticipation': 2, 'Balance': 0, 'Bravery': 0, 'Command of Area': 0, 'Communication': 0, 'Composure': 1, 'Concentration': 0, 'Corners': 0, 'Crossing': 0, 'Decisions': 2, 'Determination': 0, 'Dribbling': 1, 'Eccentricity': 0, 'Finishing': 0, 'First Touch': 2, 'Flair': 2, 'Free Kick': 0, 'Handling': 0, 'Heading': 0, 'Jumping Reach': 0, 'Kicking': 0, 'Leadership': 0, 'Long Shots': 2, 'Long Throws': 0, 'Marking': 0, 'Natural Fitness': 0, 'Off the Ball': 2, 'One on Ones': 0, 'Pace': 0, 'Passing': 2, 'Penalty Taking': 0, 'Positioning': 0, 'Tendency to Punch': 0, 'Reflexes': 0, 'Tendency to Rush': 0, 'Stamina': 0, 'Strength': 0, 'Tackling': 0, 'Teamwork': 0, 'Technique': 2, 'Throwing': 0, 'Vision': 1, 'Work Rate': 0 },
@@ -123,6 +127,31 @@ const roleAttributes = {
     'Wing Back - Support': { 'Acceleration': 2, 'Aerial Reach': 0, 'Aggression': 0, 'Agility': 1, 'Anticipation': 1, 'Balance': 0, 'Bravery': 0, 'Command of Area': 0, 'Communication': 0, 'Composure': 0, 'Concentration': 1, 'Corners': 0, 'Crossing': 2, 'Decisions': 1, 'Determination': 0, 'Dribbling': 2, 'Eccentricity': 0, 'Finishing': 0, 'First Touch': 1, 'Flair': 0, 'Free Kick': 0, 'Handling': 0, 'Heading': 0, 'Jumping Reach': 0, 'Kicking': 0, 'Leadership': 0, 'Long Shots': 0, 'Long Throws': 0, 'Marking': 2, 'Natural Fitness': 0, 'Off the Ball': 2, 'One on Ones': 0, 'Pace': 1, 'Passing': 1, 'Penalty Taking': 0, 'Positioning': 1, 'Tendency to Punch': 0, 'Reflexes': 0, 'Tendency to Rush': 0, 'Stamina': 2, 'Strength': 0, 'Tackling': 2, 'Teamwork': 2, 'Technique': 1, 'Throwing': 0, 'Vision': 0, 'Work Rate': 2 },
 }
 
+// Function that highlights the key and important attributes for a role
+function attributeHighlighter() {
+    const attributes = document.querySelectorAll('input[id*="out"]')
+
+    const selected = document.querySelector("#playerRole")
+
+    const roleMatrix = roleAttributes[selected.options[selected.selectedIndex].text]
+
+    attributes.forEach(element => {
+        const attributeName = attributeArray[element.id.slice(3)]
+
+        const text = element.parentElement.parentElement.querySelector("span")
+
+        if (roleMatrix[attributeName] == 1) {
+            text.className = "hovertext importantAttribute"
+        } else if (roleMatrix[attributeName] == 2) {
+            text.className = "hovertext keyAttribute"
+        } else {
+            text.className = "hovertext"
+        }
+    }
+    )
+
+}
+
 
 // Capitalize first letter in string
 function toCapital(string) {
@@ -222,7 +251,6 @@ function anyRequiredEmpty() {
 
     return anyEmpty
 }
-
 
 // Function to gather the information from the form
 function submitForm(formElement) {

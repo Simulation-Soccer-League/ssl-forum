@@ -1218,8 +1218,18 @@ Also sets the min-width to the same so that the forum columns look identical*/
 }
 
 #recent-alerts-data .row2,
-.popupBox-content .row2 {
+.popupBox-content .row2,
+#mobile-wrapper .row2 {
     max-width: inherit;
+}
+
+.row2:has(.mobile-post) {
+    border: 5px solid var(--borderColor);
+    max-width: inherit;
+}
+
+.mobile-post {
+    border-bottom: 5px solid var(--borderColor);
 }
 
 #board .forum-desc {
@@ -1579,8 +1589,17 @@ main td {
     padding: 5px 0;
 }
 
-.playerType {
+.playerType,
+.roleTemplate {
     text-align: center;
+}
+
+.keyAttribute {
+    color: var(--amazon);
+}
+
+.importantAttribute {
+    color: var(--mountbatten-pink)
 }
 
 .tpeSum table,
