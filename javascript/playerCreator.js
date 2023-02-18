@@ -156,6 +156,17 @@ function attributeHighlighter() {
 
 }
 
+// Checks input height if it fits within the min/max limits
+function inputCheck(element) {
+    if (element.value > element.max) {
+        element.value = element.max
+    } else if (element.value < element.min) {
+        element.value = element.min
+    } else {
+        // Do nothing
+    }
+}
+
 
 // Capitalize first letter in string
 function toCapital(string) {
