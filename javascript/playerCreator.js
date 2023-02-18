@@ -1,9 +1,11 @@
 const costArray = { 5: 0, 6: 2, 7: 4, 8: 8, 9: 12, 10: 16, 11: 22, 12: 28, 13: 34, 14: 46, 15: 58, 16: 70, 17: 88, 18: 106, 19: 131, 20: 156 }
 
-// Capitalize first letter in string
-function toCapital(string) {
-    return string[0].toUpperCase() + string.slice(1)
-}
+const keyAttributes =
+
+    // Capitalize first letter in string
+    function toCapital(string) {
+        return string[0].toUpperCase() + string.slice(1)
+    }
 
 // Updates the attribute form based on player type
 function updateForm(control) {
@@ -276,9 +278,6 @@ function submitCheck() {
         document.querySelector("#popupButton").click()
     }
 }
-
-
-document.querySelector("#createButton").addEventListener("click", submitCheck);
 
 function copyText() {
     // Get the text field
