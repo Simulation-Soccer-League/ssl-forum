@@ -158,6 +158,20 @@ a {
 * Drop down menu styles
 */
 
+#userbar li.dropmenu ul.drop,
+ul.drop {
+    background: hsl(var(--color), 0%, 90%);
+    border-top: 0;
+    z-index: 99;
+    padding: 0px;
+    display: none;
+    right: auto;
+    position: absolute;
+    left: auto;
+    border-radius: 0 0 0px 0px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.58);
+}
+
 #userbar li.dropmenu ul.drop li,
 ul.drop li {
     float: none;
@@ -947,6 +961,19 @@ li.helprow {
     text-shadow: var(--darkText) 0px 1px 0px;
     color: var(--lightText);
     display: none;
+}
+
+.popupAlert {
+    border: 5px solid hsl(var(--color), 20%);
+    border-bottom: 0;
+    background: var(--borderColor);
+    border-radius: 4px 4px 0 0;
+    color: var(--lightText);
+}
+
+.popupAlert .pformstrip {
+    background: inherit;
+    border-bottom: 5px solid hsl(var(--color), 20%);
 }
 
 #userbar ul.bar li a.selected .alert {
