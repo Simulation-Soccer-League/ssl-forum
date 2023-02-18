@@ -13,8 +13,6 @@
     --borderColor: hsl(var(--color), 75%)
 }
 
-@import url("https://simulation-soccer-league.github.io/ssl-forum/css/style.css");
-
 
 #userbar li.dropmenu ul.drop,
 ul.drop {
