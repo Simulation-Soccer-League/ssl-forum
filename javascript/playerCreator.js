@@ -136,16 +136,20 @@ function attributeHighlighter() {
     const roleMatrix = roleAttributes[selected.options[selected.selectedIndex].text]
 
     attributes.forEach(element => {
-        const attributeName = attributeArray[element.id.slice(3)]
-
-        const text = element.parentElement.parentElement.querySelector("span")
-
-        if (roleMatrix[attributeName] == 1) {
-            text.className = "hovertext importantAttribute"
-        } else if (roleMatrix[attributeName] == 2) {
-            text.className = "hovertext keyAttribute"
+        if (element.id == "outfield") {
+            // Do nothing
         } else {
-            text.className = "hovertext"
+            const attributeName = attributeArray[element.id.slice(3)]
+
+            const text = element.parentElement.parentElement.querySelector("span")
+
+            if (roleMatrix[attributeName] == 1) {
+                text.className = "hovertext importantAttribute"
+            } else if (roleMatrix[attributeName] == 2) {
+                text.className = "hovertext keyAttribute"
+            } else {
+                text.className = "hovertext"
+            }
         }
     }
     )
