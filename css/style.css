@@ -577,7 +577,7 @@ nav li a:hover {
 
 #searchi {
     background: var(--satin-sheen-gold) url(https://files.jcink.net/uploads2/simsoccer/BlackStream_Icons/search_icon.png) no-repeat 50% 50%;
-    padding: 4px 10px 3px;
+    padding: 4px 10px 3px 10px;
     margin: 0;
     border-radius: 0 4px 4px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
