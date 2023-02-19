@@ -561,9 +561,8 @@ nav li a:hover {
     margin: 0;
     padding: 4px;
     color: var(--lightText);
-    font-size: 13px;
+    font-size: 0.9em;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    background: rgba(0, 0, 0, 0.9);
 }
 
 .searchb input:focus {
