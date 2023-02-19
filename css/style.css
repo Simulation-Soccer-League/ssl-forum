@@ -1114,7 +1114,7 @@ Forum + Subforum Style Structure
 
 /* Removes headers and empty bottom row in main forum */
 .forum-subheader,
-tr:has(>.darkrow2) {
+tr>.darkrow2 {
     display: none;
 }
 
@@ -1195,7 +1195,7 @@ Also sets the min-width to the same so that the forum columns look identical*/
     max-width: inherit;
 }
 
-.row2:has(.mobile-post) {
+.row2 .mobile-post {
     border: 5px solid var(--borderColor);
     max-width: inherit;
 }
@@ -1595,7 +1595,7 @@ main td {
 }
 
 .attributeTable th,
-td:has(>.attributeCost),
+td>.attributeCost,
 #outfieldExtra,
 .attributeSubmit {
     text-align: center;
