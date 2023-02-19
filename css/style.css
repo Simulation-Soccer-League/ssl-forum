@@ -547,7 +547,8 @@ nav li a:hover {
 
 
 #keywords {
-    font-size: 13px;
+    font-family: "Gothic", sans-serif;
+    font-size: 0.9em;
     /* margin: 5px; */
     padding: 3px;
     vertical-align: top;
@@ -1032,11 +1033,11 @@ input[class="forminput"]:not([type="text"]):not([type="password"]):not([type="em
 .searchinput,
 .forminput {
     font-family: "Gothic", sans-serif;
-    font-size: 13px;
+    font-size: 0.9em;
     padding: 3px;
     vertical-align: middle;
-    background: var(--bottomBackground);
-    border: 1px solid var(--middleBackground);
+    background: var(--lightText);
+    border: 1px solid var(--borderBackground);
 }
 
 #menu .cssbutton {
