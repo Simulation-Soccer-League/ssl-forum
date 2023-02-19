@@ -1028,6 +1028,16 @@ input[class="forminput"]:not([type="text"]):not([type="password"]):not([type="em
     text-shadow: 0 -1px 0 #191919;
 }
 
+.textarea,
+.searchinput,
+.forminput {
+    font-family: "Gothic", sans-serif;
+    font-size: 13px;
+    padding: 3px;
+    vertical-align: middle;
+    background: var(--bottomBackground);
+    border: 1px solid var(--middleBackground);
+}
 
 #menu .cssbutton {
     min-width: 80px;
