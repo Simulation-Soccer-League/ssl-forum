@@ -1391,7 +1391,6 @@ table[class="postTable"] {
     font-family: monospace;
     white-space: pre;
     font-size: medium;
-    height: 100px;
     overflow: auto;
     border: 1px solid var(--lightText);
 }
