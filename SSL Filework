@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-03-13T17:55:47.197Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="X4PyfTXcq8qmoXnXkYbW" version="21.0.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-13T17:58:35.235Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="3CyR1MyJN18eRNkpJC4O" version="21.0.6" type="github">
   <diagram name="Weekly Updates" id="0oUgq9j5HouRIqQtYtSz">
-    <mxGraphModel dx="932" dy="920" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1131" dy="1117" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -67,8 +67,46 @@
         <mxCell id="3aH-dMEOj7gqE_BpXJZ5-14" value="Move and edit one of the shortlisted players in FMRTE" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="640" y="585" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="3aH-dMEOj7gqE_BpXJZ5-25" target="3aH-dMEOj7gqE_BpXJZ5-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="105" y="520" />
+              <mxPoint x="530" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-28" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3aH-dMEOj7gqE_BpXJZ5-27">
+          <mxGeometry x="-0.601" y="-4" relative="1" as="geometry">
+            <mxPoint x="-65" y="6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3aH-dMEOj7gqE_BpXJZ5-25" target="3aH-dMEOj7gqE_BpXJZ5-29">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="105" y="710" />
+              <mxPoint x="105" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-32" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3aH-dMEOj7gqE_BpXJZ5-30">
+          <mxGeometry x="-0.2524" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="3aH-dMEOj7gqE_BpXJZ5-25" value="Player updated&lt;br&gt;Traits?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="40" y="550" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="3aH-dMEOj7gqE_BpXJZ5-29" target="3aH-dMEOj7gqE_BpXJZ5-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="20" y="832" />
+              <mxPoint x="20" y="520" />
+              <mxPoint x="530" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-29" value="Unfreeze player in FMRTE&lt;br&gt;&lt;br&gt;Update &quot;Prefered Moves&quot;&lt;br&gt;&lt;br&gt;&lt;b&gt;SAVE PLAYER&lt;br&gt;&lt;/b&gt;&lt;br&gt;Freeze player" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="45" y="760" width="120" height="145" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
