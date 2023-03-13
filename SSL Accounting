@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-03-13T15:42:31.073Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="Jxnkq6Q2E9SFWvv8DDA2" version="21.0.6" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2023-03-13T15:44:30.962Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="fQxddZe6TeLRsyzaQSwQ" version="21.0.6" type="github" pages="3">
   <diagram name="Contracts" id="Y2Ez9sJXyoeaHtJBhH1h">
     <mxGraphModel dx="989" dy="978" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -178,7 +178,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Waiver Claim" id="ZK4aly2aXNBe9x-C59a_">
-    <mxGraphModel dx="659" dy="652" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="931" dy="920" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="QPcU3lgM5u91gBba3c46-0" />
         <mxCell id="QPcU3lgM5u91gBba3c46-1" parent="QPcU3lgM5u91gBba3c46-0" />
@@ -197,7 +197,7 @@
         <mxCell id="QPcU3lgM5u91gBba3c46-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E07A5F;fontColor=default;fillColor=#F2CC8F;labelBackgroundColor=none;" edge="1" parent="QPcU3lgM5u91gBba3c46-1" source="QPcU3lgM5u91gBba3c46-8" target="QPcU3lgM5u91gBba3c46-11">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="QPcU3lgM5u91gBba3c46-8" value="24 hours has passed since first &lt;b&gt;valid&lt;/b&gt;&amp;nbsp;claim" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;shadow=0;shape=process;perimeter=rectanglePerimeter;labelBackgroundColor=none;fontColor=#393C56;" vertex="1" parent="QPcU3lgM5u91gBba3c46-1">
+        <mxCell id="QPcU3lgM5u91gBba3c46-8" value="24 hours has passed since first &lt;b&gt;valid&lt;/b&gt;&amp;nbsp;claim" style="whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;shadow=0;shape=process;perimeter=rectanglePerimeter;labelBackgroundColor=none;fontColor=#333333;" vertex="1" parent="QPcU3lgM5u91gBba3c46-1">
           <mxGeometry x="354" y="270" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="_ANSmisBhBaEHbrAhRIh-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E07A5F;fontColor=default;fillColor=#F2CC8F;labelBackgroundColor=none;" edge="1" parent="QPcU3lgM5u91gBba3c46-1" source="QPcU3lgM5u91gBba3c46-11" target="_ANSmisBhBaEHbrAhRIh-4">
@@ -230,7 +230,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_ANSmisBhBaEHbrAhRIh-4" value="Does team&lt;br&gt;highest in waiver&lt;br&gt;order have&lt;br&gt;roster &lt;br&gt;space?" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;shape=rhombus;perimeter=rhombusPerimeter;labelBackgroundColor=none;fontColor=#393C56;" vertex="1" parent="QPcU3lgM5u91gBba3c46-1">
+        <mxCell id="_ANSmisBhBaEHbrAhRIh-4" value="Does team &lt;br&gt;(only among claims)&lt;br&gt;highest in waiver&lt;br&gt;order have&lt;br&gt;roster &lt;br&gt;space?" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;shape=rhombus;perimeter=rhombusPerimeter;labelBackgroundColor=none;fontColor=#393C56;" vertex="1" parent="QPcU3lgM5u91gBba3c46-1">
           <mxGeometry x="326" y="530" width="176" height="135" as="geometry" />
         </mxCell>
         <mxCell id="Y8axdqPrkcY1ORuI7-hk-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E07A5F;fontColor=#393C56;fillColor=#F2CC8F;" edge="1" parent="QPcU3lgM5u91gBba3c46-1" source="Y8axdqPrkcY1ORuI7-hk-0" target="Y8axdqPrkcY1ORuI7-hk-11">
@@ -266,7 +266,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Y8axdqPrkcY1ORuI7-hk-3" value="Does next &lt;br&gt;team in waiver&lt;br&gt;order have&lt;br&gt;roster &lt;br&gt;space?" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;shape=rhombus;perimeter=rhombusPerimeter;labelBackgroundColor=none;fontColor=#393C56;" vertex="1" parent="QPcU3lgM5u91gBba3c46-1">
+        <mxCell id="Y8axdqPrkcY1ORuI7-hk-3" value="Does next &lt;br&gt;team (only among &lt;br&gt;claims) in waiver order &lt;br&gt;have roster &lt;br&gt;space?" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;shape=rhombus;perimeter=rhombusPerimeter;labelBackgroundColor=none;fontColor=#393C56;" vertex="1" parent="QPcU3lgM5u91gBba3c46-1">
           <mxGeometry x="582" y="530" width="176" height="135" as="geometry" />
         </mxCell>
         <mxCell id="Y8axdqPrkcY1ORuI7-hk-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E07A5F;fontColor=#393C56;fillColor=#F2CC8F;" edge="1" parent="QPcU3lgM5u91gBba3c46-1" source="Y8axdqPrkcY1ORuI7-hk-11" target="QPcU3lgM5u91gBba3c46-25">
