@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-03-13T17:46:35.259Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="1NJjOe2LE5YlnFTYkGEy" version="21.0.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-13T17:51:58.692Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="btLMvq7JtQ5Xvuw5GS_l" version="21.0.6" type="github">
   <diagram name="Weekly Updates" id="0oUgq9j5HouRIqQtYtSz">
     <mxGraphModel dx="792" dy="782" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -7,7 +7,7 @@
         <mxCell id="3aH-dMEOj7gqE_BpXJZ5-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3aH-dMEOj7gqE_BpXJZ5-1" target="3aH-dMEOj7gqE_BpXJZ5-6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-1" value="Start" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-1" value="Start" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="1">
           <mxGeometry x="290" y="20" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="3aH-dMEOj7gqE_BpXJZ5-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3aH-dMEOj7gqE_BpXJZ5-2" target="3aH-dMEOj7gqE_BpXJZ5-4">
@@ -15,9 +15,12 @@
         </mxCell>
         <UserObject label="Get team updates from Player Updater Forum" link="https://simsoccer.jcink.net/index.php?showforum=81" linkTarget="_blank" id="3aH-dMEOj7gqE_BpXJZ5-2">
           <mxCell style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-            <mxGeometry x="270" y="290" width="120" height="60" as="geometry" />
+            <mxGeometry x="270" y="300" width="120" height="60" as="geometry" />
           </mxCell>
         </UserObject>
+        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3aH-dMEOj7gqE_BpXJZ5-4" target="3aH-dMEOj7gqE_BpXJZ5-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <UserObject label="Open File Update Tool and download all players that have updated" link="https://canadice.shinyapps.io/SSL-Index/#fileUpdate" linkTarget="_blank" id="3aH-dMEOj7gqE_BpXJZ5-4">
           <mxCell style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
             <mxGeometry x="250" y="430" width="160" height="80" as="geometry" />
@@ -28,6 +31,9 @@
         </mxCell>
         <mxCell id="3aH-dMEOj7gqE_BpXJZ5-6" value="Open FM and FMRTE and load latest file" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="270" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-10" value="Open players in FMRTE and import JSON file.&lt;br&gt;&lt;br&gt;&lt;b&gt;SAVE AFTER EVERY IMPORT&lt;/b&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="584.5" width="180" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
