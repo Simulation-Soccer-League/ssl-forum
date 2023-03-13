@@ -109,8 +109,7 @@ function updateOutput() {
                         if (element.value != data[0][attributeArray[element.id.slice(3)]]) {
                             updateText +=
                                 `${attributeArray[element.id.slice(3)]}: ${data[0][attributeArray[element.id.slice(3)]]} -> ${element.value}
-                                    
-                                    `
+`
                         }
                     }
                 } else {
@@ -120,8 +119,7 @@ function updateOutput() {
                         if (element.value != data[0][attributeArray[element.id.slice(3)]]) {
                             updateText +=
                                 `${attributeArray[element.id.slice(3)]}: ${data[0][attributeArray[element.id.slice(3)]]} -> ${element.value}
-                                    
-                                    `
+`
                         }
                     }
                 }

@@ -156,7 +156,7 @@ function attributeHighlighter() {
 
 }
 
-// Checks input height if it fits within the min/max limits
+// Checks input height/weight if it fits within the min/max limits
 function inputCheck(element) {
     if (element.value > element.max) {
         element.value = element.max
