@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-03-13T15:41:47.765Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="abZehKg5POpmldMFZWv1" version="21.0.6" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2023-03-13T15:42:31.073Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="Jxnkq6Q2E9SFWvv8DDA2" version="21.0.6" type="github" pages="3">
   <diagram name="Contracts" id="Y2Ez9sJXyoeaHtJBhH1h">
     <mxGraphModel dx="989" dy="978" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -207,7 +207,7 @@
           <mxGeometry x="354" y="380" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="QPcU3lgM5u91gBba3c46-25" value="Finish" style="ellipse;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;labelBackgroundColor=none;" vertex="1" parent="QPcU3lgM5u91gBba3c46-1">
-          <mxGeometry x="374" y="960" width="80" height="80" as="geometry" />
+          <mxGeometry x="374" y="1030" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="Y8axdqPrkcY1ORuI7-hk-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E07A5F;fontColor=#393C56;fillColor=#F2CC8F;" edge="1" parent="QPcU3lgM5u91gBba3c46-1" source="_ANSmisBhBaEHbrAhRIh-4" target="Y8axdqPrkcY1ORuI7-hk-0">
           <mxGeometry relative="1" as="geometry" />
@@ -233,7 +233,10 @@
         <mxCell id="_ANSmisBhBaEHbrAhRIh-4" value="Does team&lt;br&gt;highest in waiver&lt;br&gt;order have&lt;br&gt;roster &lt;br&gt;space?" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;shape=rhombus;perimeter=rhombusPerimeter;labelBackgroundColor=none;fontColor=#393C56;" vertex="1" parent="QPcU3lgM5u91gBba3c46-1">
           <mxGeometry x="326" y="530" width="176" height="135" as="geometry" />
         </mxCell>
-        <mxCell id="Y8axdqPrkcY1ORuI7-hk-0" value="" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;labelBackgroundColor=none;" vertex="1" parent="QPcU3lgM5u91gBba3c46-1">
+        <mxCell id="Y8axdqPrkcY1ORuI7-hk-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E07A5F;fontColor=#393C56;fillColor=#F2CC8F;" edge="1" parent="QPcU3lgM5u91gBba3c46-1" source="Y8axdqPrkcY1ORuI7-hk-0" target="Y8axdqPrkcY1ORuI7-hk-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y8axdqPrkcY1ORuI7-hk-0" value="Player is added to team in the Budget Sheet" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;labelBackgroundColor=none;" vertex="1" parent="QPcU3lgM5u91gBba3c46-1">
           <mxGeometry x="354" y="757.5" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Y8axdqPrkcY1ORuI7-hk-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#E07A5F;fontColor=#393C56;fillColor=#F2CC8F;" edge="1" parent="QPcU3lgM5u91gBba3c46-1" source="Y8axdqPrkcY1ORuI7-hk-3" target="Y8axdqPrkcY1ORuI7-hk-0">
@@ -265,6 +268,12 @@
         </mxCell>
         <mxCell id="Y8axdqPrkcY1ORuI7-hk-3" value="Does next &lt;br&gt;team in waiver&lt;br&gt;order have&lt;br&gt;roster &lt;br&gt;space?" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;shape=rhombus;perimeter=rhombusPerimeter;labelBackgroundColor=none;fontColor=#393C56;" vertex="1" parent="QPcU3lgM5u91gBba3c46-1">
           <mxGeometry x="582" y="530" width="176" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="Y8axdqPrkcY1ORuI7-hk-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E07A5F;fontColor=#393C56;fillColor=#F2CC8F;" edge="1" parent="QPcU3lgM5u91gBba3c46-1" source="Y8axdqPrkcY1ORuI7-hk-11" target="QPcU3lgM5u91gBba3c46-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y8axdqPrkcY1ORuI7-hk-11" value="Manager and player may start contract negotiations" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;labelBackgroundColor=none;" vertex="1" parent="QPcU3lgM5u91gBba3c46-1">
+          <mxGeometry x="354" y="897.5" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
