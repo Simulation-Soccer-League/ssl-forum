@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-03-13T18:27:47.882Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="GC2r--EM4MoGwN5OfVl3" version="21.0.6" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2023-03-13T18:30:00.393Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="3XWHiA_bIpi2Y8h2TR8e" version="21.0.6" type="github" pages="4">
   <diagram name="Contracts" id="Y2Ez9sJXyoeaHtJBhH1h">
     <mxGraphModel dx="990" dy="978" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -92,7 +92,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Trades" id="kE5g0EcxK5F8IdUbhdAn">
-    <mxGraphModel dx="791" dy="782" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="792" dy="782" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="Evn03H9KwKtXfY3LvGSO-0" />
         <mxCell id="Evn03H9KwKtXfY3LvGSO-1" parent="Evn03H9KwKtXfY3LvGSO-0" />
@@ -304,11 +304,11 @@
         <mxCell id="6jcWXmalQxMtlUNSEoa8-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E07A5F;fontColor=default;fillColor=#F2CC8F;labelBackgroundColor=none;" edge="1" parent="6jcWXmalQxMtlUNSEoa8-1" source="6jcWXmalQxMtlUNSEoa8-9" target="6jcWXmalQxMtlUNSEoa8-15">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="6jcWXmalQxMtlUNSEoa8-9" value="Accountant processes &lt;br&gt;trades that might affect waiver order" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;labelBackgroundColor=none;" vertex="1" parent="6jcWXmalQxMtlUNSEoa8-1">
+        <mxCell id="6jcWXmalQxMtlUNSEoa8-9" value="Accountant processes &lt;br&gt;trades that might affect winning bid" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;labelBackgroundColor=none;" vertex="1" parent="6jcWXmalQxMtlUNSEoa8-1">
           <mxGeometry x="354" y="380" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="6jcWXmalQxMtlUNSEoa8-10" value="Finish" style="ellipse;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;labelBackgroundColor=none;" vertex="1" parent="6jcWXmalQxMtlUNSEoa8-1">
-          <mxGeometry x="374" y="1030" width="80" height="80" as="geometry" />
+          <mxGeometry x="374" y="1070" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="6jcWXmalQxMtlUNSEoa8-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E07A5F;fontColor=#393C56;fillColor=#F2CC8F;" edge="1" parent="6jcWXmalQxMtlUNSEoa8-1" source="6jcWXmalQxMtlUNSEoa8-15" target="6jcWXmalQxMtlUNSEoa8-17">
           <mxGeometry relative="1" as="geometry" />
@@ -331,7 +331,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="6jcWXmalQxMtlUNSEoa8-15" value="Does team &lt;br&gt;(only among claims)&lt;br&gt;highest in waiver&lt;br&gt;order have&lt;br&gt;roster &lt;br&gt;space?" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;shape=rhombus;perimeter=rhombusPerimeter;labelBackgroundColor=none;fontColor=#393C56;" vertex="1" parent="6jcWXmalQxMtlUNSEoa8-1">
+        <mxCell id="6jcWXmalQxMtlUNSEoa8-15" value="Does winning team &lt;br&gt;have roster space and transfer funds for the player?" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;shape=rhombus;perimeter=rhombusPerimeter;labelBackgroundColor=none;fontColor=#393C56;" vertex="1" parent="6jcWXmalQxMtlUNSEoa8-1">
           <mxGeometry x="326" y="530" width="176" height="135" as="geometry" />
         </mxCell>
         <mxCell id="6jcWXmalQxMtlUNSEoa8-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E07A5F;fontColor=#393C56;fillColor=#F2CC8F;" edge="1" parent="6jcWXmalQxMtlUNSEoa8-1" source="6jcWXmalQxMtlUNSEoa8-17" target="6jcWXmalQxMtlUNSEoa8-24">
@@ -367,14 +367,20 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="6jcWXmalQxMtlUNSEoa8-22" value="Does next &lt;br&gt;team (only among &lt;br&gt;claims) in waiver order &lt;br&gt;have roster &lt;br&gt;space?" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;shape=rhombus;perimeter=rhombusPerimeter;labelBackgroundColor=none;fontColor=#393C56;" vertex="1" parent="6jcWXmalQxMtlUNSEoa8-1">
+        <mxCell id="6jcWXmalQxMtlUNSEoa8-22" value="Does the next team &lt;br&gt;in the order have roster &lt;br&gt;space and transfer funds &lt;br&gt;for the player?" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;shape=rhombus;perimeter=rhombusPerimeter;labelBackgroundColor=none;fontColor=#393C56;" vertex="1" parent="6jcWXmalQxMtlUNSEoa8-1">
           <mxGeometry x="582" y="530" width="176" height="135" as="geometry" />
         </mxCell>
-        <mxCell id="6jcWXmalQxMtlUNSEoa8-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E07A5F;fontColor=#393C56;fillColor=#F2CC8F;" edge="1" parent="6jcWXmalQxMtlUNSEoa8-1" source="6jcWXmalQxMtlUNSEoa8-24" target="6jcWXmalQxMtlUNSEoa8-10">
+        <mxCell id="UnmFjOlB94LFXwtLAPfx-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E07A5F;fontColor=#393C56;fillColor=#F2CC8F;" edge="1" parent="6jcWXmalQxMtlUNSEoa8-1" source="6jcWXmalQxMtlUNSEoa8-24" target="UnmFjOlB94LFXwtLAPfx-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="6jcWXmalQxMtlUNSEoa8-24" value="Manager and player may start contract negotiations" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;labelBackgroundColor=none;" vertex="1" parent="6jcWXmalQxMtlUNSEoa8-1">
-          <mxGeometry x="354" y="897.5" width="120" height="60" as="geometry" />
+        <mxCell id="6jcWXmalQxMtlUNSEoa8-24" value="Manager can request addition of player to the file" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;labelBackgroundColor=none;" vertex="1" parent="6jcWXmalQxMtlUNSEoa8-1">
+          <mxGeometry x="354" y="860" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UnmFjOlB94LFXwtLAPfx-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E07A5F;fontColor=#393C56;fillColor=#F2CC8F;" edge="1" parent="6jcWXmalQxMtlUNSEoa8-1" source="UnmFjOlB94LFXwtLAPfx-1" target="6jcWXmalQxMtlUNSEoa8-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UnmFjOlB94LFXwtLAPfx-1" value="Player is added to the file" style="whiteSpace=wrap;html=1;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;labelBackgroundColor=none;" vertex="1" parent="6jcWXmalQxMtlUNSEoa8-1">
+          <mxGeometry x="354" y="970" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
