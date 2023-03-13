@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-03-13T17:58:35.235Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="3CyR1MyJN18eRNkpJC4O" version="21.0.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-13T18:00:08.701Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="Y-41ODEWnIZ_PaY4Wc8y" version="21.0.6" type="github">
   <diagram name="Weekly Updates" id="0oUgq9j5HouRIqQtYtSz">
-    <mxGraphModel dx="1131" dy="1117" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="932" dy="920" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -23,7 +23,7 @@
         </mxCell>
         <UserObject label="Open File Update Tool and download all players that have updated" link="https://canadice.shinyapps.io/SSL-Index/#fileUpdate" linkTarget="_blank" id="3aH-dMEOj7gqE_BpXJZ5-4">
           <mxCell style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-            <mxGeometry x="250" y="430" width="160" height="80" as="geometry" />
+            <mxGeometry x="250" y="410" width="160" height="80" as="geometry" />
           </mxCell>
         </UserObject>
         <mxCell id="3aH-dMEOj7gqE_BpXJZ5-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3aH-dMEOj7gqE_BpXJZ5-6" target="3aH-dMEOj7gqE_BpXJZ5-2">
@@ -35,7 +35,10 @@
         <mxCell id="3aH-dMEOj7gqE_BpXJZ5-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3aH-dMEOj7gqE_BpXJZ5-10" target="3aH-dMEOj7gqE_BpXJZ5-25">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-10" value="Open players in FMRTE and import JSON file.&lt;br&gt;&lt;br&gt;&lt;b&gt;SAVE AFTER EVERY SINGLE IMPORT&lt;/b&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3aH-dMEOj7gqE_BpXJZ5-10" target="3aH-dMEOj7gqE_BpXJZ5-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-10" value="Open updatedplayers in FMRTE and import JSON file.&lt;br&gt;&lt;br&gt;&lt;b&gt;SAVE AFTER EVERY SINGLE IMPORT&lt;/b&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="240" y="570" width="180" height="90" as="geometry" />
         </mxCell>
         <mxCell id="3aH-dMEOj7gqE_BpXJZ5-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3aH-dMEOj7gqE_BpXJZ5-12" target="3aH-dMEOj7gqE_BpXJZ5-14">
@@ -58,8 +61,8 @@
             <mxPoint y="-23" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-12" value="New Player?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="500" y="410" width="120" height="120" as="geometry" />
+        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-12" value="New Player?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="500" y="390" width="120" height="120" as="geometry" />
         </mxCell>
         <mxCell id="3aH-dMEOj7gqE_BpXJZ5-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3aH-dMEOj7gqE_BpXJZ5-14" target="3aH-dMEOj7gqE_BpXJZ5-10">
           <mxGeometry relative="1" as="geometry" />
@@ -77,7 +80,7 @@
         </mxCell>
         <mxCell id="3aH-dMEOj7gqE_BpXJZ5-28" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3aH-dMEOj7gqE_BpXJZ5-27">
           <mxGeometry x="-0.601" y="-4" relative="1" as="geometry">
-            <mxPoint x="-65" y="6" as="offset" />
+            <mxPoint x="-69" y="13" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="3aH-dMEOj7gqE_BpXJZ5-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3aH-dMEOj7gqE_BpXJZ5-25" target="3aH-dMEOj7gqE_BpXJZ5-29">
@@ -93,7 +96,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-25" value="Player updated&lt;br&gt;Traits?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-25" value="Player updated&lt;br&gt;Traits?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
           <mxGeometry x="40" y="550" width="130" height="130" as="geometry" />
         </mxCell>
         <mxCell id="3aH-dMEOj7gqE_BpXJZ5-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="3aH-dMEOj7gqE_BpXJZ5-29" target="3aH-dMEOj7gqE_BpXJZ5-12">
@@ -107,6 +110,15 @@
         </mxCell>
         <mxCell id="3aH-dMEOj7gqE_BpXJZ5-29" value="Unfreeze player in FMRTE&lt;br&gt;&lt;br&gt;Update &quot;Prefered Moves&quot;&lt;br&gt;&lt;br&gt;&lt;b&gt;SAVE PLAYER&lt;br&gt;&lt;/b&gt;&lt;br&gt;Freeze player" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="45" y="760" width="120" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3aH-dMEOj7gqE_BpXJZ5-33" target="3aH-dMEOj7gqE_BpXJZ5-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-33" value="Post update in Player Updater Forum" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="755" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3aH-dMEOj7gqE_BpXJZ5-35" value="Finish" style="ellipse;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="1">
+          <mxGeometry x="290" y="885" width="80" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
