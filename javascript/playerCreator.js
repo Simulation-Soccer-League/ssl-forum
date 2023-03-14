@@ -421,7 +421,12 @@ function submitCheck() {
         })
     } else if (document.querySelector("#remainingTPE").innerText < 0) {
 
-        alert("You have spent too much TPE on your build.")
+        Swal.fire({
+            title: 'Too much TPE spent!',
+            text: 'You have spent more TPE on your player than you have earned.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        })
 
         document.querySelector("#remainingTPE").style = "border: 2px solid red;"
 
@@ -463,7 +468,7 @@ function copyText() {
     navigator.clipboard.writeText(copyText.innerText);
 
     // Alert the copied text
-    alert("Copied the text");
+    // alert("Copied the text");
 }
 
 
