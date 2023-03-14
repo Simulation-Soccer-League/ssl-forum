@@ -442,9 +442,15 @@ function submitCheck() {
 
         Swal.fire({
             title: 'Build Complete!',
-            text: document.querySelector("#CODE").innerHTML,
+            html: '<pre>' + document.querySelector("#CODE").innerHTML + '</pre>',
             icon: 'success',
             confirmButtonText: 'Copy text'
+        }).then(function (isConfirm) {
+            if (isConfirm) {
+                copyText()
+            } else {
+                // DO NOTHING
+            }
         })
     }
 }
