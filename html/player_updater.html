@@ -15,7 +15,35 @@
                         </div>
                     </div>
                 </div>
+                <br>
+                <div class="col-sm-8">
+                    <div style="float:left;padding-right:3px;">
+                        <button class="cssbutton" type="button" name="addRowButton" onclick="addRow();">+ Row</button>
+                        <button class="cssbutton" type="button" name="deleteRowButton" onclick="removeRow();">-
+                            Row</button>
+                    </div>
+                    <br>
+                    <table id="updatesTable" style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <th>#</th>
+                                <th>Task Name</th>
+                                <th>Link to Task</th>
+
+                                <th><small>Earned TPE</small></th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td><input id="1task" type="Text" style="width: 96%;"></td>
+                                <td><input id="1link" type="Text" style="width: 96%;"></td>
+                                <td><input class="narrow" id="1uncappedTpe" type="number" onchange="updateEarnedTPE();"
+                                        value="0" step="1"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+            <br>
             <div class="tpeSum">
                 <table>
                     <tr>
@@ -749,32 +777,6 @@
                 </p>
             </div>
         </form>
-        <div id="createdPopup" class="popupBox" style="top: 409.5px; left: 439.5px; display: none;">
-            <div class="popupBox-content">
-                <div class="maintitle2">
-                    Your update summary
-                </div>
-                <div class="popupDescription">
-                    <span>
-                        Copy the generated text below into your update page.
-                    </span>
-                </div>
-                <div class="createdOutput">
-                    <table border="0" align="center" width="95%" cellpadding="3" cellspacing="1" id="CODE-WRAP">
-                        <tbody>
-                            <tr>
-                                <td id="CODE">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="copyButton">
-                    <button class="cssbutton" onclick="copyText()">Copy text to clipboard</button>
-                </div>
-            </div>
-
-        </div>
     </main>
     <script>window.addEventListener("load", fetchListPlayers());</script>
 </body>

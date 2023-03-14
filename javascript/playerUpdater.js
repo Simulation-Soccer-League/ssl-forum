@@ -90,7 +90,15 @@ function updateOutput() {
     const earned = document.querySelector("#spentTPE").innerText
     const bank = document.querySelector("#remainingTPE").innerText
 
-    let updateText = `[b]Earned TPE:[/b] ${total}
+    var numRows = getRowsInUpdateTable();
+    var updateString = "";
+
+    for (var i = 1; i < numRows; i++) {
+        updateString += "[url=" + $('#' + i + 'link').val() + "]" + '+ ' + $('#' + i + 'uncappedTpe').val() + ' TPE - ' + $('#' + i + 'task').val() + "[/url]\n";
+    }
+
+    let updateText = `${updateString}
+[b]Earned TPE:[/b] ${total}
 [b]Used TPE:[/b] ${earned} 
 [b]Banked TPE:[/b] ${bank}
 
@@ -179,6 +187,42 @@ function copyText() {
     // alert("Copied the text");
 }
 
+function updateEarnedTPE() {
+    const allEarnings = document.querySelectorAll("[id$='uncappedTpe']")
+    const earnedTPE = document.querySelector("#earnedTPE")
+
+    var sum = 0
+
+    allEarnings.forEach(element => sum += parseInt(element.value))
+
+    earnedTPE.value = sum
+
+    attributeCost()
+}
+
+function addRow() {
+    var numRows = getRowsInUpdateTable();
+    var newRow = '<tr>';
+    newRow += '<td>' + numRows + '</td>';
+    newRow += '<td><input id="' + numRows + 'task" type="Text" style="width: 96%;"></td>';
+    newRow += '<td><input id="' + numRows + 'link" type="Text" style="width: 96%;"></td>';
+    /* newRow += '<td><input class="narrow" id="' + numRows + 'cappedTpe" type="Text" onchange="updateTpeAvailable();" value="0"></td>'; */
+    newRow += '<td><input class="narrow" id="' + numRows + 'uncappedTpe" type="number" onchange="updateEarnedTPE();" value="0"></td>'
+    newRow += '</tr>';
+    $('#updatesTable tr:last').after(newRow);
+}
+
+function removeRow() {
+    var numRows = $('#updatesTable tr').length;
+    if (numRows <= 2) {
+        return;
+    }
+    $('#updatesTable tr:last').remove();
+}
+
+function getRowsInUpdateTable() {
+    return $('#updatesTable tr').length;
+}
 
 $('select').on('change', function () {
     HandleDropdowns($(this));
