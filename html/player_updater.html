@@ -1,6 +1,18 @@
 <body>
     <main>
-        <h1>Update your player</h1>
+        <h1>Player Update Assistant</h1>
+
+        <h3>How to use the update assistant?</h3>
+        <p>The Update Assistant automatically selects your player if you are logged in to the forum. You can select your
+            player in the drop-down menu if it is not done automatically.</p>
+        <p>To get a full update output, you can enter in your unclaimed earnings in the list at the top of the page,
+            clicking on '+ Row' to add more rows in case you need them. The Earned TPE will automatically sum based on
+            your earned TPE for each claim. If you do not want to use the 'link collector' you can enter in the total
+            earned TPE manually.</p>
+        <p>Finally after all your earned TPE have been added, you may start to increase your attributes. Once you are
+            finished you can click on 'Summarize your update' and a popup will appear with your formatted update text.
+            Clicking on 'Copy text' will copy the text to your cliboard which you then can paste as a new post in your
+            update thread.</p>
 
         <!-- General Information for Player Creation -->
         <form id="playerUpdater">
@@ -15,7 +27,6 @@
                         </div>
                     </div>
                 </div>
-                <br>
                 <div class="col-60">
                     <div style="float:left;padding-right:3px;">
                         <button class="cssbutton" type="button" name="addRowButton" onclick="addRow();">+ Row</button>
@@ -44,6 +55,7 @@
                 </div>
             </div>
             <br>
+            <hr>
             <div class="tpeSum">
                 <table>
                     <tr>
