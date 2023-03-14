@@ -127,7 +127,19 @@ function updateOutput() {
 
             })
 
-            document.querySelector("#CODE").innerHTML = updateText
+
+            Swal.fire({
+                title: 'Update Summarized!',
+                html: '<pre>' + updateText + '</pre>',
+                icon: 'success',
+                confirmButtonText: 'Copy text'
+            }).then(function (isConfirm) {
+                if (isConfirm) {
+                    copyText()
+                } else {
+                    // DO NOTHING
+                }
+            })
         })
 
     return false;
@@ -151,19 +163,6 @@ function submitCheck() {
         document.querySelector("#remainingTPE").style = "border: inherit;"
 
         updateOutput()
-
-        Swal.fire({
-            title: 'Update Summarized!',
-            html: '<pre>' + document.querySelector("#CODE").innerHTML + '</pre>',
-            icon: 'success',
-            confirmButtonText: 'Copy text'
-        }).then(function (isConfirm) {
-            if (isConfirm) {
-                copyText()
-            } else {
-                // DO NOTHING
-            }
-        })
     }
 }
 

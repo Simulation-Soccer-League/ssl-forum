@@ -401,7 +401,18 @@ Trait 2: ${allEntries.trait2}`
         textOutput += addition
     }
 
-    document.querySelector("#CODE").innerHTML = textOutput
+    Swal.fire({
+        title: 'Build Complete!',
+        html: '<pre>' + textOutput + '</pre>',
+        icon: 'success',
+        confirmButtonText: 'Copy text'
+    }).then(function (isConfirm) {
+        if (isConfirm) {
+            copyText()
+        } else {
+            // DO NOTHING
+        }
+    })
 
     return false;
 }
@@ -445,18 +456,6 @@ function submitCheck() {
 
         submitForm(document.querySelector("#playerCreator"))
 
-        Swal.fire({
-            title: 'Build Complete!',
-            html: '<pre>' + document.querySelector("#CODE").innerHTML + '</pre>',
-            icon: 'success',
-            confirmButtonText: 'Copy text'
-        }).then(function (isConfirm) {
-            if (isConfirm) {
-                copyText()
-            } else {
-                // DO NOTHING
-            }
-        })
     }
 }
 
