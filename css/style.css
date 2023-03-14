@@ -1479,6 +1479,13 @@ table[class="postTable"] {
     color: var(--lightText);
 }
 
+.col-40 {
+    width: 40%;
+}
+
+.col-60 {
+    width: 60%;
+}
 
 /***
 Profile pages 
