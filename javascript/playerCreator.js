@@ -158,9 +158,9 @@ function attributeHighlighter() {
 
 // Checks input height/weight if it fits within the min/max limits
 function inputCheck(element) {
-    if (element.value > element.max) {
+    if (parseInt(element.value) > parseInt(element.max)) {
         element.value = element.max
-    } else if (element.value < element.min) {
+    } else if (parseInt(element.value) < parseInt(element.min)) {
         element.value = element.min
     } else {
         // Do nothing

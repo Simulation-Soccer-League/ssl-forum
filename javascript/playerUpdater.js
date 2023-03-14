@@ -47,9 +47,9 @@ function updateForm(position) {
 
 // Checks if numeric input falls within min/max
 function inputCheck(element) {
-    if (element.value > element.max) {
+    if (parseInt(element.value) > parseInt(element.max)) {
         element.value = element.max
-    } else if (element.value < element.min) {
+    } else if (parseInt(element.value) < parseInt(element.min)) {
         element.value = element.min
     } else {
         // Do nothing
