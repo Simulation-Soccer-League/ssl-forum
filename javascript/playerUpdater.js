@@ -147,7 +147,12 @@ function submitCheck() {
 
         updateOutput()
 
-        document.querySelector("#popupButton").click()
+        Swal.fire({
+            title: 'Build Complete!',
+            text: document.querySelector("#CODE").innerHTML,
+            icon: 'success',
+            confirmButtonText: 'Copy text'
+        })
     }
 }
 
