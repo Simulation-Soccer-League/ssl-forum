@@ -1490,7 +1490,8 @@ table[class="postTable"] {
 }
 
 .narrow {
-    width: 10%;
+    min-width: 25%;
+    max-width: 25%;
 }
 
 /***
