@@ -45,7 +45,7 @@ function updateForm(position) {
     }
 }
 
-// Checks if input is within set limits.
+// Checks if numeric input falls within min/max
 function inputCheck(element) {
     if (element.value > element.max) {
         element.value = element.max
@@ -56,7 +56,6 @@ function inputCheck(element) {
     }
 }
 
-
 // Calculates the cost of an attribute for the attribute tables
 function attributeCost(control) {
     // console.log("#cost" + toCapital(control.id))
@@ -64,7 +63,7 @@ function attributeCost(control) {
     if (control == undefined) {
         // Do nothing
     } else if (control.value < 5 | control.value > 20 | control.id == "") {
-        inputCheck(control)
+        // Do nothing
     } else {
         document.querySelector("#cost" + toCapital(control.id)).innerText = costArray[control.value]
     }
