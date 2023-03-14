@@ -232,7 +232,7 @@ function attributeCost(control) {
     if (control == undefined) {
         // Do nothing
     } else if (control.value < 5 | control.value > 20 | control.id == "") {
-        // Do nothing
+        inputCheck(control)
     } else {
         document.querySelector("#cost" + toCapital(control.id)).innerText = costArray[control.value]
     }
