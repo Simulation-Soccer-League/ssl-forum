@@ -1481,10 +1481,16 @@ table[class="postTable"] {
 
 .col-40 {
     width: 40%;
+    float: left;
 }
 
 .col-60 {
     width: 60%;
+    float: left;
+}
+
+.narrow {
+    width: 10%;
 }
 
 /***
