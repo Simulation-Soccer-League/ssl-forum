@@ -13,14 +13,49 @@
         </p>
         <hr>
         <div class="playerInfo">
-            <div style="width:50%">
+            <div style="width:50%; float: left;">
                 <span id="playerName"></span>
             </div>
-            <div style="width:50%">
+            <div style="width:50%; float: left;">
                 <span id="playerBank"></span>
             </div>
         </div>
+        <hr>
+        <div class="storePurchases">
+            <div class="rookiePurchase">
+
+            </div>
+            <div class="trainingPurchase">
+                <select name="training" id="training">
+                    <option value="1500000">Sunday League (1 TPE)</option>
+                    <option value="3000000">Amateur League (4 TPE)</option>
+                    <option value="4500000">Professional League (8 TPE)</option>
+                    <option value="5500000">Superstar League (12 TPE)</option>
+                    <option value="7500000">World Class League (18 TPE)</option>
+                </select>
+            </div>
+            <div class="addTraitPurchase">
+
+            </div>
+            <div class="removeTraitPurchase">
+
+            </div>
+            <div class="footPurchase">
+
+            </div>
+            <div class="positionPurchase">
+
+            </div>
+        </div>
+        <div class="purchaseSubmit">
+            <p>
+                <button type="button" class="cssbutton" id="summaryButton" onclick="submitCheck()">
+                    Summarize your purchase
+                </button>
+                <button type="button" class="cssbutton" id="resetButton" onclick="fetchPlayerSelected()">Reset the
+                    update</button>
+            </p>
+        </div>
 
     </main>
-    <script>window.addEventListener("load", fetchPlayer());</script>
 </body>
