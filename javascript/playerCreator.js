@@ -408,7 +408,8 @@ Trait 2: ${allEntries.trait2}`
         confirmButtonText: 'Copy text'
     }).then(function (isConfirm) {
         if (isConfirm) {
-            copyText()
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(textOutput);
         } else {
             // DO NOTHING
         }
@@ -459,16 +460,7 @@ function submitCheck() {
     }
 }
 
-function copyText() {
-    // Get the text field
-    var copyText = document.querySelector("#CODE");
 
-    // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText.innerText);
-
-    // Alert the copied text
-    // alert("Copied the text");
-}
 
 
 $('select').on('change', function () {
