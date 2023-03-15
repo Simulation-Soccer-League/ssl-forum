@@ -14,12 +14,12 @@ async function fetchPlayer() {
 
             const traitOption = document.querySelector("#removeTrait1")
 
-            const ownedTraits = data[0].All.Traits.split(" \\ ")
+            const ownedTraits = data[0]['All Traits'].split(" \\ ")
 
             for (const trait in ownedTraits) {
-                // console.log(`${key}: ${jsData[key]}`)
+                console.log(ownedTraits[trait])
                 const option = document.createElement("option");
-                option.text = trait;
+                option.text = ownedTraits[trait];
                 option.value = "500000";
                 traitOption.appendChild(option)
             }
