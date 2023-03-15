@@ -23,18 +23,47 @@
         <hr>
         <div class="storePurchases">
             <div class="rookiePurchase">
-
+                <h4>Tookie Task 5</h4>
+                <p>To complete the fifth Rookie Task you will make a <b>free rookie purchase</b> following the Player
+                    Store procedure.</p>
+                <select name="rookie" id="rookie" onchange="updateCost(this)">
+                    <option value="0">Select the task</option>
+                    <option value="0">Rookie Task 5</option>
+                </select>
+                <span id="rookieCost"></span>
             </div>
             <div class="trainingPurchase">
-                <p>You can purchase individual training in five different levels:</p>
-                <select name="training" id="training" onchange="updateCost(this)">
-                    <option value="1500000">Sunday League (1 TPE)</option>
-                    <option value="3000000">Amateur League (4 TPE)</option>
-                    <option value="4500000">Professional League (8 TPE)</option>
-                    <option value="5500000">Superstar League (12 TPE)</option>
-                    <option value="7500000">World Class League (18 TPE)</option>
-                </select>
-                <span id="trainingCost"></span>
+                <h4>Individual training</h4>
+                <p>You can purchase individual training in five different levels. There is no limit to the amount of
+                    individual trainings you can purchase during a season.</p>
+                <table id="trainingTable" style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <th>#</th>
+                            <th>Purchase</th>
+                            <th>Cost</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <select name="training" id="1training" onchange="updateCost(this)">
+                                    <option value="0">Select a level of training</option>
+                                    <option value="1500000">Sunday League (1 TPE)</option>
+                                    <option value="3000000">Amateur League (4 TPE)</option>
+                                    <option value="4500000">Professional League (8 TPE)</option>
+                                    <option value="5500000">Superstar League (12 TPE)</option>
+                                    <option value="7500000">World Class League (18 TPE)</option>
+                                </select>
+                            </td>
+                            <td>
+                                <span id="1trainingCost"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
             </div>
             <div class="addTraitPurchase">
 
