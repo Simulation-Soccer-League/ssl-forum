@@ -12,6 +12,18 @@ async function fetchPlayer() {
 
             document.querySelector("#playerBank").innerText = data[0].Name
 
+            const traitOption = document.querySelector("#removeTrait1")
+
+            const ownedTraits = data[0].All.Traits.split(" \\ ")
+
+            for (const trait in ownedTraits) {
+                // console.log(`${key}: ${jsData[key]}`)
+                const option = document.createElement("option");
+                option.text = trait;
+                option.value = "500000";
+                traitOption.appendChild(option)
+            }
+
         });
 
 }

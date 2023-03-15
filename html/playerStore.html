@@ -86,7 +86,7 @@
                     The traits are separated into seven different types of traits depending on what part of the play
                     they affect. Note that some of the traits will negatively impact your player if their attributes
                     does not match.</p>
-                <table id="trainingTable" style="width: 50%;">
+                <table id="traitTable" style="width: 50%;">
                     <tbody>
                         <tr>
                             <th>#</th>
@@ -96,7 +96,7 @@
                         <tr>
                             <td>1</td>
                             <td>
-                                <select name="training" id="training1" onchange="updateCost(this)" multiple>
+                                <select name="trait" id="trait1" onchange="updateCost(this)" multiple>
                                     <optgroup label="Movement - On the Ball">
                                         <option value="3000000">Cuts Inside From Both Wings</option>
                                         <option value="3000000">Knocks Ball Past Opponent</option>
@@ -165,7 +165,28 @@
                 </table>
             </div>
             <div class="removeTraitPurchase">
+                <h4>Remove a current trait</h4>
+                <p>Removing a player trait costs $500 000.</p>
+                <table id="traitTable" style="width: 50%;">
+                    <tbody>
+                        <tr>
+                            <th>#</th>
+                            <th>Purchase</th>
+                            <th>Cost</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <select name="removeTrait" id="removeTrait1" onchange="updateCost(this)" multiple>
 
+                                </select>
+                            </td>
+                            <td>
+                                <span id="removeTrait1Cost"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="footPurchase">
 
