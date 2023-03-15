@@ -155,7 +155,7 @@ function updateOutput() {
             }).then(function (isConfirm) {
                 if (isConfirm) {
                     // Copy the text inside the text field
-                    navigator.clipboard.writeText(textOutput);
+                    navigator.clipboard.writeText(updateText);
                 } else {
                     // DO NOTHING
                 }
