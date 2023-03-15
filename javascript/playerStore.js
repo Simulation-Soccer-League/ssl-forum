@@ -15,3 +15,10 @@ async function fetchPlayer() {
         });
 
 }
+
+
+function updateCost(element) {
+    var cost = document.querySelector('#' + element.id + 'Cost')
+
+    cost.innerText = element.value
+}

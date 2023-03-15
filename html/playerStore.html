@@ -26,13 +26,15 @@
 
             </div>
             <div class="trainingPurchase">
-                <select name="training" id="training">
+                <p>You can purchase individual training in five different levels:</p>
+                <select name="training" id="training" onchange="updateCost(this)">
                     <option value="1500000">Sunday League (1 TPE)</option>
                     <option value="3000000">Amateur League (4 TPE)</option>
                     <option value="4500000">Professional League (8 TPE)</option>
                     <option value="5500000">Superstar League (12 TPE)</option>
                     <option value="7500000">World Class League (18 TPE)</option>
                 </select>
+                <span id="trainingCost"></span>
             </div>
             <div class="addTraitPurchase">
 
