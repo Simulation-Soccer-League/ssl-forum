@@ -546,8 +546,14 @@ nav li a:hover {
 }
 
 /* Search results */
-#search-topics td[colspan="2"] {
+#search-topics .row4 {
     max-width: 400px;
+    min-width: 100px;
+}
+
+#search-topics .topicmacros {
+    padding: 0px;
+    max-width: 20px;
 }
 
 #keywords {
