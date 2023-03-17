@@ -1633,6 +1633,11 @@ td>.attributeCost,
 
 
 /* Player Store Style */
+.storePurchases table {
+    width: 800px;
+    margin: auto 0;
+}
+
 .storePurchases td {
     min-width: 10px;
     max-width: 15vh;
