@@ -1630,3 +1630,9 @@ td>.attributeCost,
     padding: inherit;
     text-align: center;
 }
+
+
+/* Player Store Style */
+.storePurchases table {
+    align-content: center;
+}
