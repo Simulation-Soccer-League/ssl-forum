@@ -1636,3 +1636,8 @@ td>.attributeCost,
 .storePurchases table {
     align-content: center;
 }
+
+.storePurchases td {
+    min-width: 20px;
+    max-width: 10vh;
+}
