@@ -545,6 +545,10 @@ nav li a:hover {
     padding-top: 6px;
 }
 
+/* Search results */
+#search-topics td[colspan="2"] {
+    max-width: 400px;
+}
 
 #keywords {
     font-family: "Gothic", sans-serif;
