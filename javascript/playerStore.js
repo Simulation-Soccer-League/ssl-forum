@@ -34,3 +34,33 @@ function updateCost(element) {
 
     cost.innerText = element.value
 }
+
+
+
+function addRow(element) {
+    const table = document.querySelector(element.id).parentNode.querySelector("table[id$='Table']")
+
+
+
+    var numRows = getRowsInUpdateTable();
+    var newRow = '<tr>';
+    newRow += '<td>' + numRows + '</td>';
+    newRow += '<td><input id="' + numRows + 'task" type="Text" style="width: 96%;"></td>';
+    newRow += '<td><input id="' + numRows + 'link" type="Text" style="width: 96%;"></td>';
+    /* newRow += '<td><input class="narrow" id="' + numRows + 'cappedTpe" type="Text" onchange="updateTpeAvailable();" value="0"></td>'; */
+    newRow += '<td><input class="narrow" id="' + numRows + 'uncappedTpe" type="number" onchange="updateEarnedTPE();" value="0"></td>'
+    newRow += '</tr>';
+    $('#updatesTable tr:last').after(newRow);
+}
+
+function removeRow() {
+    var numRows = $('#updatesTable tr').length;
+    if (numRows <= 2) {
+        return;
+    }
+    $('#updatesTable tr:last').remove();
+}
+
+function getRowsInUpdateTable() {
+    return $('#updatesTable tr').length;
+}
