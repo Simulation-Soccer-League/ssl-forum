@@ -38,29 +38,39 @@ function updateCost(element) {
 
 
 function addRow(element) {
-    const table = document.querySelector(element.id).parentNode.querySelector("table[id$='Table']")
+    const table = element.parentNode.parentNode.querySelector("table[id$='Table']")
 
+    var numRows = getRowsInUpdateTable(table);
 
+    var newRow = table.rows[1].cloneNode(true)
 
-    var numRows = getRowsInUpdateTable();
-    var newRow = '<tr>';
-    newRow += '<td>' + numRows + '</td>';
-    newRow += '<td><input id="' + numRows + 'task" type="Text" style="width: 96%;"></td>';
-    newRow += '<td><input id="' + numRows + 'link" type="Text" style="width: 96%;"></td>';
-    /* newRow += '<td><input class="narrow" id="' + numRows + 'cappedTpe" type="Text" onchange="updateTpeAvailable();" value="0"></td>'; */
-    newRow += '<td><input class="narrow" id="' + numRows + 'uncappedTpe" type="number" onchange="updateEarnedTPE();" value="0"></td>'
-    newRow += '</tr>';
-    $('#updatesTable tr:last').after(newRow);
+    newRow.querySelector("td").innerHTML = numRows
+
+    var ids = newRow.querySelectorAll('[id*="1"]')
+
+    for (var i = 0; i < ids.length; i++) {
+        var oldId = ids[i].getAttribute('id');
+        var newId = oldId.replace(/1/g, numRows);
+        ids[i].setAttribute('id', newId);
+    }
+
+    table.append(newRow)
+
 }
 
-function removeRow() {
-    var numRows = $('#updatesTable tr').length;
+function removeRow(element) {
+    const table = element.parentNode.parentNode.querySelector("table[id$='Table']")
+
+    var numRows = getRowsInUpdateTable(table);
+
     if (numRows <= 2) {
         return;
+    } else {
+        table.deleteRow(-1)
     }
-    $('#updatesTable tr:last').remove();
+
 }
 
-function getRowsInUpdateTable() {
-    return $('#updatesTable tr').length;
+function getRowsInUpdateTable(element) {
+    return $('#' + element.id + ' tr').length;
 }
