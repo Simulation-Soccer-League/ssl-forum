@@ -98,7 +98,8 @@ function updateOutput() {
     const playerData = fetch(url)
 
     const total = document.querySelector("#currentTPE").innerText
-    const earned = document.querySelector("#spentTPE").innerText
+    const earned = document.querySelector("#earnedTPE").value
+    const spent = document.querySelector("#spentTPE").innerText
     const bank = document.querySelector("#remainingTPE").innerText
 
     var numRows = getRowsInUpdateTable();
@@ -109,8 +110,8 @@ function updateOutput() {
     }
 
     let updateText = `${updateString}
-[b]Earned TPE:[/b] ${total}
-[b]Used TPE:[/b] ${earned} 
+[b]Earned TPE:[/b] ${total} + ${earned} = ${parseInt(total) + parseInt(earned)}
+[b]Used TPE:[/b] ${spent} 
 [b]Banked TPE:[/b] ${bank}
 
 `
