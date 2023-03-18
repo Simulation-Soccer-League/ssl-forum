@@ -1634,7 +1634,6 @@ td>.attributeCost,
 
 /* Player Store Style */
 .storePurchases table {
-    width: 800px;
     margin: 0 auto;
     display: inline;
 }
@@ -1648,6 +1647,14 @@ td>.attributeCost,
     max-width: 5px;
 }
 
+div[class$='Purchase'] {
+    display: flex;
+}
+
 .changeRows {
-    display: inline-block;
+    display: inline;
+}
+
+.changeRows button {
+    display: block;
 }
