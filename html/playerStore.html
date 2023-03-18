@@ -26,65 +26,70 @@
                 <h4>Rookie Task 5</h4>
                 <p>To complete the fifth Rookie Task you will make a <b>free rookie purchase</b> following the Player
                     Store procedure.</p>
-                <div class="col-60">
-                    <table id="rookieTable">
-                        <tbody>
-                            <tr>
-                                <th>#</th>
-                                <th>Purchase</th>
-                                <th>Cost</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>
-                                    <select name="rookie" id="rookie1" onchange="updateCost(this)">
-                                        <option value="0">Select the task</option>
-                                        <option value="0">Rookie Task 5</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <span id="rookie1Cost"></span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="cart">
+                    <div class="col-60">
+                        <table id="rookieTable">
+                            <tbody>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Purchase</th>
+                                    <th>Cost</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <select name="rookie" id="rookie1" onchange="updateCost(this)">
+                                            <option value="0">Select the task</option>
+                                            <option value="0">Rookie Task 5</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <span id="rookie1Cost"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="trainingPurchase">
                 <h4>Individual training</h4>
                 <p>You can purchase individual training in five different levels. There is no limit to the amount of
                     individual trainings you can purchase during a season.</p>
-                <div class="changeRows col-40">
-                    <button class="cssbutton" type="button" name="addRowButton" onclick="addRow(this);">+ Row</button>
-                    <button class="cssbutton" type="button" name="deleteRowButton" onclick="removeRow(this);">-
-                        Row</button>
-                </div>
-                <div class="col-60">
-                    <table id="trainingTable">
-                        <tbody>
-                            <tr>
-                                <th>#</th>
-                                <th>Purchase</th>
-                                <th>Cost</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>
-                                    <select name="training" id="training1" onchange="updateCost(this)">
-                                        <option value="0">Select a level of training</option>
-                                        <option value="1500000">Sunday League (1 TPE)</option>
-                                        <option value="3000000">Amateur League (4 TPE)</option>
-                                        <option value="4500000">Professional League (8 TPE)</option>
-                                        <option value="5500000">Superstar League (12 TPE)</option>
-                                        <option value="7500000">World Class League (18 TPE)</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <span id="training1Cost"></span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="cart">
+                    <div class="changeRows col-40">
+                        <button class="cssbutton" type="button" name="addRowButton" onclick="addRow(this);">+
+                            Row</button>
+                        <button class="cssbutton" type="button" name="deleteRowButton" onclick="removeRow(this);">-
+                            Row</button>
+                    </div>
+                    <div class="col-60">
+                        <table id="trainingTable">
+                            <tbody>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Purchase</th>
+                                    <th>Cost</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <select name="training" id="training1" onchange="updateCost(this)">
+                                            <option value="0">Select a level of training</option>
+                                            <option value="1500000">Sunday League (1 TPE)</option>
+                                            <option value="3000000">Amateur League (4 TPE)</option>
+                                            <option value="4500000">Professional League (8 TPE)</option>
+                                            <option value="5500000">Superstar League (12 TPE)</option>
+                                            <option value="7500000">World Class League (18 TPE)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <span id="training1Cost"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="addTraitPurchase">
@@ -95,122 +100,128 @@
                     The traits are separated into seven different types of traits depending on what part of the play
                     they affect. Note that some of the traits will negatively impact your player if their attributes
                     does not match.</p>
-                <div class="changeRows">
-                    <button class="cssbutton" type="button" name="addRowButton" onclick="addRow(this);">+ Row</button>
-                    <button class="cssbutton" type="button" name="deleteRowButton" onclick="removeRow(this);">-
-                        Row</button>
-                </div>
-                <div class="col-60">
-                    <table id="traitTable">
-                        <tbody>
-                            <tr>
-                                <th>#</th>
-                                <th>Purchase</th>
-                                <th>Cost</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>
-                                    <select name="trait" id="trait1" onchange="updateCost(this)">
-                                        <option value="0">Select a trait</option>
-                                        <optgroup label="Movement - On the Ball">
-                                            <option value="3000000">Cuts Inside From Both Wings</option>
-                                            <option value="3000000">Knocks Ball Past Opponent</option>
-                                            <option value="3000000">Runs With Ball Rarely</option>
-                                            <option value="3000000">Runs With Ball Often</option>
-                                            <option value="3000000">Runs With Ball Down Left</option>
-                                            <option value="3000000">Runs With Ball Down Right</option>
-                                            <option value="3000000">Runs With Ball Through Centre</option>
-                                            <option value="3000000">Stops Play</option>
-                                        </optgroup>
-                                        <optgroup label="Movement - Off the Ball">
-                                            <option value="3000000">Arrives Late In Opponent's Area</option>
-                                            <option value="3000000">Comes Deep To Get Ball</option>
-                                            <option value="3000000">Gets Forward Whenever Possible</option>
-                                            <option value="3000000">Gets Into Opposition Area</option>
-                                            <option value="3000000">Hugs Line</option>
-                                            <option value="3000000">Likes To Try To Beat Offside Trap</option>
-                                            <option value="3000000">Moves Into Channels</option>
-                                            <option value="3000000">Plays One-Twos</option>
-                                            <option value="3000000">Plays With Back To Goal</option>
-                                            <option value="3000000">Does Not Move Into Channels</option>
-                                            <option value="3000000">Stays Back At All Times</option>
-                                        </optgroup>
-                                        <optgroup label="Passing">
-                                            <option value="3000000">Dictates Tempo</option>
-                                            <option value="3000000">Likes To Switch Ball To Other Flank</option>
-                                            <option value="3000000">Looks For Pass Rather Than Attempting To Score
-                                            </option>
-                                            <option value="3000000">Plays No Through Balls</option>
-                                            <option value="3000000">Plays Short Simple Passes</option>
-                                            <option value="3000000">Tries Killer Balls Often</option>
-                                            <option value="3000000">Tries Long Range Passes</option>
-                                        </optgroup>
-                                        <optgroup label="Finishing">
-                                            <option value="3000000">Attempts Overhead Kicks</option>
-                                            <option value="3000000">Hits Free Kicks With Power</option>
-                                            <option value="3000000">Likes To Lob Keeper</option>
-                                            <option value="3000000">Likes To Round Keeper</option>
-                                            <option value="3000000">Places Shots</option>
-                                            <option value="3000000">Refrains From Taking Long Shots</option>
-                                            <option value="3000000">Shoots From Distance</option>
-                                            <option value="3000000">Shoots With Power</option>
-                                            <option value="3000000">Tries First Time Shots</option>
-                                            <option value="3000000">Tries Long Range Free Kicks</option>
-                                        </optgroup>
-                                        <optgroup label="Discipline">
-                                            <option value="3000000">Argues With Officials</option>
-                                        </optgroup>
-                                        <optgroup label="Defending">
-                                            <option value="3000000">Dives Into Tackles</option>
-                                            <option value="3000000">Does Not Dive Into Tackles</option>
-                                            <option value="3000000">Marks Opponent Tightly</option>
-                                        </optgroup>
-                                        <optgroup label="Technique">
-                                            <option value="3000000">Avoids Using Weaker Foot</option>
-                                            <option value="3000000">Curls Ball</option>
-                                            <option value="3000000">Possess Long Flat Throw</option>
-                                            <option value="3000000">Tries To Play Way Out Of Trouble</option>
-                                        </optgroup>
-                                    </select>
-                                </td>
-                                <td>
-                                    <span id="trait1Cost"></span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="cart">
+                    <div class="changeRows">
+                        <button class="cssbutton" type="button" name="addRowButton" onclick="addRow(this);">+
+                            Row</button>
+                        <button class="cssbutton" type="button" name="deleteRowButton" onclick="removeRow(this);">-
+                            Row</button>
+                    </div>
+                    <div class="col-60">
+                        <table id="traitTable">
+                            <tbody>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Purchase</th>
+                                    <th>Cost</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <select name="trait" id="trait1" onchange="updateCost(this)">
+                                            <option value="0">Select a trait</option>
+                                            <optgroup label="Movement - On the Ball">
+                                                <option value="3000000">Cuts Inside From Both Wings</option>
+                                                <option value="3000000">Knocks Ball Past Opponent</option>
+                                                <option value="3000000">Runs With Ball Rarely</option>
+                                                <option value="3000000">Runs With Ball Often</option>
+                                                <option value="3000000">Runs With Ball Down Left</option>
+                                                <option value="3000000">Runs With Ball Down Right</option>
+                                                <option value="3000000">Runs With Ball Through Centre</option>
+                                                <option value="3000000">Stops Play</option>
+                                            </optgroup>
+                                            <optgroup label="Movement - Off the Ball">
+                                                <option value="3000000">Arrives Late In Opponent's Area</option>
+                                                <option value="3000000">Comes Deep To Get Ball</option>
+                                                <option value="3000000">Gets Forward Whenever Possible</option>
+                                                <option value="3000000">Gets Into Opposition Area</option>
+                                                <option value="3000000">Hugs Line</option>
+                                                <option value="3000000">Likes To Try To Beat Offside Trap</option>
+                                                <option value="3000000">Moves Into Channels</option>
+                                                <option value="3000000">Plays One-Twos</option>
+                                                <option value="3000000">Plays With Back To Goal</option>
+                                                <option value="3000000">Does Not Move Into Channels</option>
+                                                <option value="3000000">Stays Back At All Times</option>
+                                            </optgroup>
+                                            <optgroup label="Passing">
+                                                <option value="3000000">Dictates Tempo</option>
+                                                <option value="3000000">Likes To Switch Ball To Other Flank</option>
+                                                <option value="3000000">Looks For Pass Rather Than Attempting To Score
+                                                </option>
+                                                <option value="3000000">Plays No Through Balls</option>
+                                                <option value="3000000">Plays Short Simple Passes</option>
+                                                <option value="3000000">Tries Killer Balls Often</option>
+                                                <option value="3000000">Tries Long Range Passes</option>
+                                            </optgroup>
+                                            <optgroup label="Finishing">
+                                                <option value="3000000">Attempts Overhead Kicks</option>
+                                                <option value="3000000">Hits Free Kicks With Power</option>
+                                                <option value="3000000">Likes To Lob Keeper</option>
+                                                <option value="3000000">Likes To Round Keeper</option>
+                                                <option value="3000000">Places Shots</option>
+                                                <option value="3000000">Refrains From Taking Long Shots</option>
+                                                <option value="3000000">Shoots From Distance</option>
+                                                <option value="3000000">Shoots With Power</option>
+                                                <option value="3000000">Tries First Time Shots</option>
+                                                <option value="3000000">Tries Long Range Free Kicks</option>
+                                            </optgroup>
+                                            <optgroup label="Discipline">
+                                                <option value="3000000">Argues With Officials</option>
+                                            </optgroup>
+                                            <optgroup label="Defending">
+                                                <option value="3000000">Dives Into Tackles</option>
+                                                <option value="3000000">Does Not Dive Into Tackles</option>
+                                                <option value="3000000">Marks Opponent Tightly</option>
+                                            </optgroup>
+                                            <optgroup label="Technique">
+                                                <option value="3000000">Avoids Using Weaker Foot</option>
+                                                <option value="3000000">Curls Ball</option>
+                                                <option value="3000000">Possess Long Flat Throw</option>
+                                                <option value="3000000">Tries To Play Way Out Of Trouble</option>
+                                            </optgroup>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <span id="trait1Cost"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="removeTraitPurchase">
                 <h4>Remove a current trait</h4>
                 <p>Removing a player trait costs $500 000.</p>
-                <div class="changeRows">
-                    <button class="cssbutton" type="button" name="addRowButton" onclick="addRow(this);">+ Row</button>
-                    <button class="cssbutton" type="button" name="deleteRowButton" onclick="removeRow(this);">-
-                        Row</button>
-                </div>
-                <div class="col-60">
-                    <table id="traitTable">
-                        <tbody>
-                            <tr>
-                                <th>#</th>
-                                <th>Purchase</th>
-                                <th>Cost</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>
-                                    <select name="removeTrait" id="removeTrait1" onchange="updateCost(this)">
-                                        <option value="0">Select a trait to remove</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <span id="removeTrait1Cost"></span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="cart">
+                    <div class="changeRows">
+                        <button class="cssbutton" type="button" name="addRowButton" onclick="addRow(this);">+
+                            Row</button>
+                        <button class="cssbutton" type="button" name="deleteRowButton" onclick="removeRow(this);">-
+                            Row</button>
+                    </div>
+                    <div class="col-60">
+                        <table id="traitTable">
+                            <tbody>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Purchase</th>
+                                    <th>Cost</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <select name="removeTrait" id="removeTrait1" onchange="updateCost(this)">
+                                            <option value="0">Select a trait to remove</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <span id="removeTrait1Cost"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="footPurchase">
