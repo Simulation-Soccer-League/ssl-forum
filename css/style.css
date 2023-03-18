@@ -1636,13 +1636,18 @@ td>.attributeCost,
 .storePurchases table {
     width: 800px;
     margin: 0 auto;
+    display: inline;
 }
 
 .storePurchases h4 {
-    margin: 0 auto;
+    text-align: center;
 }
 
 .storePurchases td {
     min-width: 5px;
     max-width: 5px;
+}
+
+.changeRows {
+    display: inline-block;
 }
