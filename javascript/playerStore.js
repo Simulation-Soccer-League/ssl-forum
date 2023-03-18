@@ -10,19 +10,33 @@ async function fetchPlayer() {
             // data contains in its [0] index, the javascript object with all information
             document.querySelector("#playerName").innerText = data[0].Name
 
-            document.querySelector("#playerBank").innerText = data[0].Name
-
             const traitOption = document.querySelector("#removeTrait1")
 
             const ownedTraits = data[0]['All Traits'].split(" \\ ")
 
             for (const trait in ownedTraits) {
-                console.log(ownedTraits[trait])
+                // console.log(ownedTraits[trait])
                 const option = document.createElement("option");
                 option.text = ownedTraits[trait];
                 option.value = "500000";
                 traitOption.appendChild(option)
             }
+
+            const url = "https://api.simulationsoccer.com/ssl/getBankBalance?user=" + username
+
+            const bankData = fetch(url)
+
+            bankData
+                .then((response) => response.json())
+                .then((data) => {
+
+                    let number = parseFloat(data[0].Balance)
+
+                    document.querySelector("#playerBank").innerText = number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+                })
+
+
+
 
         });
 
@@ -35,7 +49,25 @@ function updateCost(element) {
     cost.innerText = element.value
 }
 
+function submitCheck() {
+    if (document.querySelector("#remainingTPE").innerText < 0) {
 
+        Swal.fire({
+            title: 'Too much TPE spent!',
+            text: 'You have spent more TPE on your player than you have earned.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        })
+
+        document.querySelector("#remainingTPE").style = "border: 2px solid red;"
+
+    } else {
+        console.log("Checked and building")
+        document.querySelector("#remainingTPE").style = "border: inherit;"
+
+        updateOutput()
+    }
+}
 
 function addRow(element) {
     const table = element.parentNode.parentNode.querySelector("table[id$='Table']")
