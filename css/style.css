@@ -1683,3 +1683,9 @@ td>.attributeCost,
 .changeRows button {
     display: block;
 }
+
+#playerName,
+#playerBank {
+    font-size: larger;
+    padding: 5px;
+}
