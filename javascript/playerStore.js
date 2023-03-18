@@ -49,21 +49,86 @@ function updateCost(element) {
     cost.innerText = element.value
 }
 
+
+// Function to gather the information from the form
+function updateOutput() {
+    const purchases = document.querySelectorAll("div[class$='Purchase'] table")
+
+    const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
+
+    const playerData = fetch(url)
+
+    playerData
+        .then((response) => response.json())
+        .then((data) => {
+            const baseString = `${data[0].Name} - ${username} - ${data[0].Team}`
+
+            let purchaseString = ""
+
+            purchases.forEach(element => {
+
+                console.log(element)
+                const items = element.querySelectorAll("select")
+
+                items.forEach(element => {
+                    let selectedIndex = element.selectedIndex;
+
+                    // Only writes if a purchase has been made.
+                    if (selectedIndex != 0) {
+                        purchaseString += `${baseString} - ${element.options[selectedIndex].innerText} - ${element.options[selectedIndex].value}
+`
+                    }
+                });
+            });
+
+            Swal.fire({
+                title: 'Purchase Summarized!',
+                html: '<pre>' + purchaseString + '</pre>',
+                icon: 'success',
+                confirmButtonText: 'Copy text'
+            }).then(function (isConfirm) {
+                if (isConfirm) {
+                    // Copy the text inside the text field
+                    navigator.clipboard.writeText(purchaseString);
+                } else {
+                    // DO NOTHING
+                }
+            })
+        })
+
+    return false;
+}
+
+
 function submitCheck() {
-    if (document.querySelector("#remainingTPE").innerText < 0) {
+    const balanceCurrency = document.querySelector("#playerBank").innerHTML
+
+    const balanceNumber = balanceCurrency.replace(/[^\d.-]/g, '');
+
+    const balance = parseFloat(balanceNumber)
+
+    const costs = document.querySelectorAll("span[id$='Cost']")
+
+    var sum = 0
+
+    costs.forEach(element => {
+        sum += parseInt(element.innerHTML)
+    });
+
+    console.log(balance)
+    console.log(sum)
+    console.log(balance - sum)
+
+    if (balance - sum < 0) {
 
         Swal.fire({
-            title: 'Too much TPE spent!',
-            text: 'You have spent more TPE on your player than you have earned.',
+            title: 'Too much money spent!',
+            text: 'You have spent more money on your purchase than you have in your bank.',
             icon: 'error',
             confirmButtonText: 'OK'
         })
-
-        document.querySelector("#remainingTPE").style = "border: 2px solid red;"
-
     } else {
-        console.log("Checked and building")
-        document.querySelector("#remainingTPE").style = "border: inherit;"
+        console.log("Checked and summarizing")
 
         updateOutput()
     }
