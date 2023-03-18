@@ -67,7 +67,7 @@ function updateOutput() {
 
             purchases.forEach(element => {
 
-                console.log(element)
+                // console.log(element)
                 const items = element.querySelectorAll("select")
 
                 items.forEach(element => {
@@ -75,8 +75,7 @@ function updateOutput() {
 
                     // Only writes if a purchase has been made.
                     if (selectedIndex != 0) {
-                        purchaseString += `${baseString} - ${element.options[selectedIndex].innerText} - ${element.options[selectedIndex].value}
-`
+                        purchaseString += `${baseString} - ${element.options[selectedIndex].innerText} - -${element.options[selectedIndex].value}\n`
                     }
                 });
             });
@@ -99,7 +98,6 @@ function updateOutput() {
     return false;
 }
 
-
 function submitCheck() {
     const balanceCurrency = document.querySelector("#playerBank").innerHTML
 
@@ -115,9 +113,9 @@ function submitCheck() {
         sum += parseInt(element.innerHTML)
     });
 
-    console.log(balance)
-    console.log(sum)
-    console.log(balance - sum)
+    // console.log(balance)
+    // console.log(sum)
+    // console.log(balance - sum)
 
     if (balance - sum < 0) {
 

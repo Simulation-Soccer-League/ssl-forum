@@ -1634,7 +1634,8 @@ main td {
 .attributeTable th,
 td>.attributeCost,
 #outfieldExtra,
-.attributeSubmit {
+.attributeSubmit,
+.purchaseSubmit {
     text-align: center;
 }
 
