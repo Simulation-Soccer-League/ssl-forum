@@ -72,5 +72,5 @@ function removeRow(element) {
 }
 
 function getRowsInUpdateTable(element) {
-    return $('#' + element.id + ' tr').length;
+    return document.querySelectorAll('#' + element.id + ' tr').length;
 }
