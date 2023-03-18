@@ -1654,8 +1654,7 @@ td>.attributeCost,
 
 /* Player Store Style */
 .storePurchases table {
-    margin: 0 auto;
-    display: inline;
+    width: inherit;
 }
 
 .storePurchases h4 {
