@@ -1036,6 +1036,7 @@ input[class="forminput"]:not([type="text"]):not([type="password"]):not([type="em
     padding: 3px;
     vertical-align: middle;
     background: var(--lightText);
+    color: var(--darkText);
     border: 1px solid var(--borderBackground);
 }
 
