@@ -1699,4 +1699,9 @@ td>.attributeCost,
 .updateScale table {
     text-align: center;
     border: 1px solid var(--borderColor);
+    margin: auto 0;
+}
+
+.updateScale table td {
+    border: 1px solid var(--borderColor);
 }
