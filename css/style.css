@@ -1691,3 +1691,12 @@ td>.attributeCost,
     font-size: x-large;
     padding: 5px;
 }
+
+.updateScale {
+    font-size: small;
+}
+
+.updateScale table {
+    text-align: center;
+    border: 1px solid var(--borderColor);
+}
