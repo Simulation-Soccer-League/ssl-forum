@@ -988,7 +988,7 @@
                                         position:</span></label>
                             </td>
                             <td>
-                                <select name="posPrim" id="positionPrimary" required>
+                                <select name="posPrim" id="positionPrimary" required onchange="HandleDropdowns(this)">
                                     <option value="">--- Select
                                         a primary position ---</option>
                                     <option value="ld">Left Defender</option>
@@ -1014,7 +1014,7 @@
                                         position:</span></label>
                             </td>
                             <td>
-                                <select name="posSec1" id="positionSecondary" required>
+                                <select name="posSec1" id="positionSecondary" required onchange="HandleDropdowns(this)">
                                     <option value="">--- Select a secondary position ---</option>
                                     <option value="ld">Left Defender</option>
                                     <option value="cd">Central Defender</option>
@@ -1039,7 +1039,7 @@
                                         position:</span></label>
                             </td>
                             <td>
-                                <select name="posSec2" id="positionTertiary" required>
+                                <select name="posSec2" id="positionTertiary" required onchange="HandleDropdowns(this)">
                                     <option value="">--- Select a secondary position ---</option>
                                     <option value="ld">Left Defender</option>
                                     <option value="cd">Central Defender</option>
@@ -1067,7 +1067,7 @@
                                 <label for="trait1">Select a trait:</label>
                             </td>
                             <td>
-                                <select name="trait1" id="trait1" required>
+                                <select name="trait1" id="trait1" required onchange="HandleDropdowns(this)">
                                     <option value="">--- Select
                                         a trait ---</option>
                                     <optgroup label="Movement - On the Ball">
@@ -1136,7 +1136,7 @@
                                 <label for="trait2">Select a trait:</label>
                             </td>
                             <td>
-                                <select name="trait2" id="trait2" required>
+                                <select name="trait2" id="trait2" required onchange="HandleDropdowns(this)">
                                     <option value="">--- Select
                                         a trait ---</option>
                                     <optgroup label="Movement - On the Ball">
