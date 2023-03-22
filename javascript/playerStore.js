@@ -170,6 +170,19 @@ async function fetchPlayer() {
             // data contains in its [0] index, the javascript object with all information
             document.querySelector("#playerName").innerText = data[0].Name
 
+            const url = "https://api.simulationsoccer.com/ssl/getBankBalance?user=" + username
+
+            const bankData = fetch(url)
+
+            bankData
+                .then((response) => response.json())
+                .then((data) => {
+
+                    let number = parseFloat(data[0].Balance)
+
+                    document.querySelector("#playerBank").innerText = number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+                })
+
             const traitOption = document.querySelector("#removeTrait1")
 
             const ownedTraits = data[0]['All Traits'].split(" \\ ")
@@ -183,38 +196,31 @@ async function fetchPlayer() {
                 option.value = "500000";
                 traitOption.appendChild(option)
 
-                const conflictTraits = traitMatrix[trait]
+                if (traitMatrix[trait] != undefined) {
+                    const conflictTraits = traitMatrix[trait]
 
-                allTraits.forEach(element => {
-                    var name = element.innerText
+                    allTraits.forEach(element => {
+                        var name = element.innerText
 
-                    // console.log(name)
+                        // console.log(name)
 
-                    if (name == "Select a trait") {
-                        // DO NOTHING
-                    } else {
-                        if (conflictTraits[name] == 1) {
-                            element.disabled = true
-                            // console.log("YES")
+                        if (name == "Select a trait") {
+                            // DO NOTHING
                         } else {
-                            element.disabled = false
+                            if (conflictTraits[name] == 1) {
+                                element.disabled = true
+                                // console.log("YES")
+                            } else {
+                                element.disabled = false
+                            }
                         }
-                    }
-                });
+                    });
+                } else {
+                    console.log("Your trait is misspelled.")
+                }
             }
 
-            const url = "https://api.simulationsoccer.com/ssl/getBankBalance?user=" + username
 
-            const bankData = fetch(url)
-
-            bankData
-                .then((response) => response.json())
-                .then((data) => {
-
-                    let number = parseFloat(data[0].Balance)
-
-                    document.querySelector("#playerBank").innerText = number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-                })
         });
 }
 
