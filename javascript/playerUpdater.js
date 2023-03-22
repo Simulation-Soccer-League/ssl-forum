@@ -227,21 +227,21 @@ function getRowsInUpdateTable() {
     return $('#updatesTable tr').length;
 }
 
-$('select').on('change', function () {
-    HandleDropdowns($(this));
-});
-
 function HandleDropdowns(element) {
-    var $element = element;
-    var value = $element.val();
+    var value = element.value
 
-    $.each($('select').not($element), function () { //loop all remaining select elements
-        var subValue = $(this).val();
-        if (subValue === value) { // if value is same reset
-            $(this).val('');
-            console.log('resetting ' + $(this).attr('id')); // demo purpose
+    const otherSelect = document.querySelectorAll("select")
+
+    otherSelect.forEach(otherElement => {
+        if (otherElement.id != element.id) {
+            var subValue = otherElement.value;
+            if (subValue === value) { // if value is same reset
+                otherElement.value = '';
+                console.log('resetting ' + otherElement.id); // demo purpose
+            }
         }
     });
+
 }
 
 
