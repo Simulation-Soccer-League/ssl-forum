@@ -1030,7 +1030,8 @@ input[class="forminput"]:not([type="text"]):not([type="password"]):not([type="em
 .textarea,
 .searchinput,
 .forminput,
-#playerUpdater input {
+#playerUpdater input,
+#playerCreator input {
     font-family: "Gothic", sans-serif;
     font-size: 0.9em;
     padding: 3px;
