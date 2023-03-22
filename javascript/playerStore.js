@@ -75,7 +75,7 @@ function updateOutput() {
 
                     // Only writes if a purchase has been made.
                     if (selectedIndex != 0) {
-                        purchaseString += `${baseString} - ${element.options[selectedIndex].innerText} - -${element.options[selectedIndex].value}\n`
+                        purchaseString += `${baseString} - -${element.options[selectedIndex].value} - ${element.options[selectedIndex].innerText}\n`
                     }
                 });
             });
