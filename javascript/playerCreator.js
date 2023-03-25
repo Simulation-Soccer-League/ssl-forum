@@ -650,7 +650,12 @@ async function submitCheck() {
 
     } else if (document.querySelector("#remainingTPE").innerText > 150) {
 
-        alert("You have more than 150 TPE left to spend on your player.")
+        Swal.fire({
+            title: 'Too few TPE spent!',
+            text: 'You have more than 150 TPE left to spend on your player. It is required to start off with as much of a complete build as possible.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        })
 
     } else {
         const required = document.getElementById("playerCreator").querySelectorAll("[required]")
