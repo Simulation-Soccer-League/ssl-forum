@@ -1,6 +1,6 @@
 const costArray = { 5: 0, 6: 2, 7: 4, 8: 8, 9: 12, 10: 16, 11: 22, 12: 28, 13: 34, 14: 46, 15: 58, 16: 70, 17: 88, 18: 106, 19: 131, 20: 156 }
 
-var names = []
+var names = await fetchListPlayers();
 
 const attributeArray = {
     Acc: "Acceleration", Agi: "Agility", Bal: "Balance", Jmp: "Jumping Reach", Nat: "Natural Fitness", Pac: "Pace", Sta: "Stamina", Str: "Strength", Agg: "Aggression", Ant: "Anticipation", Bra: "Bravery", Cmp: "Composure", Con: "Concentration", Dec: "Decisions", Det: "Determination", Fla: "Flair", Lea: "Leadership", Otb: "Off the Ball", Pos: "Positioning", Tea: "Teamwork", Vis: "Vision", Wrk: "Work Rate", Cor: "Corners", Cro: "Crossing", Dri: "Dribbling", Fin: "Finishing", Fst: "First Touch", FstK: "First Touch", Frk: "Free Kick", FrkK: "Free Kick", Hea: "Heading", Lsh: "Long Shots", Lth: "Long Throws", Mar: "Marking", Pas: "Passing", PasK: "Passing", Pen: "Penalty Taking", PenK: "Penalty Taking", Tck: "Tackling", Tec: "Technique", TecK: "Technique", Aer: "Aerial Reach", Coa: "Command of Area", Com: "Communication", Ecc: "Eccentricity", Han: "Handling", Kic: "Kicking", Ooo: "One on Ones", Ref: "Reflexes", Ttr: "Tendency to Rush", Ttp: "Tendency to Punch", Thr: "Throwing"
@@ -581,23 +581,34 @@ Trait 2: ${allEntries.trait2}`
 
 // Fetches the list of current players in the league
 async function fetchListPlayers() {
-    const url = "https://api.simulationsoccer.com/ssl/listPlayers?retired=true"
+    let names = await getPlayers();
+    return names
+}
 
-    const data = fetch(url)
+function getPlayers() {
+    return new Promise(resolve => {
+        const url = "https://api.simulationsoccer.com/ssl/listPlayers?retired=true"
 
-    data
-        .then((response) => response.json())
-        .then((data) => {
-            const jsData = JSON.parse(data)
+        const data = fetch(url)
 
-            for (const key in jsData) {
-                // console.log(`${key}: ${jsData[key]}`)
-                names.push(jsData[key]);
+        var names = []
+
+        data
+            .then((response) => response.json())
+            .then((data) => {
+                const jsData = JSON.parse(data)
+
+                for (const key in jsData) {
+                    // console.log(`${key}: ${jsData[key]}`)
+                    names.push(jsData[key]);
+                }
+                names = names.flat()
+
+                resolve(names)
             }
-
-            names = names.flat()
-        }
-        )
+            )
+    }
+    )
 }
 
 
