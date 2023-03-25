@@ -325,7 +325,8 @@ async function fetchPlayerInitial() {
 
 // Fetches the build of the player that is selected in the drop-down
 async function fetchPlayerSelected() {
-    let username = document.querySelector("#selectedPlayer").value
+    // Removes .number from the value in case a user has a retired and active player
+    let username = document.querySelector("#selectedPlayer").value.replace(/\.\d+$/, "")
 
     const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
 
