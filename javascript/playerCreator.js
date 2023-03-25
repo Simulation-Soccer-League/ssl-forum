@@ -612,7 +612,9 @@ function getPlayers() {
 }
 
 
-function submitCheck() {
+async function submitCheck() {
+    let names = await fetchListPlayers();
+
     if (anyRequiredEmpty()) {
         alert("You must fill out all required fields.")
         const required = document.getElementById("playerCreator").querySelectorAll("[required]")
