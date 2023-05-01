@@ -1,0 +1,95 @@
+<mxfile host="app.diagrams.net" modified="2023-04-03T11:53:25.150Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="mmCNCWP450wQLhKe2Zln" version="21.1.2" type="github">
+  <diagram name="SSL Player Timeline" id="pU_AbrTI52gpMdg0elJg">
+    <mxGraphModel dx="1131" dy="1166" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#ffffff;" edge="1" parent="1" target="gvPUJFoQo1Wbb85WyM73-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="670" y="360" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="670" y="440" />
+              <mxPoint x="390" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-2" value="INITIAL TIMELINE FOR A PLAYER" style="text;html=1;strokeColor=#bd9523;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Gotham;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DGotham;fontSize=20;dashed=1;dashPattern=1 1;fontColor=#bd9523;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="1080" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-4" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="40" y="100" width="1080" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-1" value="SEASON 0" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Gotham;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DGotham;fontSize=17;arcSize=0;fillColor=#070b51;" vertex="1" parent="gvPUJFoQo1Wbb85WyM73-4">
+          <mxGeometry width="540" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-3" value="SEASON 1&lt;br&gt;(Class Season)" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Gotham;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DGotham;fontSize=17;arcSize=0;fillColor=#070b51;" vertex="1" parent="gvPUJFoQo1Wbb85WyM73-4">
+          <mxGeometry x="540" width="540" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#bd9523;" edge="1" parent="1" source="gvPUJFoQo1Wbb85WyM73-6" target="gvPUJFoQo1Wbb85WyM73-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-6" value="PLAYER CREATED and APPROVED" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bd9523;fontSize=18;fontFamily=Gotham;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DGotham;strokeColor=#bd9523;" vertex="1" parent="1">
+          <mxGeometry x="57.33" y="320" width="181.33" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#bd9523;" edge="1" parent="1" source="gvPUJFoQo1Wbb85WyM73-7" target="gvPUJFoQo1Wbb85WyM73-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#ffffff;strokeWidth=3;" edge="1" parent="1" source="gvPUJFoQo1Wbb85WyM73-7" target="gvPUJFoQo1Wbb85WyM73-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="280" />
+              <mxPoint x="840" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-20" value="BY THE END OF SEASON 1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=18;" vertex="1" connectable="0" parent="gvPUJFoQo1Wbb85WyM73-19">
+          <mxGeometry x="-0.2434" y="2" relative="1" as="geometry">
+            <mxPoint x="54" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-7" value="SSL ACADEMY" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=18;fillColor=#070b51;rounded=1;fontFamily=Gotham;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DGotham;" vertex="1" parent="1">
+          <mxGeometry x="330" y="320" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#bd9523;" edge="1" parent="1" source="gvPUJFoQo1Wbb85WyM73-9" target="gvPUJFoQo1Wbb85WyM73-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-9" value="SSL&lt;br&gt;DRAFT" style="rhombus;whiteSpace=wrap;html=1;fontSize=18;fillColor=#070b51;rounded=1;fontFamily=Gotham;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DGotham;" vertex="1" parent="1">
+          <mxGeometry x="520" y="300" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-11" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;elbow=vertical;shadow=0;startFill=1;fixDash=0;strokeWidth=5;endArrow=baseDash;endFill=0;strokeColor=#ffffff;" edge="1" parent="1" source="gvPUJFoQo1Wbb85WyM73-1" target="gvPUJFoQo1Wbb85WyM73-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="210" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="175" y="210" />
+              <mxPoint x="148" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-12" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;elbow=vertical;shadow=0;startFill=1;fixDash=0;strokeWidth=5;endArrow=baseDash;endFill=0;strokeColor=#ffffff;" edge="1" parent="1" source="gvPUJFoQo1Wbb85WyM73-1" target="gvPUJFoQo1Wbb85WyM73-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="210" />
+              <mxPoint x="148" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-13" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;elbow=vertical;shadow=0;startFill=1;fixDash=0;strokeWidth=5;endArrow=baseDash;endFill=0;strokeColor=#ffffff;" edge="1" parent="1" source="gvPUJFoQo1Wbb85WyM73-1" target="gvPUJFoQo1Wbb85WyM73-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="445" y="210" />
+              <mxPoint x="148" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;dashPattern=8 8;strokeWidth=3;strokeColor=#bd9523;" edge="1" parent="1" source="gvPUJFoQo1Wbb85WyM73-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1120" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gvPUJFoQo1Wbb85WyM73-14" value="SSL TEAM" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=18;fillColor=#070b51;rounded=1;fontFamily=Gotham;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DGotham;" vertex="1" parent="1">
+          <mxGeometry x="780" y="320" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
