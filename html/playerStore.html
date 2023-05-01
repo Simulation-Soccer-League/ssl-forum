@@ -23,8 +23,8 @@
         <hr>
         <div class="storePurchases">
             <div class="rookiePurchase">
-                <h4>Rookie Task 5</h4>
-                <p>To complete the fifth Rookie Task you will make a <b>free rookie purchase</b> following the Player
+                <h4>Academy Task 5</h4>
+                <p>To complete the Academy Task #5 you will make a <b>free purchase</b> following the Player
                     Store procedure.</p>
                 <div class="cart">
                     <div class="col-20">
@@ -43,7 +43,7 @@
                                     <td>
                                         <select name="rookie" id="rookie1" onchange="updateCost(this)">
                                             <option value="0">Select the task</option>
-                                            <option value="0">Rookie Task 5</option>
+                                            <option value="0">Academy Task 5</option>
                                         </select>
                                     </td>
                                     <td>
@@ -97,13 +97,15 @@
             </div>
             <div class="addTraitPurchase">
                 <h4>Traits</h4>
-                <p>You can also choose to purchase additional traits for your player. Each trait costs $3 million and
+                <p>You can purchase additional traits for your player. Each trait costs $3 million and
                     your player can have a maximum of 7 traits, including the 2 you started with.
-
+                </p>
+                <p>
                     The traits are separated into seven different types of traits depending on what part of the play
                     they affect. Note that some of the traits will negatively impact your player if their attributes
                     does not match.
-
+                </p>
+                <p>
                     If you notice a disabled trait in the list, it is not compatible with one or more of your current
                     traits.
                 </p>
@@ -232,10 +234,87 @@
                 </div>
             </div>
             <div class="footPurchase">
+                <h4>Weak Foot</h4>
+                <p>The footedness of a player is split into 20 / 10 based on the preferred footedness of the player at
+                    creation. Purchasing this item gives you an additional 5 XP on your weaker foot.</p>
+                <div class="cart">
+                    <div class="changeRows col-20">
+                        <button class="cssbutton" type="button" name="addRowButton" onclick="addRow(this);">+
+                            Row</button>
+                        <button class="cssbutton" type="button" name="deleteRowButton" onclick="removeRow(this);">-
+                            Row</button>
+                    </div>
+                    <div class="col-80">
+                        <table id="footPurchaseTable">
+                            <tbody>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Purchase</th>
+                                    <th>Cost</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <select name="footPurchase" id="footPurchase1" onchange="updateCost(this)">
+                                            <option value="0">Select an item</option>
+                                            <option value="7500000">Weak Foot (+5)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <span id="footPurchase1Cost">0</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
             </div>
             <div class="positionPurchase">
-
+                <h4>Positional Experience</h4>
+                <p>
+                    At creation, a player starts with one primary and two secondary positions corresponding to 20 and 15
+                    positional XP in Football Manager respectively.
+                </p>
+                <p>
+                    You are able to either purchase a transfer of your current experience where you indicate in the
+                    update page which two positions you are switching the experience between. You are also able to
+                    purchase either an additional secondary position (15 XP) or upgrade a secondary position to an
+                    additional primary position (15 -> 20 XP).
+                </p>
+                <div class="cart">
+                    <div class="changeRows col-20">
+                        <button class="cssbutton" type="button" name="addRowButton" onclick="addRow(this);">+
+                            Row</button>
+                        <button class="cssbutton" type="button" name="deleteRowButton" onclick="removeRow(this);">-
+                            Row</button>
+                    </div>
+                    <div class="col-80">
+                        <table id="positionTable">
+                            <tbody>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Purchase</th>
+                                    <th>Cost</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <select name="position" id="position1" onchange="updateCost(this)">
+                                            <option value="0">Select an item to purchase</option>
+                                            <option value="5000000">Positional Experience Transfer</option>
+                                            <option value="7500000">Secondary -> Primary Position Upgrade</option>
+                                            <option value="12500000">Additional Secondary Position</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <span id="positionCost">0</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
 
