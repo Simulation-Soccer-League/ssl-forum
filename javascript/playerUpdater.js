@@ -166,6 +166,117 @@ function updateOutput() {
     return false;
 }
 
+// Function to gather the information for the player page data
+function pageOutput() {
+    let username = document.querySelector("#selectedPlayer").value
+
+    const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
+
+    const playerData = fetch(url)
+
+    const bank = document.querySelector("#remainingTPE").innerText
+
+    let inputs = document.querySelectorAll('.playerBuild input')
+
+    let allEntries = {}
+
+    inputs.forEach(element => {
+        allEntries[element.name] = element.value
+    });
+
+    playerData
+        .then((response) => response.json())
+        .then((data) => {
+            let textOutput = `[size=7][u][b]Player Attributes[/b][/u][/size]
+TPE Available: ${bank}
+            
+[u][b]Physical[/b][/u]
+Acceleration: ${allEntries.pAcc}
+Agility: ${allEntries.pAgi}
+Balance: ${allEntries.pBal}
+Jumping Reach: ${allEntries.pJmp}
+Natural Fitness: ${allEntries.pNat}
+Pace: ${allEntries.pPac}
+Stamina: ${allEntries.pSta}
+Strength: ${allEntries.pStr}
+
+[u][b]Mental[/b][/u]
+Aggression: ${allEntries.mAgg}
+Anticipation: ${allEntries.mAnt}
+Bravery: ${allEntries.mBra}
+Composure: ${allEntries.mCmp}
+Concentration: ${allEntries.mCon}
+Decisions: ${allEntries.mDec}
+Determination: ${allEntries.mDet}
+Flair: ${allEntries.mFla}
+Leadership: ${allEntries.mLea}
+Off the Ball: ${allEntries.mOtb}
+Positioning: ${allEntries.mPos}
+Teamwork: ${allEntries.mTea}
+Vision: ${allEntries.mVis}
+Work Rate: ${allEntries.mWrk}
+
+`
+
+            if (data[0].Position == "Goalkeeper") {
+                let addition =
+                    `[u][b]Goalkeeping[/b][/u]
+Aerial Reach: ${allEntries.kAer}
+Command of Area: ${allEntries.kCoa}
+Communication: ${allEntries.kCom}
+Eccentricity: ${allEntries.kEcc}
+Handling: ${allEntries.kHan}
+Kicking: ${allEntries.kKic}
+One on Ones: ${allEntries.kOoo}
+Reflexes: ${allEntries.kRef}
+Tendency to Rush: ${allEntries.kRus}
+Tendency to Punch: ${allEntries.kPun}
+Throwing: ${allEntries.kThr}
+First Touch: ${allEntries.kFst}
+Free Kick: ${allEntries.kFrk}
+Passing: ${allEntries.kPas}
+Penalty Taking: ${allEntries.kPen}
+Technique: ${allEntries.kTec}`
+
+                textOutput += addition
+            } else {
+                let addition =
+                    `[u][b]Technical[/b][/u]
+Corners: ${allEntries.tCor}
+Crossing: ${allEntries.tCro}
+Dribbling: ${allEntries.tDri}
+Finishing: ${allEntries.tFin}
+First Touch: ${allEntries.tFst}
+Free Kick: ${allEntries.tFrk}
+Heading: ${allEntries.tHea}
+Long Shots: ${allEntries.tLsh}
+Long Throws: ${allEntries.tLth}
+Marking: ${allEntries.tMar}
+Passing: ${allEntries.tPas}
+Penalty Taking: ${allEntries.tPen}
+Tackling: ${allEntries.tTck}
+Technique: ${allEntries.tTec}`
+
+                textOutput += addition
+            }
+
+            Swal.fire({
+                title: 'New Player Page!',
+                html: '<pre>' + textOutput + '</pre>',
+                icon: 'success',
+                confirmButtonText: 'Copy text'
+            }).then(function (isConfirm) {
+                if (isConfirm) {
+                    // Copy the text inside the text field
+                    navigator.clipboard.writeText(updateText);
+                } else {
+                    // DO NOTHING
+                }
+            })
+        })
+    return false;
+}
+
 
 function submitCheck() {
     if (document.querySelector("#remainingTPE").innerText < 0) {
@@ -184,6 +295,26 @@ function submitCheck() {
         document.querySelector("#remainingTPE").style = "border: inherit;"
 
         updateOutput()
+    }
+}
+
+function playerPageCheck() {
+    if (document.querySelector("#remainingTPE").innerText < 0) {
+
+        Swal.fire({
+            title: 'Too much TPE spent!',
+            text: 'You have spent more TPE on your player than you have earned.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        })
+
+        document.querySelector("#remainingTPE").style = "border: 2px solid red;"
+
+    } else {
+        console.log("Checked and building")
+        document.querySelector("#remainingTPE").style = "border: inherit;"
+
+        pageOutput()
     }
 }
 
@@ -288,7 +419,7 @@ async function fetchListPlayers() {
             const selectObject = document.querySelector('#selectedPlayer')
 
             for (const key in jsData) {
-                // console.log(`${key}: ${jsData[key]}`)
+                // console.log(`${ key }: ${ jsData[key]}`)
                 const option = document.createElement("option");
                 option.text = jsData[key];
                 option.value = key;
