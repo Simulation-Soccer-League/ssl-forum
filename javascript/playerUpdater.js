@@ -268,7 +268,7 @@ Technique: ${allEntries.tTec}`
             }).then(function (isConfirm) {
                 if (isConfirm) {
                     // Copy the text inside the text field
-                    navigator.clipboard.writeText(updateText);
+                    navigator.clipboard.writeText(textOutput);
                 } else {
                     // DO NOTHING
                 }
