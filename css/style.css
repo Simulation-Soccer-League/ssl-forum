@@ -1709,3 +1709,8 @@ td>.attributeCost,
 .updateScale table th {
     border: 1px solid var(--borderColor);
 }
+
+.storePurchases li {
+    list-style: square;
+    padding-bottom: 5px;
+}
