@@ -13,10 +13,10 @@
         </p>
         <hr>
         <div class="cart">
-            <div class="col-50" style="text-align: center;">
+            <div class="col-50" style="text-align: center; font-size: x-large;">
                 Player: <span id="playerName"></span>
             </div>
-            <div class="col-50" style="text-align: center;">
+            <div class="col-50" style="text-align: center; font-size: x-large;">
                 Bank balance: <span id="playerBank"></span>
             </div>
         </div>
@@ -55,10 +55,18 @@
                     </div>
                 </div>
             </div>
+            <hr>
             <div class="trainingPurchase">
                 <h4>Individual training</h4>
-                <p>You can purchase individual training in five different levels. There is no limit to the amount of
-                    individual trainings you can purchase during a season.</p>
+                <p>You can purchase an individual training package in five different levels:
+                <ul>
+                    <li>Sunday League ($1.5 million) - 1 TPE</li>
+                    <li>Amateur League ($3 million) - 4 TPE</li>
+                    <li>Professional League ($4.5 million) - 8 TPE</li>
+                    <li>Superstar League ($5.5 million) - 12 TPE</li>
+                    <li>World Class League ($7.5 million) - 18 TPE</li>
+                </ul>
+                There is no limit to the amount of individual trainings you can purchase during a season.</p>
                 <div class="cart">
                     <div class="changeRows col-20">
                         <button class="cssbutton" type="button" name="addRowButton" onclick="addRow(this);">+
@@ -95,19 +103,22 @@
                     </div>
                 </div>
             </div>
+            <hr>
             <div class="addTraitPurchase">
                 <h4>Traits</h4>
-                <p>You can purchase additional traits for your player. Each trait costs $3 million and
-                    your player can have a maximum of 7 traits, including the 2 you started with.
+                <p>Each new trait costs $3 million and your player can have a maximum of 7 traits, including the 2 you
+                    started with.
                 </p>
                 <p>
-                    The traits are separated into seven different types of traits depending on what part of the play
+                    The traits are separated into seven different categories depending on what part of the play
                     they affect. Note that some of the traits will negatively impact your player if their attributes
                     does not match.
                 </p>
                 <p>
                     If you notice a disabled trait in the list, it is not compatible with one or more of your current
-                    traits.
+                    traits. The full list of incompatible traits can be found in the <a
+                        href="https://docs.google.com/document/d/1cp4OdU43nX8A7kbQVmOl89xZRD3l13voHcqLNrxFL4Q/edit#">Player
+                        Guide</a>
                 </p>
                 <div class="cart">
                     <div class="changeRows col-20">
@@ -199,9 +210,12 @@
                     </div>
                 </div>
             </div>
+            <hr>
             <div class="removeTraitPurchase">
                 <h4>Remove a current trait</h4>
-                <p>Removing a player trait costs $500 000.</p>
+                <p>If you want to remove an already selected player trait, you can purchase this item ($0.5 million) and
+                    specify in your update post which trait you want to remove.
+                </p>
                 <div class="cart">
                     <div class="changeRows col-20">
                         <button class="cssbutton" type="button" name="addRowButton" onclick="addRow(this);">+
@@ -233,10 +247,12 @@
                     </div>
                 </div>
             </div>
+            <hr>
             <div class="footPurchase">
                 <h4>Weak Foot</h4>
-                <p>The footedness of a player is split into 20 / 10 based on the preferred footedness of the player at
-                    creation. Purchasing this item gives you an additional 5 XP on your weaker foot.</p>
+                <p>The footedness of a player is split into a main (20) and weak (10) foot based on the preferred
+                    footedness of the player selected at creation. Purchasing this item ($7.5 million) gives you an
+                    additional 5 XP on your weaker foot.</p>
                 <div class="cart">
                     <div class="changeRows col-20">
                         <button class="cssbutton" type="button" name="addRowButton" onclick="addRow(this);">+
@@ -270,6 +286,7 @@
                 </div>
 
             </div>
+            <hr>
             <div class="positionPurchase">
                 <h4>Positional Experience</h4>
                 <p>
