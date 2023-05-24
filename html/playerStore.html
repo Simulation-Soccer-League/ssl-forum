@@ -14,10 +14,10 @@
         <hr>
         <div class="cart">
             <div class="col-50" style="text-align: center;">
-                <span id="playerName"></span>
+                Player: <span id="playerName"></span>
             </div>
             <div class="col-50" style="text-align: center;">
-                <span id="playerBank"></span>
+                Bank balance: <span id="playerBank"></span>
             </div>
         </div>
         <hr>
@@ -277,14 +277,21 @@
                     positional XP in Football Manager respectively.
                 </p>
                 <p>
-                    You are able to either purchase a transfer of your current experience where you indicate in the
-                    update page which two positions you are switching the experience between. The entire experience is
-                    switched, for instance switching CAM (primary) with CDM (none) would make CDM the new primary
-                    position.
-                </p>
-                <p>
-                    You are also able to purchase either an additional secondary position (15 XP) or upgrade a secondary
-                    position to an additional primary position (15 -> 20 XP).
+                    The items available are:
+                <ul>
+                    <li>
+                        Position Transfer ($5 million): You need to indicate in your subsequent update post which two
+                        positions you want to transfer the experience between. For example switching from CD -> CDM.
+                    </li>
+                    <li>
+                        Position Upgrade ($7.5 million): You need to indicate in your subsequent update post which of
+                        your current secondary positions you want to upgrade to a primary position.
+                    </li>
+                    <li>
+                        Position Addition ($12.5 million): You need to indicate in your subsequent update post which
+                        position you want to add as an additional secondary position.
+                    </li>
+                </ul>
                 </p>
                 <div class="cart">
                     <div class="changeRows col-20">
@@ -306,9 +313,9 @@
                                     <td>
                                         <select name="position" id="position1" onchange="updateCost(this)">
                                             <option value="0">Select an item to purchase</option>
-                                            <option value="5000000">Positional Experience Transfer</option>
-                                            <option value="7500000">Secondary -> Primary Position Upgrade</option>
-                                            <option value="12500000">Additional Secondary Position</option>
+                                            <option value="5000000">Position Transfer</option>
+                                            <option value="7500000">Position Upgrade</option>
+                                            <option value="12500000">Position Addition</option>
                                         </select>
                                     </td>
                                     <td>
