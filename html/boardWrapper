@@ -1,0 +1,320 @@
+    <div id='gmessage'><span></span></div>
+    <div class='fullWrap'>
+        <div class='wrap'>
+            <div id='header'>
+                <div id='userbar'>
+                    <ul id='modbar' class='modbar' style='display:none;'>
+                        <li id='admincp'><a href="admin.php" target="_blank">Admin CP</a></li>
+                        <li id='modcp'><a href="index.php?act=modcp">Mod CP</a></li>
+                        <li id='admincp'><a href="https://mods.files.jcink.com/" target="_blank">Skin Support (Admin
+                                Only)</a></li>
+                        <li id='modcp'><a href='index.php?act=modcp&CODE=reported'>Reports<span class='alert'
+                                    id='modcp-num'></span></a></li>
+                        <li id='modcp'><a href='index.php?act=modcp&CODE=members'>Edit Users</a></li>
+                        <li id='modcp'><a href='index.php?act=modcp&CODE=ip'>IP Tools</a></li>
+                    </ul>
+                    <ul id='member' class='bar'>
+                        <li><a href="javascript:load_alerts();" class="alerts-indicator" id="alerts-indicator"
+                                title="alerts">Alerts (<!-- |new_alerts| -->)</a>
+                            <div style="left: -361px; display: none;" id="recent-alerts">
+                                <div class="popupAlert">
+                                    <div class="pformHeader">
+                                        Recent Alerts
+                                        <div style="float: right;"><a class="alclose"
+                                                onClick="document.getElementById('recent-alerts').style.display='none';document.getElementById('albtn').checked = false;void(0);">[x]</a>
+                                        </div>
+                                    </div>
+                                    <span id="recent-alerts-data">
+                                        <div style="height: 1px;"></div>
+                                        <div class="row2">
+                                            <div class="recent-alerts-msg">
+                                                <div align="center">No new alerts to display.</div>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </span>
+                                    <div style="text-align: center;margin-bottom:-30px;" class="pformstrip">
+                                        <a title="View All Alerts" href="../index.php?act=UserCP&amp;CODE=alerts">View
+                                            All Alerts</a> · <a title="Mark All Read"
+                                            href="javascript:read_alerts();">Mark All Read</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li id="subacct_link" style="display: none;"><a
+                                onclick="document.getElementById('subacct_link').innerHTML=document.getElementById('sub_bar').innerHTML;"
+                                href="javascript:void(0);"><img alt="Switch Account"
+                                    src="https://files.jcink.net/uploads/darknight/newar23.png" height="15px" /></a>
+                        </li>
+                        <li class='dropmenu' id='messenger'><a id='menu_messenger' class='click'>Inbox <img
+                                    src="http://i103.photobucket.com/albums/m130/Gunblaza/APlus/alphaplus2_arrow.png" /><span
+                                    class='alert'><!-- |new_msg| --></span></a>
+                            <ul class='drop' id='menu_content_messenger'>
+                                <div class='drop-title'><span class='right desc'><a
+                                            href='index.php?act=Msg&CODE=01'>View all
+                                            (<!-- |msg_total| -->)</a></span><span id='newmsg'>Messages</span></div>
+                                <div id='pmshere'>
+                                    <div class='menurow center' style='display:none;' id='nomsgs'>You don't have any
+                                        messages</div>
+                                </div>
+                                <div class='pformstrip center'><a href='#' class='popup click' popupId='messPopup'
+                                        id='messPop'>Send a new message</a></div>
+                            </ul>
+                        </li>
+                        <li class='dropmenu'><a id='menu_user' class='click'><!-- |name| --> <img
+                                    src="http://i103.photobucket.com/albums/m130/Gunblaza/APlus/alphaplus2_arrow.png" /></a>
+                            <ul class='drop' id='menu_content_user'>
+                                <div class='drop-row'>
+                                    <a href='index.php?act=UserCP&CODE=24'>
+                                        <div id='insert-avatar'></div>
+                                    </a>
+                                </div>
+                                <div class='qlinks'>
+                                    <li><a href='index.php?showuser=<!-- |id| -->'>My Profile</a></li>
+                                    <li><a href='index.php?act=UserCP'>Account Settings</a></li>
+                                    <li><a
+                                            href="javascript:window.open('index.php?showuser=<!-- |id| -->&CODE=friends','Friends','width=620,height=460,resizable=yes,scrollbars=yes');void(0);">Friends</a>
+                                    </li>
+                                    <li><a
+                                            href="javascript:window.open('index.php?showuser=<!-- |id| -->&CODE=friends&blocked=1','Ignored Users','width=620,height=460,resizable=yes,scrollbars=yes');void(0);">Ignored
+                                            Users</a></li>
+                                    <li><a href="index.php?act=Search&CODE=getnew">New Posts</a></li>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class='signingout'><a href="index.php?act=Login&CODE=03&key=<!-- |auth_key| -->">Sign
+                                Out</a></li>
+                    </ul>
+                    <ul id='guest' class='bar'>
+                        <li><a href='#' class='popup click' id='loginPop' popupId='loginPopup'>Log In</a></li>
+                        <li><a href="index.php?act=Reg&CODE=00">Register</a></li>
+                        <li><a href='index.php?act=Reg&CODE=reval'>Validation</a></li>
+                    </ul>
+                </div>
+                <div id='logo'>
+                    <a href='index.php' class="left">
+                        <{LOGO}>
+                    </a>
+                    <ul id="search-bar" class='right'>
+                        <form action="/index.php?act=Search&amp;CODE=01" method="post" name='sForm'>
+                            <li class='searchb'>
+                                <input type='text' maxlength='100' size='35' name='keywords' id="keywords"
+                                    value="Search..." onfocus="this.value=''" /><input type="hidden" name='forums'
+                                    class='forminput' value='all' style="display:none;" /><input type="submit"
+                                    name="submit" value="" id='searchi' />
+                                <div class='searcha'><a href='?act=Search'><img
+                                            src='https://files.jcink.net/uploads/darknight/redmo/cog.png' /></a></div>
+                            </li>
+                        </form>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="menu"><!-- This is the navigation bar. Please note it can be custom but automatic -->
+                <ul id="menu_li">
+                    <li><a href="index.php"><span class="cssbutton">Main Forum</span></a></li>
+		    <li class='dropmenu'><a class="cssbutton click" id = "menu_index">Index Functions</a>
+			<ul class='drop' id='menu_content_index'>
+                    	   <li><a href="https://simsoccer.jcink.net/index.php?act=Pages&pid=5"><span class="cssbutton">Standings</span></a></li>
+                    	   <li><a href="https://canadice.shinyapps.io/SSL-Index/" target="_blank"><span class="cssbutton">SSL
+                                Index</span></a></li>			   
+			</ul>
+                    </li>
+		    <li><a href="https://docs.google.com/spreadsheets/u/2/d/e/2PACX-1vQibBjFKSZyR17_zSKWa3wy96LzG9Pj7usMuYpxddi-4Lg6yeb4OPTmCYPE9DUiZyI8DrKVr_vAREq5/pubhtml?gid=575836223&single=true"
+                            target="_blank"><span class="cssbutton">SSL Calendar</span></a></li>
+                    <li><a href="https://discord.gg/QEHE67AaXQ"><span class="cssbutton">Discord</span></a></li>
+                    <li><a href="index.php?showtopic=159"><span class="cssbutton">Create a Player</span></a></li>
+                    <li><a href="https://simsoccer.jcink.net/index.php?act=Pages&pid=4" target="_blank"><span
+                                class="cssbutton">Player Update Assistant</span></a></li>
+                    <li class='dropmenu'><a class="cssbutton click" id = "menu_extras">Forum Functions</a>
+			<ul class='drop' id='menu_content_extras'>
+                    	   <li><a href="index.php?act=Search&CODE=getnew"><span class="cssbutton">View New Posts</span></a></li>
+                    	   <li><a href="index.php?act=Help"><span class="cssbutton">Help</span></a></li>
+			</ul>
+                    </li>
+
+                </ul>
+		<ul id="menu_sub">
+                    <span id = "currentTasks"> </span> 
+
+                </ul>
+            </div>
+        </div>
+        <div id="innerWrap">
+            <% BOARD HEADER %>
+                <div id='navi'>
+                    <% NAVIGATION %>
+                </div>
+                <div id="board">
+                    <% BOARD %>
+                </div>
+                <script type='text/javascript'>
+                    //Created by posiden5665
+                    defaultAvatarURL = "https://files.jcink.net/uploads/darknight/black/xef.png"; if ("<!-- |input_showuser| -->".match(/[0-9]+ )!  =null|  |"<!-- |input_act| --> "= ="Profile  "&  &"<!-- |input_MID| -->".match(  -  ]+    =n  {
+                        tabl = document.getElementsByTagName("table" ; fo = <tables.leng   ; i++)
+                    {
+                        tablesT = tables[i].getElementsByTagName("td" ;i f(tablesTds.lengt    h =  = ) {i f(tablesTds[1].getElementsByTagName("h3").lengt    h   1 &    & tablesTds[1].getElementsByTagName("strong").lengt    h =  = ) {i f(tablesTds[0].innerHTM    L =    = " )  {tablesTds[0].innerHTM L  = " < img sr c = ' "  +defaultAvatarUR L  +"' borde r = '0' al t = 'Avatar' /> " } } } } }else i f( " < !--   | input_showtopi  c | --  > ".match(/[0-9]+ )!  =null|  | " < !--   | input_  t | --  > ".match(/[0-9]+ )! =null ) {avaSpan s  =getElementsByClassName("avatarSp, n, "span" ; fo = <avaSpans.leng   ; x++ ) {i f(avaSpans[x].innerHTM    L =    = " )  {avaSpans[x].innerHTM L  = " < img sr c = ' "  +defaultAvatarUR L  +"' borde r = '0' widt h = '90' heigh t = '90' al t = 'Avatar' /> " }  }}
+                </script>
+                <script language="JavaScript" type="text/javascript">
+                    if (location.href.match(/showtopic=|act=ST/i)) { multiQuote.init() } else if (location.href.match(/act=Post&CODE=02/i) && document.title.match(/Replying in/i)) { multiQuote.check() }
+                </script>
+                <% SKIN_SELECTOR %>
+        </div>
+        <!-- Automaticall opens quick reply -->
+        <script>
+                    if ('<!-- |input_act| -->' == 'ST') {
+                        ShowHide('qr_open', 'qr_closed');
+                    }
+        </script>
+        <table class='copy'>
+            <tr>
+                <td width="50%" valign="top"><a href='#' class='popup click' popupId='skinPopup' id='skinPop'>Change
+                        Skin</a>&nbsp; | &nbsp;<a href='/index.php?act=Login&CODE=05'>Mark Board Read</a>&nbsp; |
+                    &nbsp;<a href='/index.php?act=Login&CODE=06'>Delete Cookies</a><br><i><!-- |skin_name| --> created
+                        by Canadice </i> </td>
+                <td width="50%" align="right">
+                    <% COPYRIGHT %>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    </div>
+
+    <!-- Extras -->
+
+
+
+    <div id='loginPopup' class='popupBox'>
+        <div class='popupBox-background'></div>
+        <div class='popupBox-content'>
+            <div class='maintitle2'>
+                <span class='right'>
+                    <a class='closePopup click'>
+                        <img src='https://files.jcink.net/uploads/darknight/prob/close_popup.png'>
+                    </a>
+                </span>Account Login
+            </div>
+            <div class='row2' style='padding:6px;'>
+                <form style='display:inline' action="index.php?act=Login&CODE=01&CookieDate=1" method="post">
+                    <div class='center'><br>
+                        <span style="font-size: 15px;font-weight: bold;">Username</span>
+                        <input type="text" class="forminput" size="27" name="UserName" onfocus="this.value=''" value=""
+                            placeholder=""><br>
+                        <span style="font-size: 15px;font-weight: bold;">Password</span> &nbsp;
+                        <input type='password' class='forminput' size='27' name='PassWord' onfocus="this.value=''"
+                            value='' placeholder=""><br>
+                        <input type="checkbox" checked="checked" value="1" name="CookieDate"> Stay Logged In<br>
+                        <input type="checkbox" value="1" name="Privacy"> Be Anonymous<br><br>
+                        <a href='index.php?act=Reg&CODE=10' class='italic'>Forgot your password?</a>
+                    </div>
+            </div>
+            <div class='titlemedium center'>
+                <input type='submit' value='Log In'>
+                <input type='button' class='cancel' value='Advanced Login'
+                    onClick="parent.location='index.php?act=Login'">
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <div id='messPopup' class='popupBox'>
+        <div class='popupBox-background'></div>
+        <div class='popupBox-content'>
+            <div class='maintitle2'>
+                <span class='right'>
+                    <a class='closePopup click'>
+                        <img src="https://files.jcink.net/uploads/darknight/prob/close_popup.png" />
+                    </a>
+                </span>Send a New Message -
+                <a href='index.php?act=Msg&CODE=04'><u>More options</u></a>
+            </div>
+            <div class='row2' style='padding:6px;'>
+                <form id='qpmForm' name='qpm'>
+                    <input type='hidden' name='MODE' value='01'>
+                    <input type='hidden' name='OID' value=''>
+                    <input type='hidden' name='auth_key' value='<!-- |auth_key| -->'>
+                    <dl class='qpm-design'>
+                        <dt>Send To:</dt>
+                        <dd>
+                            <input type="text" class="forminput" name="entered_name">
+                            <div class='desc'>The name must be exactly as it's shown across the board.</div>
+                        </dd>
+                        <dt>Subject:</dt>
+                        <dd>
+                            <input type='text' name='msg_title' maxlength='40' class='forminput'>
+                        </dd>
+                        <dt>Message:</dt>
+                        <dd>
+                            <textarea name='Post' class='forminput'><<<<<<</textarea>
+                        </dd>
+                    </dl>
+            </div>
+            <div class='titlemedium align-right'>
+                <input type='submit' name='submit' id='qpmButton' value='Send'>
+                <input type='button' class='closePopup cancel' value='Cancel'>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <div id='skinPopup' class='popupBox'>
+        <div class='popupBox-background'></div>
+        <div class='popupBox-content'>
+            <div class='maintitle2'><span class='right'><a class='closePopup closePopup-img click'>
+                        <{POPUP_CLOSE}>
+                    </a></span>Select a skin</div>
+            <div class='row2'>
+                <ul id='skin-select'></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id='overlay'></div>
+    <script type='text/javascript'>
+                /* Shift Skin Framework 001
+                ** Skin Selector (AP210 Convert)
+                **
+                ** @author   RJ D'Amato (Gunblaza)
+                ** @description  SSF Skin Selector for AP210
+                */
+                $select_ul = $('ul#skin-select');
+                $('select[name=selector]').parent().hide();
+                skin_current_id = "<!-- |skin_id| -->";
+
+                $('select[name=selector] option').each(function (s) {
+                    $this = $(this, s);
+                    _skin_id = $this.val();
+                    _skin_name = $this.text();
+                    _skin_select_template = "<li class='sid_" + _skin_id + "'><a href='index.php?&auth_key=<!-- |auth_key| -->&setskin=" + _skin_id + "'>" + _skin_name + "</a></li>";
+
+                    $select_ul.append(_skin_select_template);
+                    $(".sid_" + skin_current_id).hide();
+                });
+
+    </script>
+    <script>
+
+                function read_alerts() {
+                    $('#recent-alerts').slideToggle('slow');
+                    $.get("index.php?recent_alerts=1&read=1", function (data) {
+                        $("#recent_alerts_data").html(data);
+                    });
+                    $(".alerts-indicator").html("Alerts (0)");
+                }
+
+
+                function load_alerts() {
+
+                    if ($('#recent-alerts').is(':visible')) {
+                        $('#recent-alerts').slideToggle('slow');
+                    } else {
+                        $.get("index.php?recent_alerts=1", function (data) {
+                            $("#recent-alerts-data").html(data);
+                        });
+                        $("#recent-alerts").slideToggle('slow');
+                    }
+                }
+
+    </script>
