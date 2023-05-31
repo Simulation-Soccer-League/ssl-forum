@@ -1745,14 +1745,17 @@ td>.attributeCost,
 }
 
 #column1 {
+    flex: 1;
     background-color: var(--bottomBackground);
 }
 
 #column2 {
+    flex: 2;
     background-color: var(--bottomBackground);
 }
 
 #column3 {
+    flex: 2;
     background-color: var(--bottomBackground);
 }
 
