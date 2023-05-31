@@ -21,11 +21,12 @@ async function fetchChecklist() {
                 link.href = element.Link
                 link.appendChild(document.createTextNode(element.Thread))
 
-                li.appendChild(link)
-
-                if (!(element.User === null)) {
-                    li.classList.add("strikethrough");
+                console.log(element.User)
+                if ((element.User !== undefined)) {
+                    link.classList.add("strikethrough");
                 }
+
+                li.appendChild(link)
 
                 capUl.appendChild(li)
             });
@@ -42,17 +43,20 @@ async function fetchChecklist() {
                 link.href = element.Link
                 link.appendChild(document.createTextNode(element.Thread))
 
-                li.appendChild(
-                    link
-                )
+                if ((element.User !== undefined)) {
+                    link.classList.add("strikethrough");
+                }
+
+                li.appendChild(link)
+
                 uncapUl.appendChild(li)
             });
 
             uncapDiv.appendChild(uncapUl)
 
-            console.log(data.length + 1)
-            console.log(cappedPT)
-            console.log(uncappedPT)
 
         });
 }
+
+
+fetchChecklist();
