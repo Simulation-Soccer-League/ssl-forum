@@ -496,6 +496,7 @@ nav li a:hover {
     margin: 0 auto;
     border-left: 3px solid var(--borderColor);
     border-right: 3px solid var(--borderColor);
+    padding-bottom: 10px;
 }
 
 #menu ul#menu_li {
@@ -1724,30 +1725,38 @@ td>.attributeCost,
     display: flex;
     justify-content: space-between;
     border-radius: 5px;
-    width: 80%;
+    width: 75%;
     margin: auto;
+    font-size: 0.8em;
+    text-align: center;
 }
 
 .column {
     flex: 1;
-    padding: 15px;
+    padding: 3px;
     border: 1px solid var(--borderColor);
     border-radius: 5px;
+    display: flex;
+    align-items: center;
 }
 
 .column-content {
     flex-grow: 1;
 }
 
-
-#header {
+#column1 {
     background-color: var(--bottomBackground);
 }
 
 #column2 {
-    background-color: (--bottomBackground);
+    background-color: var(--bottomBackground);
 }
 
 #column3 {
     background-color: var(--bottomBackground);
+}
+
+.column h4 {
+    margin: auto;
+    text-align: center;
 }
