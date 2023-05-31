@@ -1,3 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="https://files.jcink.net/uploads2/simsoccer/Emoticons/SSL_Logo_20px.png" />
+    <title>
+        <% TITLE %>
+    </title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <% GENERATOR %>
+        <% CSS %>
+            <% JAVASCRIPT %>
+                <script>
+                    //Alpha plus Global Variables
+                    // Do not edit or remove. You may add though.
+                    new_msg = '<!-- |new_msg| -->';
+                    use_pm = '<!-- |g_use_pm| -->';
+                    username = '<!-- |name| -->';
+                    userid = '<!-- |id| -->';
+                    msg_tot = '<!-- |msg_total| -->';
+                    g_id = '<!-- |g_id| -->';
+                    g_is_mod = '<!-- |g_is_supmod| -->';
+                    g_admin = '<!-- |g_access_cp| -->';
+                    act = '<!-- |input_act| -->';
+                    auth_key = '<!-- |auth_key| -->';
+                    version = '210';
+                    no_photo = "<{NO_PHOTO}>";
+                </script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script src='https://files.jcink.net/uploads2/simsoccer/scripts/forumJavascripts.js'></script>
+
+                <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+                <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> -->
+</head>
+
+<body id="<!-- |input_act| -->">
     <div id='gmessage'><span></span></div>
     <div class='fullWrap'>
         <div class='wrap'>
@@ -113,30 +150,58 @@
 
             <div id="menu"><!-- This is the navigation bar. Please note it can be custom but automatic -->
                 <ul id="menu_li">
-                    <li><a href="index.php"><span class="cssbutton">Main Forum</span></a></li>
-		    <li class='dropmenu'><a class="cssbutton click" id = "menu_index">Index Functions</a>
-			<ul class='drop' id='menu_content_index'>
-                    	   <li><a href="https://simsoccer.jcink.net/index.php?act=Pages&pid=5"><span class="cssbutton">Standings</span></a></li>
-                    	   <li><a href="https://canadice.shinyapps.io/SSL-Index/" target="_blank"><span class="cssbutton">SSL
-                                Index</span></a></li>			   
-			</ul>
+                    <li>
+                        <a href="index.php"><span class="cssbutton">Main Forum</span></a>
                     </li>
-		    <li><a href="https://docs.google.com/spreadsheets/u/2/d/e/2PACX-1vQibBjFKSZyR17_zSKWa3wy96LzG9Pj7usMuYpxddi-4Lg6yeb4OPTmCYPE9DUiZyI8DrKVr_vAREq5/pubhtml?gid=575836223&single=true"
-                            target="_blank"><span class="cssbutton">SSL Calendar</span></a></li>
-                    <li><a href="https://discord.gg/QEHE67AaXQ"><span class="cssbutton">Discord</span></a></li>
-                    <li><a href="index.php?showtopic=159"><span class="cssbutton">Create a Player</span></a></li>
-                    <li><a href="https://simsoccer.jcink.net/index.php?act=Pages&pid=4" target="_blank"><span
-                                class="cssbutton">Player Update Assistant</span></a></li>
-                    <li class='dropmenu'><a class="cssbutton click" id = "menu_extras">Forum Functions</a>
-			<ul class='drop' id='menu_content_extras'>
-                    	   <li><a href="index.php?act=Search&CODE=getnew"><span class="cssbutton">View New Posts</span></a></li>
-                    	   <li><a href="index.php?act=Help"><span class="cssbutton">Help</span></a></li>
-			</ul>
+                    <li class='dropmenu'><a class="cssbutton click" id="menu_index">Index Functions</a>
+                        <ul class='drop' id='menu_content_index'>
+                            <li><a href="https://simsoccer.jcink.net/index.php?act=Pages&pid=5"><span
+                                        class="cssbutton">Standings</span></a></li>
+                            <li><a href="https://canadice.shinyapps.io/SSL-Index/" target="_blank"><span
+                                        class="cssbutton">SSL
+                                        Index</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://docs.google.com/spreadsheets/u/2/d/e/2PACX-1vQibBjFKSZyR17_zSKWa3wy96LzG9Pj7usMuYpxddi-4Lg6yeb4OPTmCYPE9DUiZyI8DrKVr_vAREq5/pubhtml?gid=575836223&single=true"
+                            target="_blank"><span class="cssbutton">SSL Calendar</span></a>
+                    </li>
+                    <li>
+                        <a href="https://discord.gg/QEHE67AaXQ"><span class="cssbutton">Discord</span></a>
+                    </li>
+                    <li>
+                        <a href="index.php?showtopic=159"><span class="cssbutton">Create a Player</span></a>
+                    </li>
+                    <li>
+                        <a href="https://simsoccer.jcink.net/index.php?act=Pages&pid=4" target="_blank"><span
+                                class="cssbutton">Player Update Assistant</span></a>
+                    </li>
+                    <li class='dropmenu'>
+                        <a class="cssbutton click" id="menu_extras">Forum Functions</a>
+                        <ul class='drop' id='menu_content_extras'>
+                            <li><a href="index.php?act=Search&CODE=getnew"><span class="cssbutton">View New
+                                        Posts</span></a></li>
+                            <li><a href="index.php?act=Help"><span class="cssbutton">Help</span></a></li>
+                        </ul>
                     </li>
 
                 </ul>
-		<ul id="menu_sub">
-                    <span id = "currentTasks"> </span> 
+                <ul id="menu_sub">
+                    <div class="box">
+                        <div class="column" id="column1">
+                            <h2>Column 1</h2>
+                            <p>This is the content of column 1.</p>
+                        </div>
+                        <div class="column" id="column2">
+                            <h2>Column 2</h2>
+                            <p>This is the content of column 2.</p>
+                        </div>
+                        <div class="column" id="column3">
+                            <h2>Column 3</h2>
+                            <p>This is the content of column 3.</p>
+                        </div>
+                    </div>
+                    <span id="currentTasks"> </span>
 
                 </ul>
             </div>
@@ -149,13 +214,7 @@
                 <div id="board">
                     <% BOARD %>
                 </div>
-                <script type='text/javascript'>
-                    //Created by posiden5665
-                    defaultAvatarURL = "https://files.jcink.net/uploads/darknight/black/xef.png"; if ("<!-- |input_showuser| -->".match(/[0-9]+ )!  =null|  |"<!-- |input_act| --> "= ="Profile  "&  &"<!-- |input_MID| -->".match(  -  ]+    =n  {
-                        tabl = document.getElementsByTagName("table" ; fo = <tables.leng   ; i++)
-                    {
-                        tablesT = tables[i].getElementsByTagName("td" ;i f(tablesTds.lengt    h =  = ) {i f(tablesTds[1].getElementsByTagName("h3").lengt    h   1 &    & tablesTds[1].getElementsByTagName("strong").lengt    h =  = ) {i f(tablesTds[0].innerHTM    L =    = " )  {tablesTds[0].innerHTM L  = " < img sr c = ' "  +defaultAvatarUR L  +"' borde r = '0' al t = 'Avatar' /> " } } } } }else i f( " < !--   | input_showtopi  c | --  > ".match(/[0-9]+ )!  =null|  | " < !--   | input_  t | --  > ".match(/[0-9]+ )! =null ) {avaSpan s  =getElementsByClassName("avatarSp, n, "span" ; fo = <avaSpans.leng   ; x++ ) {i f(avaSpans[x].innerHTM    L =    = " )  {avaSpans[x].innerHTM L  = " < img sr c = ' "  +defaultAvatarUR L  +"' borde r = '0' widt h = '90' heigh t = '90' al t = 'Avatar' /> " }  }}
-                </script>
+
                 <script language="JavaScript" type="text/javascript">
                     if (location.href.match(/showtopic=|act=ST/i)) { multiQuote.init() } else if (location.href.match(/act=Post&CODE=02/i) && document.title.match(/Replying in/i)) { multiQuote.check() }
                 </script>
@@ -163,9 +222,9 @@
         </div>
         <!-- Automaticall opens quick reply -->
         <script>
-                    if ('<!-- |input_act| -->' == 'ST') {
-                        ShowHide('qr_open', 'qr_closed');
-                    }
+            if ('<!-- |input_act| -->' == 'ST') {
+                ShowHide('qr_open', 'qr_closed');
+            }
         </script>
         <table class='copy'>
             <tr>
@@ -273,48 +332,51 @@
 
     <div id='overlay'></div>
     <script type='text/javascript'>
-                /* Shift Skin Framework 001
-                ** Skin Selector (AP210 Convert)
-                **
-                ** @author   RJ D'Amato (Gunblaza)
-                ** @description  SSF Skin Selector for AP210
-                */
-                $select_ul = $('ul#skin-select');
-                $('select[name=selector]').parent().hide();
-                skin_current_id = "<!-- |skin_id| -->";
+        /* Shift Skin Framework 001
+        ** Skin Selector (AP210 Convert)
+        **
+        ** @author   RJ D'Amato (Gunblaza)
+        ** @description  SSF Skin Selector for AP210
+        */
+        $select_ul = $('ul#skin-select');
+        $('select[name=selector]').parent().hide();
+        skin_current_id = "<!-- |skin_id| -->";
 
-                $('select[name=selector] option').each(function (s) {
-                    $this = $(this, s);
-                    _skin_id = $this.val();
-                    _skin_name = $this.text();
-                    _skin_select_template = "<li class='sid_" + _skin_id + "'><a href='index.php?&auth_key=<!-- |auth_key| -->&setskin=" + _skin_id + "'>" + _skin_name + "</a></li>";
+        $('select[name=selector] option').each(function (s) {
+            $this = $(this, s);
+            _skin_id = $this.val();
+            _skin_name = $this.text();
+            _skin_select_template = "<li class='sid_" + _skin_id + "'><a href='index.php?&auth_key=<!-- |auth_key| -->&setskin=" + _skin_id + "'>" + _skin_name + "</a></li>";
 
-                    $select_ul.append(_skin_select_template);
-                    $(".sid_" + skin_current_id).hide();
-                });
+            $select_ul.append(_skin_select_template);
+            $(".sid_" + skin_current_id).hide();
+        });
 
     </script>
     <script>
 
-                function read_alerts() {
-                    $('#recent-alerts').slideToggle('slow');
-                    $.get("index.php?recent_alerts=1&read=1", function (data) {
-                        $("#recent_alerts_data").html(data);
-                    });
-                    $(".alerts-indicator").html("Alerts (0)");
-                }
+        function read_alerts() {
+            $('#recent-alerts').slideToggle('slow');
+            $.get("index.php?recent_alerts=1&read=1", function (data) {
+                $("#recent_alerts_data").html(data);
+            });
+            $(".alerts-indicator").html("Alerts (0)");
+        }
 
 
-                function load_alerts() {
+        function load_alerts() {
 
-                    if ($('#recent-alerts').is(':visible')) {
-                        $('#recent-alerts').slideToggle('slow');
-                    } else {
-                        $.get("index.php?recent_alerts=1", function (data) {
-                            $("#recent-alerts-data").html(data);
-                        });
-                        $("#recent-alerts").slideToggle('slow');
-                    }
-                }
+            if ($('#recent-alerts').is(':visible')) {
+                $('#recent-alerts').slideToggle('slow');
+            } else {
+                $.get("index.php?recent_alerts=1", function (data) {
+                    $("#recent-alerts-data").html(data);
+                });
+                $("#recent-alerts").slideToggle('slow');
+            }
+        }
 
     </script>
+</body>
+
+</html>
