@@ -1766,3 +1766,7 @@ td>.attributeCost,
     font-size: 0.9em;
     padding: initial;
 }
+
+.strikethrough {
+    text-decoration: line-through;
+}
