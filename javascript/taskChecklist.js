@@ -21,7 +21,7 @@ async function fetchChecklist() {
                 link.href = element.Link
                 link.appendChild(document.createTextNode(element.Thread))
 
-                console.log(element.User)
+                // console.log(element.User)
                 if ((element.User !== undefined)) {
                     link.classList.add("strikethrough");
                 }
