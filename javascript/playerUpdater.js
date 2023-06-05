@@ -128,7 +128,7 @@ function updateOutput() {
                         element.closest("#physicalAttributes") != null) {
                         if (element.value != data[0][attributeArray[element.id.slice(3)]]) {
                             updateText +=
-                                `${attributeArray[element.id.slice(3)]}: ${data[0][attributeArray[element.id.slice(3)]]} -> ${element.value}
+                                `${attributeArray[element.id.slice(3)]}: ${data[0][attributeArray[element.id.slice(3)]]} -> ${element.value} (${costArray[data[0][attributeArray[element.id.slice(3)]]] - costArray[element.value]})
 `
                         }
                     }
@@ -138,7 +138,7 @@ function updateOutput() {
                         element.closest("#physicalAttributes") != null) {
                         if (element.value != data[0][attributeArray[element.id.slice(3)]]) {
                             updateText +=
-                                `${attributeArray[element.id.slice(3)]}: ${data[0][attributeArray[element.id.slice(3)]]} -> ${element.value}
+                                `${attributeArray[element.id.slice(3)]}: ${data[0][attributeArray[element.id.slice(3)]]} -> ${element.value} (${costArray[data[0][attributeArray[element.id.slice(3)]]] - costArray[element.value]})
 `
                         }
                     }
