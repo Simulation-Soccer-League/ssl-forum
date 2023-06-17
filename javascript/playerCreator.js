@@ -457,7 +457,7 @@ function submitForm(formElement) {
 First Name: ${allEntries.firstName}
 Last Name: ${allEntries.lastName}
 Discord: ${allEntries.discordUsername}
-Birthplace: ${allEntries.birthplace}
+Birthplace: ${allEntries.birthplace + ", " + allEntries.nationality}
 Height: ${allEntries.height}
 Weight: ${allEntries.weight}
 Preferred Foot: ${allEntries.footedness}
