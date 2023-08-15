@@ -340,7 +340,7 @@ function submitCheck() {
     // console.log(sum)
     // console.log(balance - sum)
 
-    if (balance - sum < 0 | username === "Guest") {
+    if (balance - sum < 0 & username !== "Guest") {
 
         Swal.fire({
             title: 'Too much money spent!',
