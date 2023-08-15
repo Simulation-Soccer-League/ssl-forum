@@ -161,7 +161,7 @@ const traitMatrix = {
 // Fetches the build of the player whose user is logged in
 async function fetchPlayer() {
     if (username === "Guest") {
-        return ()
+        return false;
     }
 
     const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
