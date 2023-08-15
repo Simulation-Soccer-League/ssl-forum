@@ -160,6 +160,10 @@ const traitMatrix = {
 
 // Fetches the build of the player whose user is logged in
 async function fetchPlayer() {
+    if (username === "Guest") {
+        return ()
+    }
+
     const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
 
     const playerData = fetch(url)
@@ -236,48 +240,85 @@ function updateCost(element) {
 function updateOutput() {
     const purchases = document.querySelectorAll("div[class$='Purchase'] table")
 
-    const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
+    if (username === "Guest") {
+        let purchaseString = ""
+        const baseString = `PLAYERNAME - USERNAME - TEAM`
 
-    const playerData = fetch(url)
+        purchases.forEach(element => {
 
-    playerData
-        .then((response) => response.json())
-        .then((data) => {
-            const baseString = `${data[0].Name} - ${username} - ${data[0].Team}`
+            // console.log(element)
+            const items = element.querySelectorAll("select")
 
-            let purchaseString = ""
+            items.forEach(element => {
+                let selectedIndex = element.selectedIndex;
 
-            purchases.forEach(element => {
-
-                // console.log(element)
-                const items = element.querySelectorAll("select")
-
-                items.forEach(element => {
-                    let selectedIndex = element.selectedIndex;
-
-                    // Only writes if a purchase has been made.
-                    if (selectedIndex != 0) {
-                        purchaseString += `${baseString} - -${element.options[selectedIndex].value} - ${element.options[selectedIndex].innerText}\n`
-                    }
-                });
-            });
-
-            Swal.fire({
-                title: "Purchase Summarized!",
-                html: '<pre>' + purchaseString + '</pre> ',
-                icon: 'success',
-                confirmButtonText: 'Copy text'
-            }).then(function (isConfirm) {
-                if (isConfirm) {
-                    // Copy the text inside the text field
-                    navigator.clipboard.writeText(purchaseString);
-                } else {
-                    // DO NOTHING
+                // Only writes if a purchase has been made.
+                if (selectedIndex != 0) {
+                    purchaseString += `${baseString} - -${element.options[selectedIndex].value} - ${element.options[selectedIndex].innerText}\n`
                 }
-            })
-        })
+            });
+        });
 
-    return false;
+        Swal.fire({
+            title: "Purchase Summarized!",
+            html: '<pre>' + purchaseString + '</pre> ',
+            icon: 'success',
+            confirmButtonText: 'Copy text'
+        }).then(function (isConfirm) {
+            if (isConfirm) {
+                // Copy the text inside the text field
+                navigator.clipboard.writeText(purchaseString);
+            } else {
+                // DO NOTHING
+            }
+        })
+        return false;
+    } else {
+        const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
+
+        const playerData = fetch(url)
+
+        playerData
+            .then((response) => response.json())
+            .then((data) => {
+                const baseString = `${data[0].Name} - ${username} - ${data[0].Team}`
+
+                let purchaseString = ""
+
+                purchases.forEach(element => {
+
+                    // console.log(element)
+                    const items = element.querySelectorAll("select")
+
+                    items.forEach(element => {
+                        let selectedIndex = element.selectedIndex;
+
+                        // Only writes if a purchase has been made.
+                        if (selectedIndex != 0) {
+                            purchaseString += `${baseString} - -${element.options[selectedIndex].value} - ${element.options[selectedIndex].innerText}\n`
+                        }
+                    });
+                });
+
+                Swal.fire({
+                    title: "Purchase Summarized!",
+                    html: '<pre>' + purchaseString + '</pre> ',
+                    icon: 'success',
+                    confirmButtonText: 'Copy text'
+                }).then(function (isConfirm) {
+                    if (isConfirm) {
+                        // Copy the text inside the text field
+                        navigator.clipboard.writeText(purchaseString);
+                    } else {
+                        // DO NOTHING
+                    }
+                })
+            })
+
+        return false;
+    }
+
+
 }
 
 function submitCheck() {
@@ -299,7 +340,7 @@ function submitCheck() {
     // console.log(sum)
     // console.log(balance - sum)
 
-    if (balance - sum < 0) {
+    if (balance - sum < 0 | username === "Guest") {
 
         Swal.fire({
             title: 'Too much money spent!',
