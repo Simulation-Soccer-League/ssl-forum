@@ -11,7 +11,7 @@ function toCapital(string) {
 
 // Updates the attribute tables based on the selected player position
 function updateForm(position) {
-    if (position != "Goalkeeper") {
+    if (!(position == "Goalkeeper" || position == "GK")) {
         document.querySelector("#keeperAttributes").style.display = "none"
         document.querySelector("#technicalAttributes").style.display = "block"
 
@@ -122,7 +122,7 @@ function updateOutput() {
             const attributes = document.querySelectorAll('input[id*="out"]')
 
             attributes.forEach(element => {
-                if (data[0].Position == "Goalkeeper") {
+                if (data[0].Position == "Goalkeeper" || data[0].Position == "GK") {
                     if (element.closest("#keeperAttributes") != null |
                         element.closest("#mentalAttributes") != null |
                         element.closest("#physicalAttributes") != null) {
@@ -218,7 +218,7 @@ Work Rate: ${allEntries.mWrk}
 
 `
 
-            if (data[0].Position == "Goalkeeper") {
+            if (data[0].Position == "Goalkeeper" || data[0].Position == "GK") {
                 let addition =
                     `[u][b]Goalkeeping[/b][/u]
 Aerial Reach: ${allEntries.kAer}
@@ -380,7 +380,7 @@ function HandleDropdowns(element) {
 function updateAttribute(element, data) {
     const keeperPattern = /K$/
 
-    if (data[0].Position == "Goalkeeper") {
+    if (data[0].Position == "Goalkeeper" || data[0].Position == "GK") {
 
         // Checks if the attribute is in the Keeper Attributes table and fills it if that is true
         if (element.closest("#keeperAttributes") != null |
