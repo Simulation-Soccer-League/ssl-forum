@@ -196,7 +196,7 @@ async function fetchPlayer() {
             for (const trait in ownedTraits) {
                 // console.log(ownedTraits[trait])
                 const option = document.createElement("option");
-                option.text = ownedTraits[trait];
+                option.text = `Remove ${ownedTraits[trait]}`;
                 option.value = "500000";
                 traitOption.appendChild(option)
 
