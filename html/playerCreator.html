@@ -1,11 +1,11 @@
 <body>
     <main>
-        <!-- <p>Welcome to the Player Creation Tool! This tool allows you to define all of the aspects of your player using
+        <p>Welcome to the Player Creation Tool! This tool allows you to define all of the aspects of your player using
             text and selection prompts before combining all of the information into a formatted output, ready for your
             player page thread.</p>
         <p>After finishing the creation process, click on "Summarize your created player" and copy the output. Next,
             navigate to this <a href="https://forum.simulationsoccer.com/forumdisplay.php?fid=57" target="_blank">this
-                subforum</a> and create a new thread, pasting in the information copied from this tool.</p> -->
+                subforum</a> and create a new thread, pasting in the information copied from this tool.</p>
         <!-- General Information for Player Creation -->
         <form id="playerCreator" onsubmit="return submitForm(this)">
             <h3>Player Details</h3>
@@ -44,7 +44,7 @@
                     </td>
                     <td>
                         <select name="nationality" id="nationality" required>
-                            <option value="">------- Select your nationality -------</option>
+                            <option value="">--- Select your nationality ---</option>
                             <option value="Other">Other</option>
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Albania">Albania</option>
@@ -274,7 +274,7 @@
                     </td>
                     <td>
                         <select name="footedness" id="footedness" required>
-                            <option value="">------- Select a side -------</option>
+                            <option value="">--- Select a side ---</option>
                             <option value="left">Left</option>
                             <option value="right">Right</option>
                         </select>
@@ -288,16 +288,24 @@
                         <input type="text" name="render" id="render" placeholder="None">
                     </td>
                 </tr>
-            </table>
-            <h3>Cosmetics</h3>
-            <table class="playerCosmetics">
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+                        <h3>Cosmetics</h3>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         <label for="hairColor">Select hair color:</label>
                     </td>
                     <td>
                         <select name="hairColor" id="hairColor" required>
-                            <option value="">------- Select a color -------</option>
+                            <option value="">--- Select a color ---</option>
                             <option value="Light Brown 1">Light Brown 1</option>
                             <option value="Light Brown 2">Light Brown 2</option>
                             <option value="Light Brown 3">Light Brown 3</option>
@@ -320,7 +328,7 @@
                     </td>
                     <td>
                         <select name="hairLength" id="hairLength" required>
-                            <option value="">------- Select a length -------</option>
+                            <option value="">--- Select a length ---</option>
                             <option value="Bald">Bald</option>
                             <option value="Buzz">Buzzcut</option>
                             <option value="Short">Short</option>
@@ -333,7 +341,7 @@
                     </td>
                     <td>
                         <select name="skinColor" id="skinColor" required>
-                            <option value="">------- Select a skin tone -------</option>
+                            <option value="">--- Select a skin tone ---</option>
                             <option value="Skin Tone 1">Skin Tone 1 (lightest)</option>
                             <option value="Skin Tone 2">Skin Tone 2</option>
                             <option value="Skin Tone 3">Skin Tone 3</option>
