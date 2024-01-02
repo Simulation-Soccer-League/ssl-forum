@@ -462,6 +462,7 @@ Height: ${allEntries.height}
 Weight: ${allEntries.weight}
 Preferred Foot: ${allEntries.footedness}
 Preferred Position: ${allEntries.posPrim.toUpperCase()}
+Player Render: ${allEntries.render}
 
 [size=7][u][b]Cosmetics[/b][/u][/size]
 Hair Color: ${allEntries.hairColor}
