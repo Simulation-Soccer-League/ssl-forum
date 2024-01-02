@@ -184,7 +184,10 @@ async function fetchPlayer() {
 
                     let number = parseFloat(data[0].Balance)
 
-                    document.querySelector("#playerBank").innerText = number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+                    document.querySelector("#playerBank").innerText = number.toLocaleString('en-US', {
+                        style: 'currency', currency: 'USD', minimumFractionDigits: 0,
+                        maximumFractionDigits: 0
+                    });
                 })
 
             const traitOption = document.querySelector("#removeTrait1")
