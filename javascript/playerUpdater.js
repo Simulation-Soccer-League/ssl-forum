@@ -91,7 +91,8 @@ function totalAttributeCost() {
 
 // Function to gather the information from the form
 function updateOutput() {
-    let username = document.querySelector("#selectedPlayer").value
+    // If a user has multiple players (retired + recreate), a number is added to the username which needs to be removed
+    let username = document.querySelector("#selectedPlayer").value.replace(/\.\d+$/, "")
 
     const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
 
@@ -168,9 +169,15 @@ function updateOutput() {
 
 // Function to gather the information for the player page data
 function pageOutput() {
-    let username = document.querySelector("#selectedPlayer").value
+    // let username = document.querySelector("#selectedPlayer").value.replace(/\.\d+$/, "")
 
-    const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
+    // const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
+
+    let choice = document.querySelector("#selectedPlayer")
+
+    let playerName = choice.options[choice.selectedIndex].text;
+
+    const url = "https://api.simulationsoccer.com/ssl/getPlayer?player=" + playerName
 
     const playerData = fetch(url)
 
@@ -457,9 +464,14 @@ async function fetchPlayerInitial() {
 // Fetches the build of the player that is selected in the drop-down
 async function fetchPlayerSelected() {
     // Removes .number from the value in case a user has a retired and active player
-    let username = document.querySelector("#selectedPlayer").value.replace(/\.\d+$/, "")
+    // EDIT: Search instead for player name when a specific player has been selected, thereby not updating the selection 
+    // let username = document.querySelector("#selectedPlayer").value.replace(/\.\d+$/, "")
 
-    const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
+    let choice = document.querySelector("#selectedPlayer")
+
+    let playerName = choice.options[choice.selectedIndex].text;
+
+    const url = "https://api.simulationsoccer.com/ssl/getPlayer?player=" + playerName
 
     const playerData = fetch(url)
 
@@ -471,7 +483,7 @@ async function fetchPlayerSelected() {
 
             document.querySelector("#currentTPE").innerText = data[0].TPE
 
-            document.querySelector('option[value="' + username + '"]').selected = true
+            // document.querySelector('option[value="' + username + '"]').selected = true
 
             const attributes = document.querySelectorAll('input[id*="out"]')
 
