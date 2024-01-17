@@ -194,7 +194,25 @@ function pageOutput() {
     playerData
         .then((response) => response.json())
         .then((data) => {
-            let textOutput = `[size=7][u][b]Player Attributes[/b][/u][/size]
+            let textBase = `[size=large][u][b]Player Details[/b][/u][/size]
+First Name: ${data[0]['First Name']}
+Last Name: ${data[0]['Last Name']}
+Discord: ${data[0]['Discord']}
+Birthplace: ${data[0]['Birthplace']}
+Height: ${data[0]['Height']}
+Weight: ${data[0]['Weight']}
+Preferred Foot: ${data[0]['Preferred Foot']}
+Preferred Position: ${data[0]['Preferred Position']}
+Player Render: ${data[0]['Player Render']}
+
+[size=large][u][b]Cosmetics[/b][/u][/size]
+Hair Color: ${data[0]['Hair Color']}
+Hair Length: ${data[0]['Hair Length']}
+Skin Tone: ${data[0]['Skin Tone']}
+
+`
+
+            let textOutput = `[size=large][u][b]Player Attributes[/b][/u][/size]
 TPE Available: ${bank}
             
 [u][b]Physical[/b][/u]
@@ -225,6 +243,8 @@ Work Rate: ${allEntries.mWrk}
 
 `
 
+            textOutput = textBase + textOutput;
+
             if (data[0].Position == "Goalkeeper" || data[0].Position == "GK") {
                 let addition =
                     `[u][b]Goalkeeping[/b][/u]
@@ -243,9 +263,26 @@ First Touch: ${allEntries.kFst}
 Free Kick: ${allEntries.kFrk}
 Passing: ${allEntries.kPas}
 Penalty Taking: ${allEntries.kPen}
-Technique: ${allEntries.kTec}`
+Technique: ${allEntries.kTec}
+
+`
 
                 textOutput += addition
+                // IF the goalkeeper has traits these are added to the bottom of the player page
+                if (data[0]['All Traits'] !== undefined) {
+                    function formatTraits(inputString) {
+                        const traits = inputString.split('\\');
+                        const formattedTraits = traits.map((trait, index) => `Trait ${index + 1}: ${trait.trim()}`).join('\n');
+                        return formattedTraits;
+                    }
+
+                    const inputString = data[0]['All Traits']
+
+                    const formattedOutput = String(formatTraits(inputString));
+
+                    textOutput += `[size=large][[u][b]Traits[/b][/u][/size]
+` + formattedOutput
+                }
             } else {
                 let addition =
                     `[u][b]Technical[/b][/u]
@@ -262,9 +299,38 @@ Marking: ${allEntries.tMar}
 Passing: ${allEntries.tPas}
 Penalty Taking: ${allEntries.tPen}
 Tackling: ${allEntries.tTck}
-Technique: ${allEntries.tTec}`
+Technique: ${allEntries.tTec}
+
+[size=large][[u][b]Positional Experience[/b][/u][/size]
+Striker: ${data[0]['Striker']}
+Attacking Midfielder [L]: ${data[0]['Attacking Midfielder [L]']}
+Attacking Midfielder [C]: ${data[0]['Attacking Midfielder [C]']}
+Attacking Midfielder [R]: ${data[0]['Attacking Midfielder [R]']}
+Midfielder [L]: ${data[0]['Midfielder [L]']}
+Midfielder [C]: ${data[0]['Midfielder [C]']}
+Midfielder [R]: ${data[0]['Midfielder [R]']}
+Wingback [L]: ${data[0]['Wingback [L]']}
+Defensive Midfielder [C]: ${data[0]['Defensive Midfielder [C]']}
+Wingback [R]: ${data[0]['Wingback [R]']}
+Defense [L]: ${data[0]['Defense [L]']}
+Defense [C]: ${data[0]['Defense [C]']}
+Defense [R]: ${data[0]['Defense [R]']}
+
+[size=large][[u][b]Traits[/b][/u][/size]
+`
+                function formatTraits(inputString) {
+                    const traits = inputString.split('\\');
+                    const formattedTraits = traits.map((trait, index) => `Trait ${index + 1}: ${trait.trim()}`).join('\n');
+                    return formattedTraits;
+                }
+
+                const inputString = data[0]['All Traits']
+
+                const formattedOutput = String(formatTraits(inputString));
 
                 textOutput += addition
+
+                textOutput += formattedOutput
             }
 
             Swal.fire({

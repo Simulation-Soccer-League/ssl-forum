@@ -453,7 +453,7 @@ function submitForm(formElement) {
     }
 
     let textOutput =
-        `[size=7][u][b]Player Details[/b][/u][/size]
+        `[size=large][u][b]Player Details[/b][/u][/size]
 First Name: ${allEntries.firstName}
 Last Name: ${allEntries.lastName}
 Discord: ${allEntries.discordUsername}
@@ -464,12 +464,12 @@ Preferred Foot: ${allEntries.footedness}
 Preferred Position: ${allEntries.posPrim.toUpperCase()}
 Player Render: ${allEntries.render}
 
-[size=7][u][b]Cosmetics[/b][/u][/size]
+[size=large][u][b]Cosmetics[/b][/u][/size]
 Hair Color: ${allEntries.hairColor}
 Hair Length: ${allEntries.hairLength}
 Skin Tone: ${allEntries.skinColor}
 
-[size=7][u][b]Player Attributes[/b][/u][/size]
+[size=large][u][b]Player Attributes[/b][/u][/size]
 TPE Available: ${allEntries.totalTPE - totalAttributeCost()}
 
 [u][b]Physical[/b][/u]
