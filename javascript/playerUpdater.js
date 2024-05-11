@@ -91,10 +91,16 @@ function totalAttributeCost() {
 
 // Function to gather the information from the form
 function updateOutput() {
-    // If a user has multiple players (retired + recreate), a number is added to the username which needs to be removed
-    let username = document.querySelector("#selectedPlayer").value.replace(/\.\d+$/, "")
+    
+	
+	// If a user has multiple players (retired + recreate), a number is added to the username which needs to be removed
+    // let username = document.querySelector("#selectedPlayer").value.replace(/\.\d+$/, "")
+	
+	// Due to multiple players per user, select the player name instead
+	let sel = document.querySelector("#selectedPlayer")
+	let playername = sel.options[sel.selectedIndex].text
 
-    const url = "https://api.simulationsoccer.com/ssl/getPlayer?username=" + username
+    const url = "https://api.simulationsoccer.com/ssl/getPlayer?player=" + playername
 
     const playerData = fetch(url)
 
