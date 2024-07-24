@@ -293,45 +293,19 @@ async function fetchListPlayers() {
     data
         .then((response) => response.json())
         .then((data) => {
-            const usernames = JSON.parse(data[0].username)
-            const playernames = JSON.parse(data[0].name)
-
             const selectObject = document.querySelector('#selectedPlayer')
 
-            for (const key in jsData) {
-                // console.log(`${ key }: ${ jsData[key]}`)
-                const option = document.createElement("option");
-                option.text = playernames;
-                option.value = usernames;
-                selectObject.appendChild(option)
-            }
+            data.forEach(player => {
 
-            if (username != "Guest") { fetchPlayerInitial() } else { fetchPlayerSelected() }
+                const option = document.createElement("option");
+                option.text = player.name;
+                option.value = player.username;
+                selectObject.appendChild(option)
+            })
+
+            fetchPlayerSelected()
         }
         )
-}
-
-// Fetches the build of the player whose user is logged in
-async function fetchPlayerInitial() {
-    const url = "https://api.simulationsoccer.com/player/getPlayer?username=" + username
-
-    const playerData = fetch(url)
-
-    playerData
-        .then((response) => response.json())
-        .then((data) => {
-            // data contains in its [0] index, the javascript object with all information
-            updateForm(data[0].pos_gk)
-
-            document.querySelector("#currentTPE").innerText = data[0].tpe
-
-            document.querySelector('option[value="' + username + '"]').selected = true
-
-            const attributes = document.querySelectorAll('input[id*="out"]')
-
-            attributes.forEach(element => updateAttribute(element, data))
-        });
-
 }
 
 // Fetches the build of the player that is selected in the drop-down
@@ -344,7 +318,7 @@ async function fetchPlayerSelected() {
 
     let playerName = choice.options[choice.selectedIndex].text;
 
-    const url = "https://api.simulationsoccer.com/player/getPlayer?name=" + playername
+    const url = "https://api.simulationsoccer.com/player/getPlayer?name=" + playerName
 
     const playerData = fetch(url)
 
