@@ -140,8 +140,9 @@ function attributeHighlighter() {
         if (element.id == "outfield") {
             // Do nothing
         } else {
-            const attributeName = attributeArray[element.id.slice(3)].toLowerCase()
+            const attributeName = attributeArray[element.id.slice(3)]
 
+            console.log(attributeName);
             const text = element.parentElement.parentElement.querySelector("span")
 
             if (roleMatrix[attributeName] == 1) {

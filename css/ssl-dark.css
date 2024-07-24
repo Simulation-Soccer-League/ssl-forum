@@ -5,8 +5,8 @@
     --satin-sheen-gold: #bd9523ff;
     --lightText: hsl(var(--color), 100%);
     --darkText: hsl(var(--color), 0%);
-    --amazon: #417b5aff;
-    --mountbatten-pink: #916c80ff;
+    --key: #276BB0;
+    --important: #60c689;
     --topBackground: hsl(var(--color), 10%);
     --middleBackground: hsl(var(--color), 20%);
     --bottomBackground: hsl(var(--color), 30%);

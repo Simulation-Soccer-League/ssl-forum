@@ -71,7 +71,7 @@ label {
 }
 
 button {
-    background-color: var(--amazon);
+    background-color: var(--key);
     color: var(--lightText);
     border-color: var(--midnight-blue);
 }
@@ -361,7 +361,7 @@ table {
 
 /* Lists in navigation styles */
 nav li {
-    background-color: var(--amazon);
+    background-color: var(--key);
     padding: 15px;
     border-radius: 25px;
     /* Sets size to be defined by the outer box, not the content */
@@ -1609,15 +1609,15 @@ main td {
 }
 
 .keyAttribute {
-    color: var(--amazon);
-    border: 1px dashed var(--amazon);
+    color: var(--key);
+    border: 1px dashed var(--key);
     border-radius: 5px;
     padding: 0 5px;
 }
 
 .importantAttribute {
-    color: var(--mountbatten-pink);
-    border: 1px dashed var(--mountbatten-pink);
+    color: var(--important);
+    border: 1px dashed var(--important);
     border-radius: 5px;
     padding: 0 5px;
 }
