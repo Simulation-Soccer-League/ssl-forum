@@ -1,58 +1,7 @@
 const costArray = { 5: 0, 6: 2, 7: 4, 8: 8, 9: 12, 10: 16, 11: 22, 12: 28, 13: 34, 14: 46, 15: 58, 16: 70, 17: 88, 18: 106, 19: 131, 20: 156 }
 
 const attributeArray = {
-    "Acc": "acceleration",
-    "Agi": "agility",
-    "Bal": "balance",
-    "Jmp": "jumping reach",
-    "Nat": "natural fitness",
-    "Pac": "pace",
-    "Sta": "stamina",
-    "Str": "strength",
-    "Agg": "aggression",
-    "Ant": "anticipation",
-    "Bra": "bravery",
-    "Cmp": "composure",
-    "Con": "concentration",
-    "Dec": "decisions",
-    "Det": "determination",
-    "Fla": "flair",
-    "Lea": "leadership",
-    "Otb": "off the ball",
-    "Pos": "positioning",
-    "Tea": "teamwork",
-    "Vis": "vision",
-    "Wrk": "work rate",
-    "Cor": "corners",
-    "Cro": "crossing",
-    "Dri": "dribbling",
-    "Fin": "finishing",
-    "Fst": "first touch",
-    "FstK": "first touch",
-    "Frk": "free kick",
-    "FrkK": "free kick",
-    "Hea": "heading",
-    "Lsh": "long shots",
-    "Lth": "long throws",
-    "Mar": "marking",
-    "Pas": "passing",
-    "PasK": "passing",
-    "Pen": "penalty taking",
-    "PenK": "penalty taking",
-    "Tck": "tackling",
-    "Tec": "technique",
-    "TecK": "technique",
-    "Aer": "aerial reach",
-    "Coa": "command of area",
-    "Com": "communication",
-    "Ecc": "eccentricity",
-    "Han": "handling",
-    "Kic": "kicking",
-    "Ooo": "one on ones",
-    "Ref": "reflexes",
-    "Ttr": "tendency to rush",
-    "Ttp": "tendency to punch",
-    "Thr": "throwing"
+    Acc: "Acceleration", Agi: "Agility", Bal: "Balance", Jmp: "Jumping Reach", Nat: "Natural Fitness", Pac: "Pace", Sta: "Stamina", Str: "Strength", Agg: "Aggression", Ant: "Anticipation", Bra: "Bravery", Cmp: "Composure", Con: "Concentration", Dec: "Decisions", Det: "Determination", Fla: "Flair", Lea: "Leadership", Otb: "Off the Ball", Pos: "Positioning", Tea: "Teamwork", Vis: "Vision", Wrk: "Work Rate", Cor: "Corners", Cro: "Crossing", Dri: "Dribbling", Fin: "Finishing", Fst: "First Touch", FstK: "First Touch", Frk: "Free Kick", FrkK: "Free Kick", Hea: "Heading", Lsh: "Long Shots", Lth: "Long Throws", Mar: "Marking", Pas: "Passing", PasK: "Passing", Pen: "Penalty Taking", PenK: "Penalty Taking", Tck: "Tackling", Tec: "Technique", TecK: "Technique", Aer: "Aerial Reach", Coa: "Command of Area", Com: "Communication", Ecc: "Eccentricity", Han: "Handling", Kic: "Kicking", Ooo: "One on Ones", Ref: "Reflexes", Ttr: "Tendency to Rush", Ttp: "Tendency to Punch", Thr: "Throwing"
 }
 
 const roleAttributes = {
@@ -191,7 +140,7 @@ function attributeHighlighter() {
         if (element.id == "outfield") {
             // Do nothing
         } else {
-            const attributeName = attributeArray[element.id.slice(3)]
+            const attributeName = attributeArray[element.id.slice(3)].toLowerCase()
 
             const text = element.parentElement.parentElement.querySelector("span")
 
@@ -329,9 +278,9 @@ function updateOutput() {
                     if (element.closest("#keeperAttributes") != null |
                         element.closest("#mentalAttributes") != null |
                         element.closest("#physicalAttributes") != null) {
-                        if (element.value != data[0][attributeArray[element.id.slice(3)]]) {
+                        if (element.value != data[0][attributeArray[element.id.slice(3)].toLowerCase()]) {
                             updateText +=
-                                `${attributeArray[element.id.slice(3)]}: ${data[0][attributeArray[element.id.slice(3)]]} -> ${element.value} (${costArray[data[0][attributeArray[element.id.slice(3)]]] - costArray[element.value]})
+                                `${attributeArray[element.id.slice(3)].toLowerCase()}: ${data[0][attributeArray[element.id.slice(3)].toLowerCase()]} -> ${element.value} (${costArray[data[0][attributeArray[element.id.slice(3)].toLowerCase()]] - costArray[element.value]})
 `
                         }
                     }
@@ -339,9 +288,9 @@ function updateOutput() {
                     if (element.closest("#technicalAttributes") != null |
                         element.closest("#mentalAttributes") != null |
                         element.closest("#physicalAttributes") != null) {
-                        if (element.value != data[0][attributeArray[element.id.slice(3)]]) {
+                        if (element.value != data[0][attributeArray[element.id.slice(3)].toLowerCase()]) {
                             updateText +=
-                                `${attributeArray[element.id.slice(3)]}: ${data[0][attributeArray[element.id.slice(3)]]} -> ${element.value} (${costArray[data[0][attributeArray[element.id.slice(3)]]] - costArray[element.value]})
+                                `${attributeArray[element.id.slice(3)].toLowerCase()}: ${data[0][attributeArray[element.id.slice(3)].toLowerCase()]} -> ${element.value} (${costArray[data[0][attributeArray[element.id.slice(3)].toLowerCase()]] - costArray[element.value]})
 `
                         }
                     }
@@ -418,14 +367,14 @@ function updateAttribute(element, data) {
         if (element.closest("#keeperAttributes") != null |
             element.closest("#mentalAttributes") != null |
             element.closest("#physicalAttributes") != null) {
-            element.value = data[0][attributeArray[element.id.slice(3)]]
+            element.value = data[0][attributeArray[element.id.slice(3)].toLowerCase()]
         }
 
     } else {
         if (keeperPattern.test(element.id)) {
             // Do nothing
         } else {
-            element.value = data[0][attributeArray[element.id.slice(3)]]
+            element.value = data[0][attributeArray[element.id.slice(3)].toLowerCase()]
         }
 
     }
