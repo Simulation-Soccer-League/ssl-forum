@@ -3,14 +3,9 @@
         <h4>How to use this assistant?</h4>
         <p>The Update Assistant automatically selects your player if you are logged in to the forum. You can select your
             player in the drop-down menu if it is not done automatically.</p>
-        <p>To get a full update output, you can enter in your unclaimed earnings in the list at the top of the page,
-            clicking on '+ Row' to add more rows in case you need them. The Earned TPE will automatically sum based on
-            your earned TPE for each claim. If you do not want to use the 'link collector' you can enter in the total
-            earned TPE manually.</p>
-        <p>Finally after all your earned TPE have been added, you may start to increase your attributes. Once you are
-            finished you can click on 'Summarize your update' and a popup will appear with your formatted update text.
-            Clicking on 'Copy text' will copy the text to your cliboard which you then can paste as a new post in your
-            update thread.</p>
+        <p>Once you are finished with your build you can click on 'Summarize your update' and a popup will appear with
+            your formatted update text.
+            Clicking on 'Copy text' will copy the text to your cliboard to save for later.</p>
         <br>
         <hr>
         <!-- General Information for Player Creation -->
@@ -25,33 +20,6 @@
                             </select>
                         </div>
                     </div>
-                </div>
-                <div class="col-10">&nbsp;</div>
-                <div class="col-60">
-                    <div style="float:left;padding-right:3px;">
-                        <button class="cssbutton" type="button" name="addRowButton" onclick="addRow();">+ Row</button>
-                        <button class="cssbutton" type="button" name="deleteRowButton" onclick="removeRow();">-
-                            Row</button>
-                    </div>
-                    <br>
-                    <table id="updatesTable" style="width: 100%;">
-                        <tbody>
-                            <tr>
-                                <th>#</th>
-                                <th>Task Name</th>
-                                <th>Link to Task</th>
-
-                                <th><small>Earned TPE</small></th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td><input id="1task" type="Text" style="width: 96%;"></td>
-                                <td><input id="1link" type="Text" style="width: 96%;"></td>
-                                <td><input class="narrow" id="1uncappedTpe" type="number" onchange="updateEarnedTPE();"
-                                        value="0" step="1"></td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
             <br>
@@ -786,9 +754,6 @@
                         update</button>
                     <a href="#" style="display: none;" class="popup click" popupid="createdPopup" id="popupButton">
                     </a>
-                    <button type="button" class="cssbutton" id="pageButton" onclick="playerPageCheck()">
-                        Generate the player page
-                    </button>
                 </p>
             </div>
             <div class="updateScale">
